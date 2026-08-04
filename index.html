@@ -8,9 +8,13 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Monda:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
     </style>
+
+
+    
     
 </head>
 <body>
+    
     <header>
 
     <section class="superior">
@@ -25,14 +29,16 @@
         </form>
 
     </section>
+    <button id="abrir" class="menu">☰</button>
+    <nav class="nav" id="nav">
 
-    <nav>
+        
 
-        <button class="menu">☰</button>
+        <button class="cerrar-menu" id="cerrar">cerrar</button>
 
         <img src="img/casa.png" alt="Inicio" class="casa">
 
-        <ul>
+        <ul class="despl-list">
             <li><a href="#" class="activo">Inicio</a></li>
 
             <li>
@@ -51,7 +57,7 @@
     </nav>
 
 </header>
-
+    <div class="centerP">
     <main>
         <img src="img/Pagina principal/Primera.png" alt="Niños recibiendo el restaurante">
         <div class="Info">
@@ -72,7 +78,7 @@
         <p>Administrar de forma correcta el inventario alimentario.</p>
         <a href="https://www.fao.org/home/es?utm_source=chatgpt.com"><p class="link-text">¿COMO?</p></a>
     </aside>
-    
+    </div>
     <footer>
 
     <section class="redes">
@@ -120,5 +126,6 @@
     </section>
 
     </footer>
+    <script src="js/mHam.js"></script>
 </body>
 </html>
