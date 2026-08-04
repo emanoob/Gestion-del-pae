@@ -220,6 +220,60 @@ RESPONSIVE
     nav ul {
         gap: 30px;
     }
+
+    
+}
+
+.menu{
+    display: none;
+    background-color: #00131a;
+}
+
+.cerrar-menu{
+    display: none;
+    color: var(--secundario);
+    background-color: var(--texto);
+    font-family: 'Monda';
+    font-size: 1rem;
+}
+@media screen and (max-width:500px){
+
+    .menu{
+        display: block;
+    }
+    .cerrar-menu{
+        display: block;
+    }
+
+    .nav{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .nav{
+        
+        padding: 2rem;
+        display: flex;
+        display: none;
+        top:0;
+        right: 0;
+        flex-direction: column;
+        align-items: end;
+        position: initial;
+        margin: 0;
+        z-index: 500;
+        margin-left: 25%;
+
+    }
+    .nav.visible{
+        visibility: visible;
+        opacity: 1;
+        display: flex;
+    }
+
+    .despl-list{
+        flex-direction: column;
+        margin:0;
+    }
 }
 
 
