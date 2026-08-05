@@ -8,9 +8,13 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Monda:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
     </style>
+
+
+    
     
 </head>
 <body>
+    
     <header>
 
     <section class="superior">
@@ -25,14 +29,16 @@
         </form>
 
     </section>
+    <button id="abrir" class="menu">☰</button>
+    <nav class="nav" id="nav">
 
-    <nav>
+        
 
-        <button class="menu">☰</button>
+        <button class="cerrar-menu" id="cerrar">cerrar</button>
 
         <img src="../img/casa.png" alt="Inicio" class="casa">
 
-        <ul>
+        <ul class="despl-list">
             <li><a href="../index.html">Inicio</a></li>
 
             <li>
@@ -64,18 +70,18 @@
             <section class="part">
 
                 <section class ="side">
-                    <ul class="Camp1">
+                    <ul class="Camp">
                         <li><p>Nombre de institicion</p><p class="Important">*</p></li>
                         <li><input type="text" id="NomInst" name="NomInst"></li>    
                     </ul>
-                    <ul class="Camp2">
+                    <ul class="Camp">
                         <li><p>Direccion</p><p class="Important">*</p></li>
                         <li><input type="text" id="Dir" name="Dir"></li>    
                     </ul>
                 </section>
                 
                 <section class="side">
-                    <ul class="Camp3">
+                    <ul class="Camp">
                         <li><p>Telefono</p><p class="Important">*</p></li>
                         <li><input type="int" id="Tel" name="Tel"></li>    
                     </ul>
@@ -87,23 +93,23 @@
 
             <section class="part">
                 <section class="side">
-                    <ul class="Camp4">
+                    <ul class="Camp">
                         <li class="txt"><p>Cedula de usuario</p><p class="Important">*</p></li>
                         <li><input type="text" id="CedAdmin" name="CedAdmin"></li>    
                     </ul>
             
-                    <ul class="Camp5">
+                    <ul class="Camp">
                         <li class="txt"><p>Correo del usuario</p><p class="Important">*</p></li>
                         <li><input type="text" id="CorrAdmin" name="CorrAdmin"></li>    
                     </ul>
                 </section>
                 
                 <section class="side">
-                    <ul class="Camp6">
+                    <ul class="Camp">
                         <li class="txt"><p>Nombre del usuario</p><p class="Important">*</p></li>
                         <li><input type="int" id="NomAd" name="NomAd"></li>   
                     </ul>
-                    <ul class="Camp7">
+                    <ul class="Camp">
                         <li><p class="txt">Apellido del usuario</p><p class="Important">*</p></li>
                         <li><input type="int" id="NomAd" name="NomAd"></li>   
 
@@ -154,7 +160,7 @@
 
         <p>
             <a href="https://www.tiktok.com/@gomezyeral2323._?_r=1&_t=ZS-96wEMCMsZ7P">
-            <img src="../img/redes sociales/tito.png">
+            <img src="../img/tito.png">
             @Gestion_alimenticia_
             </a>
         </p>
@@ -168,7 +174,8 @@
         <p>Alcaldía de Medellín</p>
 
     </section>
-
+    <script src="../js/mHam.js"></script>
+    <script src="../js/buscador.js"></script>
 </footer>
 </body>
 </html>
