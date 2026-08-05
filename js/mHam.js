@@ -1,11 +1,20 @@
+//Menu hamburguesa
+
+
+//variables necesrias
 const nav =document.querySelector("#nav");
 const abrir=document.querySelector("#abrir");
-const cerrar=document.querySelector("#cerrar");
+let swich=false;
 
+
+//funcionalidad
 abrir.addEventListener("click", () =>{
-    nav.classList.add("visible");
-})
-
-cerrar.addEventListener("click", () =>{
-    nav.classList.remove("visible")
+    if(swich==false){
+        nav.classList.add("visible");
+        swich=true
+    }else{
+        nav.classList.remove("visible");
+        swich=false
+    }
+    
 })

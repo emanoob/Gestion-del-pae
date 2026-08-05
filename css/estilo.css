@@ -117,6 +117,7 @@ nav a{
     transition:0.3s;
 }
 
+
 /*===========================
  COLOR AL PASAR EL MOUSE 
  ============================*/
@@ -241,9 +242,6 @@ RESPONSIVE
     .menu{
         display: block;
     }
-    .cerrar-menu{
-        display: block;
-    }
 
     .nav{
         opacity: 0;
@@ -320,14 +318,66 @@ main h2{
 
 
 
-main img{
-    position: relative;
-    width: 100%;
-    z-index: 1;
-    bottom: 1%;
-    left: 6%;
 
+/*CARRUSEL*/
+
+.carrusel{
+    width: 80%;
+    background-color: var(--tarjeta);
+    max-width: 120em;
+    padding: 2em;
+    border-radius: 1em;
+    box-shadow: 1rem 2rem 1rem #00131a50;
 }
+
+.carrusel .grande{
+    width: 300%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secundario);
+    border-radius: 0.5em;
+    padding: 2em;
+
+    transition: all .5s ease;
+    transform: translateX(0%);
+}
+
+.carrusel .img{
+    width: calc(100%/3 - 2em);
+    min-height: 10vh;
+    margin: 1px;
+    background-color: #ffffff;
+}
+
+.carrusel .puntos{
+    list-style: none;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrusel .punto{
+    width: 3em;
+    height: 2em;
+    background-color: var(--texto);
+    margin: 0.8em;
+    border-radius: 2em;
+    
+}
+
+.carrusel .punto.activo{
+    background-color: var(--color-resaltar);
+}
+
+
+
+
+
 
 .centerP{
     display: flex;
