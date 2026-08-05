@@ -221,6 +221,64 @@ RESPONSIVE
     nav ul {
         gap: 30px;
     }
+
+    
+}
+
+.menu{
+    display: none;
+    background-color: #00131a;
+}
+
+.cerrar-menu{
+    display: none;
+    color: var(--secundario);
+    background-color: var(--texto);
+    font-family: 'Monda';
+    font-size: 1rem;
+}
+@media screen and (max-width:500px){
+
+    .menu{
+        display: block;
+    }
+
+    .nav{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .nav{
+        
+        padding: 2rem;
+        display: flex;
+        display: none;
+        top:0;
+        right: 0;
+        flex-direction: column;
+        align-items: end;
+        position: initial;
+        margin: 0;
+        z-index: 500;
+        margin-left: 25%;
+
+    }
+    .nav.visible{
+        visibility: visible;
+        opacity: 1;
+        display: flex;
+    }
+
+    .despl-list{
+        flex-direction: column;
+        margin:0;
+    }
+
+    header h1{
+    font-size:2rem;
+    }
+    .logo{
+        width: 25%;
+    }
 }
 
 
@@ -234,7 +292,7 @@ RESPONSIVE
 main{
     background: var(--fondo);
     margin: 1px;
-    align-items: center;
+    align-items: start;
     display: flex;
     flex-direction: column;
 }
@@ -253,29 +311,84 @@ main h2{
 
 
 
-main img{
-    position: relative;
-    width: 49%;
-    z-index: 1;
-    bottom: 1%;
-    left: -6%;
 
+/*CARRUSEL*/
+
+.carrusel{
+    width: 80%;
+    background-color: var(--tarjeta);
+    max-width: 120em;
+    padding: 2em;
+    border-radius: 1em;
+    box-shadow: 1rem 2rem 1rem #00131a50;
+}
+
+.carrusel .grande{
+    width: 300%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secundario);
+    border-radius: 0.5em;
+    padding: 2em;
+
+    transition: all .5s ease;
+    transform: translateX(0%);
+}
+
+.carrusel .img{
+    width: calc(100%/3 - 2em);
+    min-height: 10vh;
+    margin: 1px;
+    background-color: #ffffff;
+}
+
+.carrusel .puntos{
+    list-style: none;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrusel .punto{
+    width: 3em;
+    height: 2em;
+    background-color: var(--texto);
+    margin: 0.8em;
+    border-radius: 2em;
+    
+}
+
+.carrusel .punto.activo{
+    background-color: var(--color-resaltar);
 }
 
 
+
+
+
+
+.centerP{
+    display: flex;
+}
 
 
 .Info{
     bottom: -10rem;
     display: flex;
     justify-content: space-between;
-    gap: 10rem;
-    margin-right: 15%;
+    gap: 5rem;
+    margin-right: 50%;
+    padding-left: -30rem;
 }
 
 .Info div{
     margin: 1px;
-    margin-left: 100px;
+    margin-left: 10px;
     background-color: var(--tarjeta);
     border-radius: 100%;
     height: 11rem;
@@ -310,16 +423,11 @@ main img{
 }
 
 .aside{
-    position:relative;
-    margin-left: -10%;
     background: var(--tarjeta);
     border-radius: 10%;
     height: 15rem;
     align-items: center;
     align-content: center;
-    width: 20rem;
-    left: 80rem;
-    bottom: 40rem;
     margin: 1px;
 }
 
@@ -337,7 +445,18 @@ main img{
     padding-top: 1.5rem;
 }
 
+@media (max-width:740px){
+    .Info{
+        flex-direction: column;
+    }
+    .centerP{
+        flex-direction: column;
+    }
 
+    .header.h1{
+        font-size: 1rem;
+    }
+}
 
 
 
@@ -475,7 +594,6 @@ article p{
 .overlay{
     width:100%;
     height:100%;
-
     background:rgba(255,255,255,.75);
 
     display:flex;
@@ -673,7 +791,7 @@ article p{
     display: flex;
     gap: 1rem;
     justify-content: flex-end;
-    padding-right: 10rem;
+    padding-right: 80%;
 }
 
 
@@ -752,7 +870,15 @@ article p{
     .part {
         grid-template-columns: 1fr;
     }
+    .ButtonsCon{
+        padding-right:40%;
+    }
+
+    .Camp{
+        flex-direction: column;
+    }
 }
+
 
 
 
