@@ -3,7 +3,7 @@ document.getElementById("buscadorForm").addEventListener("submit", function(e) {
 
     let texto = document.getElementById("busqueda").value.toLowerCase().trim();
 
-    if (texto === "rutas") {
+    if (texto === "rutas" || texto === "entregas") {
         window.location.href = "/html/rutentrega.html";
     }
 
