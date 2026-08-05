@@ -7,6 +7,10 @@ document.getElementById("buscadorForm").addEventListener("submit", function(e) {
         window.location.href = "/html/rutentrega.html";
     }
 
+    else if (texto === "inicio") {
+        window.location.href = "/html/index.html";
+    }
+
     else if (texto === "servicios") {
         window.location.href = "/html/servicioCliente.html";
     }
