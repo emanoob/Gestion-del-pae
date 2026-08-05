@@ -1,33 +1,25 @@
-buscador.js
 document.getElementById("buscadorForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    let texto = document.getElementById("busqueda").ariaValueMax.toLowerCase();
+    let texto = document.getElementById("busqueda").value.toLowerCase().trim();
 
-    const paginas = {
-        "inicio": "index.html",
-        "principal": "index.html",
+    if (texto === "rutas") {
+        window.location.href = "html/rutentrega.html";
+    }
 
-        "rutas": "html/rutentrega.html",
-        "entrega": "html/rutentrega",
+    else if (texto === "servicios") {
+        window.location.href = "html/servicioCliente.html";
+    }
 
-        "atencion": "html/servicioCliente",
-        "servicios": "html/servicioCliente",
-        "Cliente": "html/servicioCliente",
+    else if (texto === "acceder") {
+        window.location.href = "html/pagina4.html";
+    }
 
-        "acceder": "html/pagina4.html",
-        "servicio": "html/pagina4.html",
+    else if (texto === "login" || texto === "iniciar sesion") {
+        window.location.href = "html/iniciarSesion.html";
+    }
 
-        "login": "html/iniciarSesion.html",
-        "sesion": "html/iniciarSesion.html",
-        "iniciar sesion": "html/iniciarSesion.html"
-    };
-    
-    if (paginas[texto]) {
-        window.location.href = paginas[texto];
-    } else {
-        alert("No se encontro ningun resultado.");
+    else {
+        alert("No se encontró ningún resultado");
     }
 });
-
-console.log("buscador cargado")
