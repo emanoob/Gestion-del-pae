@@ -4,19 +4,19 @@ document.getElementById("buscadorForm").addEventListener("submit", function(e) {
     let texto = document.getElementById("busqueda").value.toLowerCase().trim();
 
     if (texto === "rutas") {
-        window.location.href = "html/rutentrega.html";
+        window.location.href = "/html/rutentrega.html";
     }
 
     else if (texto === "servicios") {
-        window.location.href = "html/servicioCliente.html";
+        window.location.href = "/html/servicioCliente.html";
     }
 
     else if (texto === "acceder") {
-        window.location.href = "html/pagina4.html";
+        window.location.href = "/html/pagina4.html";
     }
 
     else if (texto === "login" || texto === "iniciar sesion") {
-        window.location.href = "html/iniciarSesion.html";
+        window.location.href = "/html/iniciarSesion.html";
     }
 
     else {
