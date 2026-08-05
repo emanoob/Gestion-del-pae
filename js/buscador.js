@@ -1,11 +1,7 @@
 document.getElementById("buscadorForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    let texto = document.getElementById("busqueda").value
-    .toLowerCase()
-    .normalize("NFD")
-    .REPLACE(/[\u0300-\u036f]/g, "")
-    .trim();
+    let texto = document.getElementById("busqueda").value.toLowerCase().trim();
 
     if (texto === "rutas" || texto === "entregas" || texto === "ruta" || texto === "entrega" || texto === "transporte" || texto === "distribucion" || texto === "logistica") {
         window.location.href = "/html/rutentrega.html";
