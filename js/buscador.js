@@ -8,7 +8,7 @@ document.getElementById("buscadorForm").addEventListener("submit", function(e) {
     }
 
     else if (texto === "inicio") {
-        window.location.href = "/html/index.html";
+        window.location.href = "/index.html";
     }
 
     else if (texto === "servicios") {
