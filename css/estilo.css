@@ -238,7 +238,6 @@ RESPONSIVE
     font-size: 1rem;
 }
 @media screen and (max-width:500px){
-
     .menu{
         display: block;
     }
@@ -328,6 +327,7 @@ main h2{
     padding: 2em;
     border-radius: 1em;
     box-shadow: 1rem 2rem 1rem #00131a50;
+    overflow-x: hidden;
 }
 
 .carrusel .grande{
