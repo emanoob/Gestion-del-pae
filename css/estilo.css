@@ -278,6 +278,9 @@ RESPONSIVE
     .logo{
         width: 25%;
     }
+    footer{
+        flex-direction: column;
+    }
 }
 
 
@@ -321,7 +324,7 @@ main h2{
 /*CARRUSEL*/
 
 .carrusel{
-    width: 80%;
+    width: 100%;
     background-color: var(--tarjeta);
     max-width: 120em;
     padding: 2em;
@@ -437,30 +440,38 @@ main h2{
     align-items: center;
     align-content: center;
     margin: 1px;
+    margin-top: 5%;
+    margin-right:3%;
 }
 
 .aside h2{
     padding-left: 0.2rem;
     padding-top: 8px;
     text-decoration: none;
+    margin:1px;
 }
 
 .aside p{
     padding-left: 1.1rem;
     padding-top: 8px ;
-    max-width: 19rem;
+    max-width: 20rem;
     text-align: center;
-    padding-top: 1.5rem;
+    margin: 1px;
 }
 
 @media (max-width:740px){
     .Info{
         flex-direction: column;
+        margin-left: 1%;
     }
     .centerP{
         flex-direction: column;
     }
 
+    .aside{
+        align-items: center;
+        align-self: center;
+    }
     .header.h1{
         font-size: 1rem;
     }
@@ -490,9 +501,9 @@ main h2{
 
 .informacion h2{
     font-family:'Anton';
-    font-size:4rem;
+    font-size:3.8rem;
     color:#333;
-
+    text-align: left; 
     margin-bottom:20px;
 }
 
