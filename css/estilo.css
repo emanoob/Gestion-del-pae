@@ -1075,3 +1075,40 @@ article p{
         margin-top:10px;
     }
 }
+.tabla-rutas{
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,.2);
+}
+
+.tabla-rutas th{
+    background: #002b36;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+}
+
+.tabla-rutas td{
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.activa{
+    color: green;
+    font-weight: bold;
+}
+
+.proceso{
+    color: orange;
+    font-weight: bold;
+}
+
+.inactiva{
+    color: red;
+    font-weight: bold;
+}
