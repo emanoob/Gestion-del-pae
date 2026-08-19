@@ -56,28 +56,28 @@
     </nav>
 
 </header>
-    <main>
-        <section class="options_app">
+    <main class="app-pr">
+        <section class="options-app">
             <button><img alt="boton" src=""></button>
-            <ul class="option_app_item">
+            <ul class="option-app-item">
                 <img alt="option_item_img" src="">
                 <li>Añadir</li>
             </ul>
-            <ul class="option_app_item">
+            <ul class="option-app-item">
                 <img alt="option_item_img" src="">
                 <li>Ver registros</li>
             </ul>
-            <ul class="option_app_item">
+            <ul class="option-app-item">
                 <img alt="option_item_img" src="">
                 <li>Graficar</li>
             </ul>
-            <ul class="option_app_item">
+            <ul class="option-app-item">
                 <img alt="option_item_img" src="">
                 <li>Reportar</li>
             </ul>
         </section>
-        <section class="app_forms">
-
+        <section class="app-forms">
+            <p>a</p>
         </section>
     </main>
 
@@ -128,8 +128,7 @@
     </section>
 
     </footer>
-    <script src="js/mHam.js"></script>
-    <script src="js/carrusel.js"></script>
-    <script src="js/buscador.js"></script>
+    <script src="../../js/mHam.js"></script>
+    <script src="../../js/buscador.js"></script>
 </body>
 </html>

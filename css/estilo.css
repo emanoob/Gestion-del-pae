@@ -1112,3 +1112,30 @@ article p{
     color: red;
     font-weight: bold;
 }
+/*
+APP PRINCIPAL
+*/
+
+.app-pr{
+    display: flex;
+    flex-direction: row;
+    min-width: 50%;
+}
+
+.options-app{
+    background-color: #714537;
+}
+
+.option-app-item{
+    list-style: none;
+    display: flex;
+    
+}
+
+.app-forms{
+    width: 100%;
+    min-height: 10hv;
+    border-color: #00131a;
+    border-width: 4px;
+}
+
