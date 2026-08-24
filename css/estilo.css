@@ -1130,7 +1130,7 @@ APP PRINCIPAL
     gap:2.1rem;
     padding-bottom: 1rem;
     padding-left: 1rem;
-    box-shadow: #272726 1rem 1rem;
+    box-shadow: #27272665 1rem 1rem;
 }
 
 .hb-app img{
@@ -1158,6 +1158,12 @@ APP PRINCIPAL
 .option-app-item img{
     width: 15%;
 }
+
+.option-app-item p:hover{
+    color: var(--color-resaltar);
+    transform:translateY(-1px);
+}
+
 .app-forms{
     align-content: space-between;
     width: 100%;
@@ -1165,11 +1171,14 @@ APP PRINCIPAL
     border-width: 5px;
     border-color: #00131a;
     border-style:solid;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     background-color: transparent;
     min-height: 50vh;
     overflow-y: scroll ;
     max-height: 50vh;
+    background-color: #d7f3fd;
+    box-shadow:1rem 1.1rem 1.1rem #00131a71;
 }
 
