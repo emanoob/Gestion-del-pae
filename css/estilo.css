@@ -1130,6 +1130,7 @@ APP PRINCIPAL
     gap:2.1rem;
     padding-bottom: 1rem;
     padding-left: 1rem;
+    box-shadow: #272726 1rem 1rem;
 }
 
 .hb-app img{
