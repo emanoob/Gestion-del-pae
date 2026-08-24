@@ -1119,23 +1119,56 @@ APP PRINCIPAL
 .app-pr{
     display: flex;
     flex-direction: row;
-    min-width: 50%;
 }
 
 .options-app{
     background-color: #714537;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:2.1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+.hb-app img{
+    max-width: 15%;
+}
+
+.hb-app{
+    background-color: transparent;
+    border: transparent;
+    
 }
 
 .option-app-item{
     list-style: none;
     display: flex;
-    
+    background-color: transparent;
+    border: transparent;
 }
 
+.option-app-item p{
+    align-content: center;
+    color: var(--secundario);
+    font-size: 1.2rem;
+}
+.option-app-item img{
+    width: 15%;
+}
 .app-forms{
+    align-content: space-between;
     width: 100%;
-    min-height: 10hv;
+    margin: 2px;
+    border-width: 5px;
     border-color: #00131a;
-    border-width: 4px;
+    border-style:solid;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    min-height: 50vh;
+    overflow-y: scroll ;
+    max-height: 50vh;
 }
 

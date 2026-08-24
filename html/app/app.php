@@ -58,23 +58,23 @@
 </header>
     <main class="app-pr">
         <section class="options-app">
-            <button><img alt="boton" src=""></button>
-            <ul class="option-app-item">
-                <img alt="option_item_img" src="">
-                <li>Añadir</li>
-            </ul>
-            <ul class="option-app-item">
-                <img alt="option_item_img" src="">
-                <li>Ver registros</li>
-            </ul>
-            <ul class="option-app-item">
-                <img alt="option_item_img" src="">
-                <li>Graficar</li>
-            </ul>
-            <ul class="option-app-item">
-                <img alt="option_item_img" src="">
-                <li>Reportar</li>
-            </ul>
+            <button class="hb-app"><img alt="boton-pleg-app" src="../../img/App/mh.png"></button>
+            <button class="option-app-item">
+                <img alt="option_item_img" src="../../img/App/1.png">
+                <p>Añadir</p>
+            </button>
+            <button class="option-app-item">
+                <img alt="option_item_img" src="../../img/App/2.png">
+                <p>Ver registros</p>
+            </button>
+            <button class="option-app-item">
+                <img alt="option_item_img" src="../../img/App/3.png">
+                <p>Graficar</p>
+            </button>
+            <button class="option-app-item">
+                <img alt="option_item_img" src="../../img/App/4.png">
+                <p>Reportar</p>
+            </button>
         </section>
         <section class="app-forms">
             <p>a</p>
