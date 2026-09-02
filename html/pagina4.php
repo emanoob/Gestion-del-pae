@@ -39,19 +39,19 @@
         <img src="../img/casa.png" alt="Inicio" class="casa">
 
         <ul class="despl-list">
-            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../index.php">Inicio</a></li>
 
             <li>
-                <a href="rutentrega.html" >
+                <a href="rutentrega.php" >
                     Rutas de Entrega
                 </a>
             </li>
 
-            <li><a href="servicioCliente.html">Atención y servicios</a></li>
+            <li><a href="servicioCliente.php">Atención y servicios</a></li>
 
             <li><a href="#" class="activo">Acceder al servicio</a></li>
 
-            <li><a href="iniciarSesion.html">Iniciar sesión</a></li>
+            <li><a href="iniciarSesion.php">Iniciar sesión</a></li>
         </ul>
 
     </nav>
@@ -63,7 +63,6 @@
 
         <h2>Formulario</h2>
 
-        <button class="GuardarB"><img src="../img/pagina4/Guardar_btn.png" alt="Boton Guardar"></button>
 
         <section class="formulario">
             <section class="dentro">
@@ -72,18 +71,18 @@
                 <section class ="side">
                     <ul class="Camp">
                         <li><p>Nombre de institicion</p><p class="Important">*</p></li>
-                        <li><input type="text" id="NomInst" name="NomInst"></li>    
+                        <li><input type="text" name="NomInst"></li>    
                     </ul>
                     <ul class="Camp">
                         <li><p>Direccion</p><p class="Important">*</p></li>
-                        <li><input type="text" id="Dir" name="Dir"></li>    
+                        <li><input type="text" name="Dir"></li>    
                     </ul>
                 </section>
                 
                 <section class="side">
                     <ul class="Camp">
                         <li><p>Telefono</p><p class="Important">*</p></li>
-                        <li><input type="int" id="Tel" name="Tel"></li>    
+                        <li><input type="int" name="Tel"></li>    
                     </ul>
                 </section>
                 
@@ -95,23 +94,28 @@
                 <section class="side">
                     <ul class="Camp">
                         <li class="txt"><p>Cedula de usuario</p><p class="Important">*</p></li>
-                        <li><input type="int" id="CedUsu" name="CedUsu"></li>    
+                        <li><input type="int" name="CedUsu"></li>    
                     </ul>
             
                     <ul class="Camp">
                         <li class="txt"><p>Correo del usuario</p><p class="Important">*</p></li>
-                        <li><input type="text" id="CorrUsu" name="CorrUsu"></li>    
+                        <li><input type="text" name="CorrUsu"></li>    
                     </ul>
                 </section>
                 
                 <section class="side">
                     <ul class="Camp">
                         <li class="txt"><p>Nombre del usuario</p><p class="Important">*</p></li>
-                        <li><input type="text" id="NomUs" name="NomUs"></li>   
+                        <li><input type="text" name="NomUs"></li>   
                     </ul>
                     <ul class="Camp">
                         <li><p class="txt">Apellido del usuario</p><p class="Important">*</p></li>
-                        <li><input type="text" id="ApUs" name="ApUs"></li>   
+                        <li><input type="text" name="ApUs"></li>   
+
+                    </ul>
+                    <ul class="Camp">
+                        <li><p class="txt">Contraseña</p><p class="Important">*</p></li>
+                        <li><input type="text" name="Contr"></li>   
 
                     </ul>
                 </section>
@@ -121,8 +125,8 @@
             <p class="lin">___________________________________________________________________________________________</p>
 
             <div class="ButtonsCon">
-                <button class="Cerrar">Cerrar</button>
-                <button class="enviar">Enviar</button>
+                <button class="Cerrar" name="btn_reset">Cerrar</button>
+                <button class="enviar" name="btn_send">Enviar</button>
             </div>
             </section>    
             </section>

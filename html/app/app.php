@@ -41,16 +41,16 @@
             <li><a href="#" >Inicio</a></li>
 
             <li>
-                <a href="../rutentrega.html" >
+                <a href="../rutentrega.php" >
                     Rutas de Entrega
                 </a>
             </li>
 
-            <li><a href="../servicioCliente.html">Atención y servicios</a></li>
+            <li><a href="../servicioCliente.php">Atención y servicios</a></li>
 
-            <li><a href="../pagina4.html">Acceder al servicio</a></li>
+            <li><a href="../pagina4.php">Acceder al servicio</a></li>
 
-            <li><a href="../iniciarSesion.html">Iniciar sesión</a></li>
+            <li><a href="../iniciarSesion.php">Iniciar sesión</a></li>
         </ul>
 
     </nav>

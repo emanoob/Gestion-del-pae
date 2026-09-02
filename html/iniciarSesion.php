@@ -39,104 +39,78 @@
         <img src="../img/casa.png" alt="Inicio" class="casa">
 
         <ul class="despl-list">
-            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../index.php">Inicio</a></li>
 
             <li>
-                <a href="#" class="activo">
-                    Rutas de Entrega
-                </a>
+                <a href="rutentrega.php"> Rutas de Entrega</a>
             </li>
 
-            <li><a href="servicioCliente.html">Atención y servicios</a></li>
+            <li><a href="servicioCliente.php">Atención y servicios</a></li>
 
-            <li><a href="pagina4.html">Acceder al servicio</a></li>
+            <li><a href="pagina4.php">Acceder al servicio</a></li>
 
-            <li><a href="iniciarSesion.html">Iniciar sesión</a></li>
+            <li><a href="#" class="activo">Iniciar sesión</a></li>
         </ul>
 
     </nav>
 
-</header >
+</header>
 
-<main class="mainentr">
+        <main class="contenedor">
 
-    <section class="informacion">
+        <h1>Iniciar sesión</h1>
 
-        <h2>📍Rutas de Entrega</h2>
+        <div class="contenido">
 
-        <p>
-            Consulta las rutas de entrega de los alimentos.
-            Trabajamos para que los alimentos lleguen de forma
-            segura y oportuna.
-        </p>
-
-        <a href="https://www.google.com/maps/d/edit?mid=1x5u3iXzpNnCtzeObVjZP4-MGctkWAWM&usp=sharing">
-            <img src="../img/rutas de entrega/mapa nuevo de las rutas medellin.png" alt="Mapa">
-        </a>
-
-        <article class="articleentr">
-
-            <img src="../img/rutas de entrega/calend.png" alt="Calendario">
-
-            <div>
-
-                <h3>Información importante</h3>
+            <!-- LADO IZQUIERDO -->
+            <div class="infos">
 
                 <p>
-                    Los horarios pueden variar según condiciones
-                    climáticas o disponibilidad de rutas.
+                    Ingresa tus credenciales para acceder a la
+                    plataforma de gestión alimentaria.
                 </p>
+
+                <img src="../img/iniciarSesion/3223ae74-494d-432b-80c6-596b76b82e61 cuchitaa (1).png" alt="Gestión alimentaria">
 
             </div>
 
-        </article>
+            <!-- LADO DERECHO -->
+            
+            <!-- LADO DERECHO -->
+<div class="login">
 
-    </section>
+    <div class="grupo">
+        <label>Correo electrónico</label>
+        <input type="email">
+    </div>
 
-    <aside class="asideentr">
+    <div class="grupo">
+        <label>Contraseña</label>
+        <input type="password">
+    </div>
 
-        <img src="../img/rutas de entrega/gmedellin.jpg" alt="Mapa Medellín">
+    
+    <div class="opciones">
+    <div>
+        <input type="checkbox">
+        <span>Recordar mis datos</span>
+    </div>
 
-        <table class="tabla-rutas">
+    <a href="#">¿Olvidaste tu contraseña?</a>
+</div>
+                <button>Iniciar sesión</button>
 
-        <tr>
-            <th>Ruta</th>
-            <th>Recorrido</th>
-            <th>Estado</th>
-        </tr>
+                <p class="continuar">o continúa con</p>
 
-        <tr>
-            <td>A</td>
-            <td>Robledo → Aranjuez</td>
-            <td class="activa">🟢 Activa</td>
-        </tr>
+                <div class="sociales">
+                    <button>Google</button>
+                    <button>Microsoft</button>
 
-        <tr>
-            <td>B</td>
-            <td>Centro → Boston</td>
-            <td class="activa">🟢 Activa</td>
-        </tr>
-
-        <tr>
-            <td>C</td>
-            <td>Buenos Aires → La Milagrosa</td>
-            <td class="proceso">🟡 En proceso</td>
-        </tr>
-
-        <tr>
-            <td>D</td>
-            <td>Belén → Guayabal</td>
-            <td class="inactiva">🔴 Suspendida</td>
-        </tr>
-
-    </table>
-
-
-    </aside>
-
-</main>
-
-<footer>
+                </div>
+            </div>
+        </div>
+    </main>
+   <footer>
 
     <section class="redes">
 
@@ -156,8 +130,8 @@
 
         <p>
             <a href="https://www.facebook.com/share/1JHe1Jqxjx/">
-                <img src="../img/redes sociales/f.png">
-                @gestion_alimenticia-med
+            <img src="../img/redes sociales/f.png">
+            @gestion_alimenticia-med
             </a>
         </p>
 
