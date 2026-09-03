@@ -39,98 +39,89 @@
         <img src="../img/casa.png" alt="Inicio" class="casa">
 
         <ul class="despl-list">
-            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../index.php">Inicio</a></li>
 
             <li>
-                <a href="rutentrega.html"> Rutas de Entrega</a>
+                <a href="rutentrega.php">Rutas de Entrega
+                </a>
             </li>
 
-            <li><a href="servicioCliente.html">Atención y servicios</a></li>
+            <li><a href="#" class="activo">Atención y servicios</a></li>
 
-            <li><a href="pagina4.html">Acceder al servicio</a></li>
+            <li><a href="pagina4.php">Acceder al servicio</a></li>
 
-            <li><a href="#" class="activo">Iniciar sesión</a></li>
+            <li><a href="iniciarSesion.php">Iniciar sesión</a></li>
         </ul>
 
     </nav>
 
 </header>
 
-        <main class="contenedor">
+<main class ="mainServCl">
 
-        <h1>Iniciar sesión</h1>
+    <section class="hero">
 
-        <div class="contenido">
+        <div class="overlay">
 
-            <!-- LADO IZQUIERDO -->
-            <div class="infos">
+            <div class="card">
 
-                <p>
-                    Ingresa tus credenciales para acceder a la
-                    plataforma de gestión alimentaria.
+                <h2>Servicio al Ciudadano</h2>
+
+                <a href="#">Monitoreo de Consumo en Tiempo Real</a>
+
+                <a href="https://www.medellin.gov.co/es/secretaria-de-inclusion-social-y-familia/subsecretaria-de-grupos-poblacionales/equipo-de-seguridad-alimentaria-y-nutricional/" target="_blank">Logística de Redistribución</a>
+
+                <a href="https://www.medellin.gov.co/es/secretaria-suministros-y-servicios/politica-sostenibilidad/gestion-integral-de-residuos-de-la-alcaldia-de-medellin/" target="_blank">Gestión de Residuos Orgánicos</a>
+
+            </div>
+
+            <div class="card">
+
+                <h2>Atención al cliente</h2>
+
+                <p>Línea de atención general:</p>
+
+                <a href="https://wa.me/573107398094?text=Hola%20quiero%20más%20información%20sobre%20sus%20servicios" target="_blank">
+    Escríbenos por WhatsApp
+</a>
+
+                <p class="texto">
+                    Motivo del contacto:
+                    (Opciones: Reportar excedentes,
+                    Consulta nutricional,
+                    Queja por mal estado,
+                    Sugerencia de menú).
                 </p>
 
-                <img src="../img/iniciarSesion/3223ae74-494d-432b-80c6-596b76b82e61 cuchitaa (1).png" alt="Gestión alimentaria">
-
             </div>
 
-            <!-- LADO DERECHO -->
-            
-            <!-- LADO DERECHO -->
-<div class="login">
-
-    <div class="grupo">
-        <label>Correo electrónico</label>
-        <input type="email">
-    </div>
-
-    <div class="grupo">
-        <label>Contraseña</label>
-        <input type="password">
-    </div>
-
-    
-    <div class="opciones">
-    <div>
-        <input type="checkbox">
-        <span>Recordar mis datos</span>
-    </div>
-
-    <a href="#">¿Olvidaste tu contraseña?</a>
-</div>
-                <button>Iniciar sesión</button>
-
-                <p class="continuar">o continúa con</p>
-
-                <div class="sociales">
-                    <button>Google</button>
-                    <button>Microsoft</button>
-
-                </div>
-            </div>
         </div>
-    </main>
-   <footer>
+
+    </section>
+
+</main>
+
+<footer>
 
     <section class="redes">
 
         <p>
             <a href="https://www.instagram.com/gestion_alimenticia_jorge?utm_source=qr&igsh=ZWJ4ZDU0bTM3bDIy">
-            <img src="../img/redes sociales/lnstagram.png">
+            <img src="/img/redes sociales/lnstagram.png">
             gestion_alimenticia_Medellin
             </a>
         </p>
 
         <p>
             <a href="https://wa.me/573107398094?text=Hola%20quiero%20más%20información%20sobre%20sus%20servicios" target="_blank">
-            <img src="../img/redes sociales/w.png">
+            <img src="/img/redes sociales/w.png">
             3234724735
             </a>
         </p>
 
         <p>
             <a href="https://www.facebook.com/share/1JHe1Jqxjx/">
-            <img src="../img/redes sociales/f.png">
+            <img src="/img/redes sociales/f.png">
             @gestion_alimenticia-med
             </a>
         </p>
@@ -141,7 +132,7 @@
 
         <p>
             <a href=" https://www.tiktok.com/@gomezyeral2323._?_r=1&_t=ZS-96wEMCMsZ7P">
-            <img src="../img/tito.png">
+            <img src="/img/tito.png">
             @Gestion_alimenticia_
             </a>
         </p>
@@ -150,7 +141,7 @@
 
     <section class="alcaldia">
 
-        <img src="../img/logo-med.png" alt="Alcaldía de Medellín">
+        <img src="/img/logo-med.png" alt="Alcaldía de Medellín">
 
         <p>Alcaldía de Medellín</p>
 
