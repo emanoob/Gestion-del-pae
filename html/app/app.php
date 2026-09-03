@@ -77,7 +77,24 @@
             </button>
         </section>
         <section class="app-forms">
-            
+            <section class="form-item">
+                <p class="id-form-item">001</p>
+                <section class="form-time-all">
+                    <p class="fecha-form-item">29/08/2026</p>
+                    <p class="hora-form-item">5:00</p>
+                <section>
+                <section class="form-botons">
+                    <button class="form-view">
+                        <img alt="boton-ver">
+                    </button>
+                    <button class="form-edit">
+                        <img alt="boton-editar">
+                    </button>
+                    <button class="form-delete">
+                    <img alt="boton-eliminar">
+                    </button>
+                </section>
+            </section>
         </section>
     </main>
 

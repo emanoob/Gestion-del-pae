@@ -1182,3 +1182,24 @@ APP PRINCIPAL
     box-shadow:1rem 1.1rem 1.1rem #00131a71;
 }
 
+.form-item{
+    display: flex;
+    flex-direction: row;
+    background-color:#95c0dd;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    gap:8rem;
+}
+
+.form-time-all{
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+}
+
+.form-botones{
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+}
