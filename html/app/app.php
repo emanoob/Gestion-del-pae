@@ -59,7 +59,8 @@
     <main class="app-pr">
         <section class="options-app">
             <button class="hb-app"><img alt="boton-pleg-app" src="../../img/App/mh.png"></button>
-            <button class="option-app-item">
+            
+            <button class="buton-abrir-regist option-app-item" >
                 <img alt="option_item_img" src="../../img/App/1.png">
                 <p>Añadir</p>
             </button>
@@ -121,8 +122,8 @@
                     
                 ?>
         </section>
-        <dialog open class="app-regist-inf">
-            <button>X</button>
+        <dialog class="app-regist-inf">
+            <button class="buton-cerrar-regist">X</button>
             <h2>Registrar</h2>
             <Form action="../../base_datos/informes/controlador/nuevo.php" method="POST">
                 <ul class="regist_camp">

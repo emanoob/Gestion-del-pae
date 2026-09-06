@@ -64,3 +64,18 @@ const cerrar_update=document.querySelector('.cerrar-dialog-update');
 cerrar_update.addEventListener('click', function(){
     document.querySelector('.app-update-inf').close()
 })
+
+
+
+
+const buton_abrir_regist=document.querySelector('.buton-abrir-regist');
+const buton_cerrar_regist=document.querySelector('.buton-cerrar-regist');
+
+
+buton_abrir_regist.addEventListener('click', function(){
+    document.querySelector('.app-regist-inf').showModal();
+})
+
+buton_cerrar_regist.addEventListener('click', function(){
+    document.querySelector('.app-regist-inf').close();
+})
