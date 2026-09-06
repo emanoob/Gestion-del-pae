@@ -65,13 +65,13 @@
 
 
         <section class="formulario">
-            <section class="dentro">
+            <form class="dentro" action="../base_datos/registrar_usuarios/controlador/nuevo.php" method="POST">
             <section class="part">
 
                 <section class ="side">
                     <ul class="Camp">
                         <li><p>Nombre de institicion</p><p class="Important">*</p></li>
-                        <li><input type="text" name="NomInst"></li>    
+                        <li><input type="text" name="NomInsti"></li>    
                     </ul>
                     <ul class="Camp">
                         <li><p>Direccion</p><p class="Important">*</p></li>
@@ -125,10 +125,10 @@
             <p class="lin">___________________________________________________________________________________________</p>
 
             <div class="ButtonsCon">
-                <button class="Cerrar" name="btn_reset">Cerrar</button>
-                <button class="enviar" name="btn_send">Enviar</button>
+                <input type="submit" class="Cerrar" name="btn_reset" value="cerrar">
+                <input type="submit" name="btn_send" value="enviar">
             </div>
-            </section>    
+            </form>    
             </section>
         <img src="../img/pagina4/Circulo.png" class="Circulo">
         <img src="../img/pagina4/Circulo.png" class="CirculoA">

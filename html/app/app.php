@@ -77,25 +77,109 @@
             </button>
         </section>
         <section class="app-forms">
-            <section class="form-item">
-                <p class="id-form-item">001</p>
-                <section class="form-time-all">
-                    <p class="fecha-form-item">29/08/2026</p>
-                    <p class="hora-form-item">5:00</p>
-                <section>
-                <section class="form-botons">
-                    <button class="form-view">
-                        <img alt="boton-ver">
-                    </button>
-                    <button class="form-edit">
-                        <img alt="boton-editar">
-                    </button>
-                    <button class="form-delete">
-                    <img alt="boton-eliminar">
-                    </button>
-                </section>
-            </section>
+            
+            <?php
+
+                    include("../../base_datos/informes/conexion/abrir_conexion.php");
+
+                    for($i=0;$i<=20;$i++)
+                        {
+                            $resultados=mysqli_query($conexion, "SELECT * FROM `$tabla_db1` WHERE id = $i");
+                            WHILE($consulta =mysqli_fetch_array($resultados))
+                            {
+                                
+                                echo "<form action=\"../../base_datos/informes/actualizar/Actualizar.php\" method=\"POST\">";
+                                echo "<div class=\"form-item\">";
+                                
+                                echo "<p>".$consulta['id']."</p>";
+                                echo "<p class=\"fecha-form-item\">".$consulta['fecha']."</p>".
+                                    "<p>".$consulta['hora']."</p>".
+                                    "<div class=\"form-botons\">";
+                                    //Boton de ver abre un dialog
+                                echo "<input type=\"hidden\" value=\"".$consulta['id']."\" name=\"IDD\">".
+                                    "<button class=\"ver\" type=\"button\" data-id=\"".$consulta['id']."\" 
+                                    data-nombre=\"".$consulta['nombre']."\" data-cedu=\"".$consulta['cedula']."\" 
+                                    data-plentr=\"".$consulta['platos entregados']."\" data-desper=\"".$consulta['desperdicios']."\" 
+                                    data-fecha=\"".$consulta['fecha']."\" data-hora=\"".$consulta['hora']."\">Ver</button>".
+                                    
+                                    //Boton de update abre un dialog
+                                    "<button class=\"update\" type=\"button\" name=\"updatee\" data-id=\"".$consulta['id']."\" 
+                                    data-nombre=\"".$consulta['nombre']."\" data-cedu=\"".$consulta['cedula']."\" 
+                                    data-plentr=\"".$consulta['platos entregados']."\" data-desper=\"".$consulta['desperdicios']."\" 
+                                    data-fecha=\"".$consulta['fecha']."\" data-hora=\"".$consulta['hora']."\">Actualizar</button>".
+                                    
+                                    "<input type=\"submit\" value=\"Borrar\" class=\"delete\" name=\"delete\">";
+                                echo "</div>";
+                                
+                                
+                                echo "</div>";
+                                echo "</form>";
+                                
+                            }
+                        }
+                        include("../../base_datos/informes/conexion/cerrar_conexion.php");
+                    
+                ?>
         </section>
+        <dialog open class="app-regist-inf">
+            <button>X</button>
+            <h2>Registrar</h2>
+            <Form action="../../base_datos/informes/controlador/nuevo.php" method="POST">
+                <ul class="regist_camp">
+                        <li><p>platos entregados</p></li>
+                        <li><input type="text" name="PlEntr" class="PlEntr"></li>    
+                </ul>
+                <ul class="regist_camp">
+                        <li><p>desperdicios kg</p></li>
+                        <li><input type="text" name="desper" class="desper"></li>    
+                </ul>
+                <ul class="regist_camp">
+                        <li><p>fecha</p></li>
+                        <li><input type="date" name="fecha" class="fecha"></li>    
+                </ul>
+                <ul class="regist_camp">
+                        <li><p>hora</p></li>
+                        <li><input type="time" name="hora" class="hora"></li>    
+                </ul>
+                <input type="submit" name="btn_send_inf" class="btn_send_inf">
+                
+            </Form>
+        </dialog>
+        <dialog class="app-ver-inf">
+            <button class="cerrar-dialog-ver">X</button>
+            <h2>Ver</h2>
+            <p>id: <span id="ver-inf-id"></span></p>
+            <p>nombre: <span id="ver-inf-nom"></span></p>
+            <p>cedula: <span id="ver-inf-ced"></span></p>
+            <p>platos entregados: <span id="ver-inf-plt"></span></p>
+            <p>fecha: <span id="ver-inf-fecha"></span></p>
+            <p>hora: <span id="ver-inf-hora"></span></p>
+            <p>desperdicios: <span id="ver-inf-desper"></span></p>
+        </dialog>
+        <dialog class ="app-update-inf">
+            <button class="cerrar-dialog-update">X</button>
+            <h2>actualizar</h2>
+            <Form action="../../base_datos/informes/controlador/gestion_tabla.php" method="POST">
+                <ul class="regist_camp">
+                        <li><p>platos entregados</p></li>
+                        <li><input type="text" name="newPlEntr" class="PlEntr" placeholder="" id="plt-update"></li>    
+                </ul>
+                <ul class="regist_camp">
+                        <li><p>desperdicios kg</p></li>
+                        <li><input type="text" name="newdesper" class="desper" placeholder="" id="desper-update"></li>    
+                </ul>
+                <ul class="regist_camp">
+                        <li><p>fecha</p></li>
+                        <li><input type="date" name="newfecha" class="fecha" placeholder="" id="fecha-update"></li>    
+                </ul>
+                <ul class="regist_camp">
+                        <li><p>hora</p></li>
+                        <li><input type="time" name="newhora" class="hora" placeholder="" id="hora-update"></li>    
+                </ul>
+                <input type="hidden" value="" id="IDD2" name="IDD2">
+                <input type="submit" name="btn_save" class="btn_save">
+                
+        </dialog>
     </main>
 
     <footer>
@@ -147,5 +231,6 @@
     </footer>
     <script src="../../js/mHam.js"></script>
     <script src="../../js/buscador.js"></script>
+    <script src="../../js/app-dialog.js"></script>
 </body>
 </html>
