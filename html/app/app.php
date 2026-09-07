@@ -38,7 +38,7 @@
         <img src="../../img/casa.png" alt="Inicio" class="casa">
 
         <ul class="despl-list">
-            <li><a href="#" >Inicio</a></li>
+            <li><a href="../../index.php" >Inicio</a></li>
 
             <li>
                 <a href="../rutentrega.php" >
