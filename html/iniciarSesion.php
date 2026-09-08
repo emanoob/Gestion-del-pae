@@ -1,3 +1,15 @@
+<?php
+    session_start();
+    if(isset($_SESSION['usuario'])){
+        header("location:app/app.php");
+    }
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -78,36 +90,36 @@
             
             <!-- LADO DERECHO -->
 <div class="login">
-
+<form action="../base_datos/login_php/login_usuario_be.php" method="POST">
     <div class="grupo">
         <label>Correo electrónico</label>
-        <input type="email">
+        <input type="email" name="correo">
     </div>
 
     <div class="grupo">
         <label>Contraseña</label>
-        <input type="password">
+        <input type="password" name="contraseña">
     </div>
 
     
     <div class="opciones">
     <div>
-        <input type="checkbox">
+        <input type="checkbox" name="recordar_datos">
         <span>Recordar mis datos</span>
     </div>
 
     <a href="#">¿Olvidaste tu contraseña?</a>
 </div>
-                <button>Iniciar sesión</button>
+                <input class="ini_sec" type="submit" name="ini_sec" value="Iniciar Sesion">
 
                 <p class="continuar">o continúa con</p>
 
                 <div class="sociales">
                     <button>Google</button>
                     <button>Microsoft</button>
-
                 </div>
             </div>
+            </form>
         </div>
     </main>
    <footer>

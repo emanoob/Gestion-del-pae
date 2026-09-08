@@ -993,7 +993,7 @@ article p{
 }
 
 /* BOTON */
-.login button{
+.ini_sec{
     width:100%;
     height:50px;
     border:none;
@@ -1004,7 +1004,7 @@ article p{
     cursor:pointer;
 }
 
-.login button:hover{
+.ini_sec:hover{
     background:#202128;
 }
 
