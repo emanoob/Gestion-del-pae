@@ -1,34 +1,38 @@
-document.getElementById("buscadorForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", function() {
+    const formulario = document.getElementById("buscadorForm");
 
-    let texto = document.getElementById("busqueda").value.toLowerCase().trim();
+    if (!formulario) return;
 
-    if (texto === "rutas" || texto === "entregas" || texto === "ruta" || texto === "entrega" || texto === "transporte" || texto === "distribucion" || texto === "logistica") {
-        window.location.href = "../html/rutentrega.php";
-    }
+    formulario.addEventListener("submit", function(e) {
+        e.preventDefault(); // Evita el envío a Apache y el error 404
 
-    else if (texto === "inicio" || texto === "principal" || texto === "home" || texto === "pagina principal" || texto === "gestion alimentaria") {
-        window.location.href = "../index.php";
-    }
+        let texto = document.getElementById("busqueda").value.toLowerCase().trim();
 
-    else if (texto === "servicios" || texto === "atencion" || texto === "servicio" || texto === "ayuda" || texto === "soporte" || texto === "contacto" || texto === "cliente") {
-        window.location.href = "../html/servicioCliente.php";
-    }
+        // Detecta si estás dentro de la carpeta /html/
+        let enSubcarpeta = window.location.pathname.includes("/html/");
+        let prefijoHtml = enSubcarpeta ? "" : "html/";
+        let rutaInicio = enSubcarpeta ? "../index.php" : "index.php";
 
-    else if (texto === "acceder" || texto === "registro" || texto === "registrarse" || texto === "solicitud" || texto === "solicitar" || texto === "formulario" || texto === "inscripcion" ) {
-        window.location.href = "../html/pagina4.php";
-    }
-
-    else if (texto === "login" || texto === "iniciar sesion" || texto === "sesion" || texto === "entrar" || texto === "acceso" || texto === "usuario") {
-        window.location.href = "../html/iniciarSesion.php";
-    }
-    
-     else if (texto === "datos registrados" || texto === "datos" || texto === "registros" || texto === "entrada" ) {
-        window.location.href = "/html/app/app.php";
-    }
-    
-
-    else {
-        alert("No se encontró ningún resultado");
-    }
+        if (["rutas", "entregas", "ruta", "entrega", "transporte", "distribucion", "logistica"].includes(texto)) {
+            window.location.href = prefijoHtml + "rutentrega.php";
+        }
+        else if (["inicio", "principal", "home", "pagina principal", "gestion alimentaria"].includes(texto)) {
+            window.location.href = rutaInicio;
+        }
+        else if (["servicios", "atencion", "servicio", "ayuda", "soporte", "contacto", "cliente"].includes(texto)) {
+            window.location.href = prefijoHtml + "servicioCliente.php";
+        }
+        else if (["acceder", "registro", "registrarse", "solicitud", "solicitar", "formulario", "inscripcion"].includes(texto)) {
+            window.location.href = prefijoHtml + "pagina4.php";
+        }
+        else if (["login", "iniciar sesion", "sesion", "entrar", "acceso", "usuario"].includes(texto)) {
+            window.location.href = prefijoHtml + "iniciarSesion.php";
+        }
+        else if (["datos registrados", "datos", "registros", "entrada"].includes(texto)) {
+            window.location.href = prefijoHtml + "app/app.php";
+        }
+        else {
+            alert("No se encontró ningún resultado para: " + texto);
+        }
+    });
 });
