@@ -9,6 +9,9 @@
         session_destroy();
         die();
     }
+    $usuario=$_SESSION['usuario'];
+    $UsurTablaSql="SELECT * FROM cuentas_usuarios WHERE correo= '$usuario'";
+    
 ?>
 
 
@@ -97,7 +100,9 @@
             <?php
 
                     include("../../base_datos/informes/conexion/abrir_conexion.php");
-
+                    $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
+                    $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
+             
                     for($i=0;$i<=20;$i++)
                         {
                             $resultados=mysqli_query($conexion, "SELECT * FROM `$tabla_db1` WHERE id = $i");
@@ -116,15 +121,17 @@
                                     "<button class=\"ver\" type=\"button\" data-id=\"".$consulta['id']."\" 
                                     data-nombre=\"".$consulta['nombre']."\" data-cedu=\"".$consulta['cedula']."\" 
                                     data-plentr=\"".$consulta['platos entregados']."\" data-desper=\"".$consulta['desperdicios']."\" 
-                                    data-fecha=\"".$consulta['fecha']."\" data-hora=\"".$consulta['hora']."\">Ver</button>".
+                                    data-fecha=\"".$consulta['fecha']."\" data-hora=\"".$consulta['hora']."\">Ver</button>";
                                     
                                     //Boton de update abre un dialog
-                                    "<button class=\"update\" type=\"button\" name=\"updatee\" data-id=\"".$consulta['id']."\" 
+                                    if($usurTablaArr['cedula']==$consulta['cedula']){
+                                         echo"<button class=\"update\" type=\"button\" name=\"updatee\" data-id=\"".$consulta['id']."\" 
                                     data-nombre=\"".$consulta['nombre']."\" data-cedu=\"".$consulta['cedula']."\" 
                                     data-plentr=\"".$consulta['platos entregados']."\" data-desper=\"".$consulta['desperdicios']."\" 
-                                    data-fecha=\"".$consulta['fecha']."\" data-hora=\"".$consulta['hora']."\">Actualizar</button>".
+                                    data-fecha=\"".$consulta['fecha']."\" data-hora=\"".$consulta['hora']."\">Actualizar</button>";
                                     
-                                    "<input type=\"submit\" value=\"Borrar\" class=\"delete\" name=\"delete\">";
+                                echo"<input type=\"submit\" value=\"Borrar\" class=\"delete\" name=\"delete\">";
+                                    }
                                 echo "</div>";
                                 
                                 
