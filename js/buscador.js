@@ -22,6 +22,11 @@ document.getElementById("buscadorForm").addEventListener("submit", function(e) {
     else if (texto === "login" || texto === "iniciar sesion" || texto === "sesion" || texto === "entrar" || texto === "acceso" || texto === "usuario") {
         window.location.href = "/html/iniciarSesion.html";
     }
+    
+     else if (texto === "datos registrados" || texto === "datos" || texto === "registros" || texto === "entrada" ) {
+        window.location.href = "/html/app/app.php";
+    }
+    
 
     else {
         alert("No se encontró ningún resultado");

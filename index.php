@@ -57,8 +57,11 @@
 
 </header>
     <div class="centerP">
+
     <main>
+
         <div class="carrusel">
+
             <div class="grande">
                 <img src="img/Pagina principal/carrusel/Primera.png" alt="imagen 1 carrusel" class="img">
                 <img src="img/Pagina principal/carrusel/Segunda.png" alt="imagen 2 del carrusel" class="img">
@@ -70,28 +73,49 @@
                 <li class="punto"></li>
                 <li class="punto"></li>
             </ul>
-            
+
         </div>
-        
+
         <div class="Info">
+
             <div>
                 <h2>Reduce el desperdicio</h2>
-                <p>Administra  los alimentos de  forma responsable para evitar perdidas.</p>
-                <a href="https://www.fao.org/platform-food-loss-waste/es"><p class="link-text">CONOCE MAS</p></a>
+                <p>
+                    Administra los alimentos de forma responsable para evitar pérdidas.
+                </p>
+
+                <a href="https://www.fao.org/platform-food-loss-waste/es" class="link-text">
+                    CONOCE MÁS
+                </a>
             </div>
+
             <div>
                 <h2>Alimentos para todos</h2>
-                <p>Accesibilidad para toda la comunidad oportunidades para todos.</p>
-                <a href="https://es.wfp.org"><p class="link-text">CONOCE MAS</p></a>
+                <p>
+                    Accesibilidad para toda la comunidad y oportunidades para todos.
+                </p>
+
+                <a href="https://es.wfp.org" class="link-text">
+                    CONOCE MÁS
+                </a>
             </div>
+
+            <div>
+                <h2>Administración responsable</h2>
+                <p>
+                    Administrar de forma correcta el inventario alimentario.
+                </p>
+
+                <a href="https://www.fao.org/home/es" class="link-text">
+                    ¿CÓMO?
+                </a>
+            </div>
+
         </div>
+
     </main>
-    <aside class="aside">
-        <h2>Administracion responsable</h2>
-        <p>Administrar de forma correcta el inventario alimentario.</p>
-        <a href="https://www.fao.org/home/es"><p class="link-text">¿COMO?</p></a>
-    </aside>
-    </div>
+
+</div>
     <footer>
 
     <section class="redes">
