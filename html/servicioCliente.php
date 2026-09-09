@@ -107,7 +107,7 @@
 
         <p>
             <a href="https://www.instagram.com/gestion_alimenticia_jorge?utm_source=qr&igsh=ZWJ4ZDU0bTM3bDIy">
-            <img src="/img/redes sociales/lnstagram.png">
+            <img src="/img/redes sociales/instagram.png">
             gestion_alimenticia_Medellin
             </a>
         </p>
