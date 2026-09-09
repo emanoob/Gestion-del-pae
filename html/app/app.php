@@ -1,3 +1,19 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['usuario'])){
+        echo '<script>
+        alert("Por favor debes iniciar secion");
+        window.location = "../iniciarSesion.php
+        </script>"';
+        header("location:../iniciarSesion.php");
+        session_destroy();
+        die();
+    }
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,8 +26,7 @@
     </style>
 
 
-    
-    
+
 </head>
 <body>
     
@@ -38,7 +53,7 @@
         <img src="../../img/casa.png" alt="Inicio" class="casa">
 
         <ul class="despl-list">
-            <li><a href="#" >Inicio</a></li>
+            <li><a href="../../index.php" >Inicio</a></li>
 
             <li>
                 <a href="../rutentrega.php" >
@@ -181,6 +196,7 @@
                 <input type="submit" name="btn_save" class="btn_save">
                 
         </dialog>
+        <a href="../../base_datos/login_php/cerrar_sesion.php">Cerrar secion</a>
     </main>
 
     <footer>
