@@ -154,9 +154,10 @@
         </p>
 
         <p>
-            <a href="https://www.facebook.com/share/1JHe1Jqxjx/"></a>
+            <a href="https://www.facebook.com/share/1JHe1Jqxjx/">
             <img src="../img/redes sociales/f.png">
             @gestion_alimenticia-med
+            </a>
         </p>
 
     </section>
