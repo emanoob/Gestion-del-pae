@@ -102,13 +102,18 @@
                     include("../../base_datos/informes/conexion/abrir_conexion.php");
                     $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
                     $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
+                    $institucioncomprobar=$usurTablaArr['institucion'];
              
                     for($i=0;$i<=20;$i++)
                         {
                             $resultados=mysqli_query($conexion, "SELECT * FROM `$tabla_db1` WHERE id = $i");
+                            
                             WHILE($consulta =mysqli_fetch_array($resultados))
                             {
-                                
+                                if($consulta['institucion']==$institucioncomprobar){
+                            
+
+                            
                                 echo "<form action=\"../../base_datos/informes/actualizar/Actualizar.php\" method=\"POST\">";
                                 echo "<div class=\"form-item\">";
                                 
@@ -129,14 +134,15 @@
                                     data-nombre=\"".$consulta['nombre']."\" data-cedu=\"".$consulta['cedula']."\" 
                                     data-plentr=\"".$consulta['platos entregados']."\" data-desper=\"".$consulta['desperdicios']."\" 
                                     data-fecha=\"".$consulta['fecha']."\" data-hora=\"".$consulta['hora']."\">Actualizar</button>";
-                                    
+                                
                                 echo"<input type=\"submit\" value=\"Borrar\" class=\"delete\" name=\"delete\">";
                                     }
                                 echo "</div>";
                                 
-                                
+                            
                                 echo "</div>";
                                 echo "</form>";
+                            }
                                 
                             }
                         }

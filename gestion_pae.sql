@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-09-2026 a las 03:11:56
+-- Tiempo de generación: 11-09-2026 a las 00:38:39
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -58,7 +58,8 @@ CREATE TABLE `cuentas_usuarios` (
 --
 
 INSERT INTO `cuentas_usuarios` (`id`, `nombre`, `apellido`, `cedula`, `correo`, `institucion`, `teléfono`, `contraseña`) VALUES
-(1, 'emanuel', 'koo', 902920, 'akkak', 'aaaaa', 33333, 'qaddqde');
+(1, 'emanuel', 'koo', 902920, 'emanuelgomezch8@gmail.com', 'a', 33333, '1234'),
+(2, 'juan', 'lol', 224466, 'juan@gmail.com', 'a', 33333, 'juangod');
 
 -- --------------------------------------------------------
 
@@ -73,17 +74,18 @@ CREATE TABLE `informes` (
   `platos entregados` int(10) NOT NULL,
   `fecha` date NOT NULL,
   `hora` time NOT NULL,
-  `desperdicios` decimal(65,38) NOT NULL
+  `desperdicios` decimal(65,38) NOT NULL,
+  `institucion` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `informes`
 --
 
-INSERT INTO `informes` (`id`, `nombre`, `cedula`, `platos entregados`, `fecha`, `hora`, `desperdicios`) VALUES
-(3, 'emanuel', 902920, 11111, '2026-09-10', '03:08:00', 0.00000000000000000000000000000000000000),
-(4, 'emanuel', 902920, 0, '0000-00-00', '11:13:00', 0.00000000000000000000000000000000000000),
-(5, 'emanuel', 902920, 12, '2026-09-24', '12:36:00', 1.00000000000000000000000000000000000000);
+INSERT INTO `informes` (`id`, `nombre`, `cedula`, `platos entregados`, `fecha`, `hora`, `desperdicios`, `institucion`) VALUES
+(3, 'emanuel', 902920, 11111, '2026-09-10', '03:08:00', 0.00000000000000000000000000000000000000, 'a'),
+(4, 'emanuel', 902920, 0, '0000-00-00', '11:13:00', 0.00000000000000000000000000000000000000, 'a'),
+(5, 'emanuel', 902920, 12, '2026-09-24', '12:36:00', 1.00000000000000000000000000000000000000, '');
 
 -- --------------------------------------------------------
 
@@ -232,7 +234,7 @@ ALTER TABLE `comprobantes`
 -- AUTO_INCREMENT de la tabla `cuentas_usuarios`
 --
 ALTER TABLE `cuentas_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `informes`
@@ -269,34 +271,6 @@ ALTER TABLE `registros_semanales`
 --
 ALTER TABLE `reportes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `comprobantes`
---
-ALTER TABLE `comprobantes`
-  ADD CONSTRAINT `comprobantes_ibfk_1` FOREIGN KEY (`id`) REFERENCES `cuentas_usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `cuentas_usuarios`
---
-ALTER TABLE `cuentas_usuarios`
-  ADD CONSTRAINT `cuentas_usuarios_ibfk_1` FOREIGN KEY (`cedula`) REFERENCES `registros usuarios` (`cedula`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `instituciones_registradas`
---
-ALTER TABLE `instituciones_registradas`
-  ADD CONSTRAINT `instituciones_registradas_ibfk_1` FOREIGN KEY (`id institucion`) REFERENCES `pre_registros_instituciones` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `pre_registros_instituciones`
---
-ALTER TABLE `pre_registros_instituciones`
-  ADD CONSTRAINT `pre_registros_instituciones_ibfk_1` FOREIGN KEY (`administrador ced`) REFERENCES `cuentas_usuarios` (`cedula`) ON DELETE NO ACTION ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
