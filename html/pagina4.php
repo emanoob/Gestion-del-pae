@@ -73,10 +73,6 @@
                         <li><p>Nombre de institicion</p><p class="Important">*</p></li>
                         <li><input type="text" name="NomInsti"></li>    
                     </ul>
-                    <ul class="Camp">
-                        <li><p>Direccion</p><p class="Important">*</p></li>
-                        <li><input type="text" name="Dir"></li>    
-                    </ul>
                 </section>
                 
                 <section class="side">

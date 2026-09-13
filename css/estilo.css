@@ -1125,6 +1125,16 @@ article p{
     color: red;
     font-weight: bold;
 }
+
+
+
+
+
+
+
+
+
+
 /*
 APP PRINCIPAL
 */
@@ -1196,6 +1206,7 @@ APP PRINCIPAL
 }
 
 .form-item{
+    align-items: center;
     display: flex;
     flex-direction: row;
     background-color:#95c0dd;
@@ -1205,6 +1216,13 @@ APP PRINCIPAL
     gap:8rem;
 }
 
+.id-form-item{
+    margin-left: 0.5rem;
+    font-family: 'Antont';
+    font-size: 1rem;
+    font-weight: bold;
+}
+
 .form-time-all{
     display: flex;
     flex-direction: row;
@@ -1212,7 +1230,29 @@ APP PRINCIPAL
 }
 
 .form-botones{
+    align-items: center;
     display: flex;
     flex-direction: row;
-    gap:1rem;
+    justify-content: space-between;
+    gap:2px;
+    
+}
+
+.update{
+    margin: 1px;
+    background-color:#95c0dd;
+    color: #00131a;
+    margin-left: 5px; 
+}
+
+.delete{
+    background-color:#95c0dd;
+    color: #00131a;
+    margin-left: 5px; 
+}
+
+.ver{
+    background-color:#95c0dd;
+    color: #00131a;
+    margin-left: 5px; 
 }

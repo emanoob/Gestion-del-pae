@@ -5,7 +5,6 @@
         include("../conexion/abrir_conexion.php");
 
         $NomInsti=$_POST['NomInsti'];
-        $Dir=$_POST['Dir'];
         $Tel=$_POST['Tel'];
         $CedUsu=$_POST['CedUsu'];
         $CorrUsu=$_POST['CorrUsu'];

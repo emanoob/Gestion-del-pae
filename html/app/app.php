@@ -117,7 +117,7 @@
                                 echo "<form action=\"../../base_datos/informes/actualizar/Actualizar.php\" method=\"POST\">";
                                 echo "<div class=\"form-item\">";
                                 
-                                echo "<p>".$consulta['id']."</p>";
+                                echo "<p class=\"id-form-item\">".$consulta['id']."</p>";
                                 echo "<p class=\"fecha-form-item\">".$consulta['fecha']."</p>".
                                     "<p>".$consulta['hora']."</p>".
                                     "<div class=\"form-botons\">";
