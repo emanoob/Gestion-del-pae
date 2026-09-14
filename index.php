@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -49,8 +55,13 @@
             <li><a href="html/servicioCliente.php">Atención y servicios</a></li>
 
             <li><a href="html/pagina4.php">Acceder al servicio</a></li>
-
-            <li><a href="html/iniciarSesion.php">Iniciar sesión</a></li>
+            <?php
+                if(isset($_SESSION['usuario'])){
+                    echo 'li><a href="html/iniciarSesion.php">App principal</a></li>';
+                }else{
+                    echo 'li><a href="html/iniciarSesion.php">Iniciar sesión</a></li>';
+                }
+            ?>>
         </ul>
 
     </nav>

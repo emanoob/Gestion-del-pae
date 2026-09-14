@@ -1,3 +1,16 @@
+<?php
+    include("../base_datos/informes/conexion/abrir_conexion.php");
+    session_start();
+    if(isset($_SESSION['usuario'])){
+        $usuario=$_SESSION['usuario'];
+        $UsurTablaSql="SELECT * FROM cuentas_usuarios WHERE correo= '$usuario'";
+        $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
+        $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
+        $rol=$usurTablaArr['rol'];
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -51,7 +64,13 @@
 
             <li><a href="pagina4.php">Acceder al servicio</a></li>
 
-            <li><a href="iniciarSesion.php">Iniciar sesión</a></li>
+            <?php
+                if(isset($_SESSION['usuario'])){
+                    echo '<li><a href="iniciarSesion.php">App principal</a></li>';
+                }else{
+                    echo '<li><a href="iniciarSesion.php">Iniciar sesión</a></li>';
+                }
+            ?>
         </ul>
 
     </nav>
@@ -97,74 +116,96 @@
 
         <img src="../img/rutas de entrega/gmedellin.jpg" alt="Mapa Medellín">
 
-       ```html
+       
 <table class="tabla-rutas" id="tablaRutas">
 
     <tr>
         <th>Ruta</th>
         <th>Recorrido</th>
         <th>Estado</th>
-        <th>Acción</th>
+        <?php
+        if(isset($_SESSION['usuario']) && $rol=="ADP"){
+            echo"<th>Acción</th>";
+        }
+            
+        ?>
+        
     </tr>
 
     <tr>
         <td>A</td>
         <td class="recorrido">Robledo → Aranjuez</td>
         <td class="estado activa">🟢 Activa</td>
-        <td>
-            <button class="btn-estado" onclick="cambiarEstado(this)">
-                Desactivar
-            </button>
-            <button class="btn-editar" onclick="editarRuta(this)">
-                ✏️ Editar
-            </button>
-        </td>
+        <?php
+            if(isset($_SESSION['usuario']) && $rol=="ADP"){
+                echo '<td>';
+                echo '<button class="btn-estado" onclick="cambiarEstado(this)">';
+                echo 'Desactivar';
+                echo '</button>';
+                echo '<button class="btn-editar" onclick="editarRuta(this)">';
+                echo '✏️ Editar';
+                echo '</button>';
+                echo '</td>';
+            }
+        ?>
     </tr>
 
     <tr>
         <td>B</td>
         <td class="recorrido">Centro → Boston</td>
         <td class="estado activa">🟢 Activa</td>
-        <td>
-            <button class="btn-estado" onclick="cambiarEstado(this)">
-                Desactivar
-            </button>
-            <button class="btn-editar" onclick="editarRuta(this)">
-                ✏️ Editar
-            </button>
-        </td>
+        <?php
+            if(isset($_SESSION['usuario']) && $rol=="ADP"){
+                echo '<td>';
+                echo '<button class="btn-estado" onclick="cambiarEstado(this)">';
+                echo 'Desactivar';
+                echo '</button>';
+                echo '<button class="btn-editar" onclick="editarRuta(this)">';
+                echo '✏️ Editar';
+                echo '</button>';
+                echo '</td>';
+            }
+        ?>
     </tr>
 
     <tr>
         <td>C</td>
         <td class="recorrido">Buenos Aires → La Milagrosa</td>
         <td class="estado proceso">🟡 En proceso</td>
-        <td>
-            <button class="btn-estado" onclick="cambiarEstado(this)">
-                Desactivar
-            </button>
-            <button class="btn-editar" onclick="editarRuta(this)">
-                ✏️ Editar
-            </button>
-        </td>
+        <?php
+            if(isset($_SESSION['usuario']) && $rol=="ADP"){
+                echo '<td>';
+                echo '<button class="btn-estado" onclick="cambiarEstado(this)">';
+                echo 'Desactivar';
+                echo '</button>';
+                echo '<button class="btn-editar" onclick="editarRuta(this)">';
+                echo '✏️ Editar';
+                echo '</button>';
+                echo '</td>';
+            }
+        ?>
     </tr>
 
     <tr>
         <td>D</td>
         <td class="recorrido">Belén → Guayabal</td>
         <td class="estado inactiva">🔴 Suspendida</td>
-        <td>
-            <button class="btn-estado" onclick="cambiarEstado(this)">
-                Activar
-            </button>
-            <button class="btn-editar" onclick="editarRuta(this)">
-                ✏️ Editar
-            </button>
-        </td>
+        <?php
+            if(isset($_SESSION['usuario']) && $rol=="ADP"){
+                echo '<td>';
+                echo '<button class="btn-estado" onclick="cambiarEstado(this)">';
+                echo 'Desactivar';
+                echo '</button>';
+                echo '<button class="btn-editar" onclick="editarRuta(this)">';
+                echo '✏️ Editar';
+                echo '</button>';
+                echo '</td>';
+            }
+        ?>
     </tr>
 
 </table>
-```
+
 
 
     </aside>
