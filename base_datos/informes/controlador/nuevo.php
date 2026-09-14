@@ -13,7 +13,7 @@
         $UsurTablaSql="SELECT * FROM cuentas_usuarios WHERE correo= '$usuario'";
         $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
         $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
-        $institucion=$UsurTablaArr['institucion'];
+        $institucion=$usurTablaArr['institucion'];
         
         $CedUsu=$usurTablaArr['cedula'];
         $NomUs=$usurTablaArr['nombre'];
