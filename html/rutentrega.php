@@ -97,39 +97,74 @@
 
         <img src="../img/rutas de entrega/gmedellin.jpg" alt="Mapa Medellín">
 
-        <table class="tabla-rutas">
+       ```html
+<table class="tabla-rutas" id="tablaRutas">
 
-        <tr>
-            <th>Ruta</th>
-            <th>Recorrido</th>
-            <th>Estado</th>
-        </tr>
+    <tr>
+        <th>Ruta</th>
+        <th>Recorrido</th>
+        <th>Estado</th>
+        <th>Acción</th>
+    </tr>
 
-        <tr>
-            <td>A</td>
-            <td>Robledo → Aranjuez</td>
-            <td class="activa">🟢 Activa</td>
-        </tr>
+    <tr>
+        <td>A</td>
+        <td class="recorrido">Robledo → Aranjuez</td>
+        <td class="estado activa">🟢 Activa</td>
+        <td>
+            <button class="btn-estado" onclick="cambiarEstado(this)">
+                Desactivar
+            </button>
+            <button class="btn-editar" onclick="editarRuta(this)">
+                ✏️ Editar
+            </button>
+        </td>
+    </tr>
 
-        <tr>
-            <td>B</td>
-            <td>Centro → Boston</td>
-            <td class="activa">🟢 Activa</td>
-        </tr>
+    <tr>
+        <td>B</td>
+        <td class="recorrido">Centro → Boston</td>
+        <td class="estado activa">🟢 Activa</td>
+        <td>
+            <button class="btn-estado" onclick="cambiarEstado(this)">
+                Desactivar
+            </button>
+            <button class="btn-editar" onclick="editarRuta(this)">
+                ✏️ Editar
+            </button>
+        </td>
+    </tr>
 
-        <tr>
-            <td>C</td>
-            <td>Buenos Aires → La Milagrosa</td>
-            <td class="proceso">🟡 En proceso</td>
-        </tr>
+    <tr>
+        <td>C</td>
+        <td class="recorrido">Buenos Aires → La Milagrosa</td>
+        <td class="estado proceso">🟡 En proceso</td>
+        <td>
+            <button class="btn-estado" onclick="cambiarEstado(this)">
+                Desactivar
+            </button>
+            <button class="btn-editar" onclick="editarRuta(this)">
+                ✏️ Editar
+            </button>
+        </td>
+    </tr>
 
-        <tr>
-            <td>D</td>
-            <td>Belén → Guayabal</td>
-            <td class="inactiva">🔴 Suspendida</td>
-        </tr>
+    <tr>
+        <td>D</td>
+        <td class="recorrido">Belén → Guayabal</td>
+        <td class="estado inactiva">🔴 Suspendida</td>
+        <td>
+            <button class="btn-estado" onclick="cambiarEstado(this)">
+                Activar
+            </button>
+            <button class="btn-editar" onclick="editarRuta(this)">
+                ✏️ Editar
+            </button>
+        </td>
+    </tr>
 
-    </table>
+</table>
+```
 
 
     </aside>
@@ -185,5 +220,66 @@
 </footer>
     <script src="../js/mHam.js"></script>
     <script src="../js/buscador.js"></script>
+```html
+<script>
+
+function cambiarEstado(boton) {
+
+    // Buscamos la fila donde está el botón
+    let fila = boton.closest("tr");
+
+    // Buscamos la celda del estado
+    let estado = fila.querySelector(".estado");
+
+    // Si actualmente está activa
+    if (estado.classList.contains("activa")) {
+
+        estado.classList.remove("activa");
+        estado.classList.add("inactiva");
+
+        estado.innerHTML = "🔴 Suspendida";
+
+        boton.innerText = "Activar";
+
+    } 
+    
+    // Si está suspendida
+    else {
+
+        estado.classList.remove("inactiva");
+        estado.classList.add("activa");
+
+        estado.innerHTML = "🟢 Activa";
+
+        boton.innerText = "Desactivar";
+    }
+}
+
+
+function editarRuta(boton) {
+
+    // Buscamos la fila
+    let fila = boton.closest("tr");
+
+    // Buscamos el recorrido
+    let recorrido = fila.querySelector(".recorrido");
+
+    // Pedimos el nuevo recorrido
+    let nuevoRecorrido = prompt(
+        "Escribe el nuevo recorrido:",
+        recorrido.innerText
+    );
+
+    // Si el usuario escribió algo
+    if (nuevoRecorrido !== null && nuevoRecorrido.trim() !== "") {
+
+        recorrido.innerText = nuevoRecorrido;
+    }
+}
+
+</script>
+```
+
+
 </body>
 </html>
