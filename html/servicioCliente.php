@@ -69,9 +69,9 @@
 
                 <a href="#">Monitoreo de Consumo en Tiempo Real</a>
 
-                <a href="https://www.medellin.gov.co/es/secretaria-de-inclusion-social-y-familia/subsecretaria-de-grupos-poblacionales/equipo-de-seguridad-alimentaria-y-nutricional/" target="_blank">Logística de Redistribución</a>
+                <a href="https://www.medellin.gov.co/es/secretaria-de-inclusion-social-y-familia/subsecretaria-de-grupos-poblacionales/equipo-de-seguridad-alimentaria-y-nutricional/">Logística de Redistribución</a>
 
-                <a href="https://www.medellin.gov.co/es/secretaria-suministros-y-servicios/politica-sostenibilidad/gestion-integral-de-residuos-de-la-alcaldia-de-medellin/" target="_blank">Gestión de Residuos Orgánicos</a>
+                <a href="https://www.medellin.gov.co/es/secretaria-suministros-y-servicios/politica-sostenibilidad/gestion-integral-de-residuos-de-la-alcaldia-de-medellin/">Gestión de Residuos Orgánicos</a>
 
             </div>
 
@@ -107,7 +107,7 @@
 
         <p>
             <a href="https://www.instagram.com/gestion_alimenticia_jorge?utm_source=qr&igsh=ZWJ4ZDU0bTM3bDIy">
-            <img src="/img/redes sociales/instagram.png">
+            <img src="../img/redes sociales/i.png">
             gestion_alimenticia_Medellin
             </a>
         </p>
