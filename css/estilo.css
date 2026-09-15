@@ -8,11 +8,11 @@
     --primario: #fbfbf9;
     --secundario: #d7f3fd;
     --fondo: #f5fdff;
-    --tarjeta: #c3e4ef;
+    --tarjeta: #D7E0FD;
     --texto: #00131a;
     --gris: #42413b;
     --letra2:#ff9c7c;
-    --color-resaltar:#ff9472;
+    --color-resaltar:#FBC3AE;
     --decoracion:#f1d796;
     --decoracion-x2:#d7b45a;
     --titulos-:#011218;
@@ -1197,7 +1197,7 @@ APP PRINCIPAL
 }
 
 .options-app{
-    background-color: #714537;
+    background-color: #D7E0FD;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -1227,7 +1227,7 @@ APP PRINCIPAL
 
 .option-app-item p{
     align-content: center;
-    color: var(--secundario);
+    color: var(--texto);
     font-size: 1.2rem;
 }
 .option-app-item img{

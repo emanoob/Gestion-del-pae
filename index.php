@@ -57,9 +57,9 @@
             <li><a href="html/pagina4.php">Acceder al servicio</a></li>
             <?php
                 if(isset($_SESSION['usuario'])){
-                    echo 'li><a href="html/iniciarSesion.php">App principal</a></li>';
+                    echo '<li><a href="html/iniciarSesion.php">App principal</a></li>';
                 }else{
-                    echo 'li><a href="html/iniciarSesion.php">Iniciar sesión</a></li>';
+                    echo '<li><a href="html/iniciarSesion.php">Iniciar sesión</a></li>';
                 }
             ?>>
         </ul>

@@ -75,6 +75,7 @@
 
 </header>
     <main class="app-pr">
+        <a href="../../base_datos/login_php/cerrar_sesion.php">Cerrar secion</a>
         <section class="options-app">
             <button class="hb-app"><img alt="boton-pleg-app" src="../../img/App/mh.png"></button>
             
@@ -84,7 +85,7 @@
             </button>
             <button class="option-app-item">
                 <img alt="option_item_img" src="../../img/App/2.png">
-                <p>Ver registros</p>
+                <p>Ver registro agrupados</p>
             </button>
             <button class="option-app-item">
                 <img alt="option_item_img" src="../../img/App/3.png">
@@ -209,7 +210,7 @@
                 <input type="submit" name="btn_save" class="btn_save">
                 
         </dialog>
-        <a href="../../base_datos/login_php/cerrar_sesion.php">Cerrar secion</a>
+        
     </main>
 
     <footer>
