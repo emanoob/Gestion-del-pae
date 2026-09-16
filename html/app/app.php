@@ -69,6 +69,11 @@
             <li><a href="../pagina4.php">Acceder al servicio</a></li>
 
             <li><a href="#">App principal</a></li>
+            <li>
+    <a href="../base_datos/login_php/cerrar_sesion.php" class="btn-cerrar-sesion">
+        Cerrar sesión
+    </a>
+            </li>
         </ul>
 
     </nav>
