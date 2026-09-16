@@ -1314,7 +1314,7 @@ APP PRINCIPAL
     border-radius: 20px;
     padding: 25px;
     width: 400px;
-    background: #c3e4ef;
+    background: #D7E0FD;
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
@@ -1377,4 +1377,17 @@ APP PRINCIPAL
     height: 35px;
     border-radius: 50%;
     cursor: pointer;
+}
+.app-regist-inf{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: none;
+    border-radius: 20px;
+    padding: 25px;
+    width: 400px;
+    background: #c3e4ef;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
