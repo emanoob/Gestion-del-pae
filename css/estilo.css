@@ -1308,3 +1308,73 @@ APP PRINCIPAL
     color: #00131a;
     margin-left: 5px; 
 }
+/* Ventana Registrar */
+.app-regist-inf{
+    border: none;
+    border-radius: 20px;
+    padding: 25px;
+    width: 400px;
+    background: #c3e4ef;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.app-regist-inf h2{
+    text-align: center;
+    color: #00131a;
+    font-family: 'Anton', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Campos */
+.regist_camp{
+    list-style: none;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.regist_camp p{
+    color: #00131a;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.regist_camp input{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #00131a;
+    border-radius: 10px;
+    background: #f5fdff;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Botón enviar */
+.btn_send_inf{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #00131a;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn_send_inf:hover{
+    background: #ff9472;
+    color: #00131a;
+}
+
+/* Botón cerrar */
+.buton-cerrar-regist{
+    float: right;
+    border: none;
+    background: #ff9472;
+    color: #00131a;
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}

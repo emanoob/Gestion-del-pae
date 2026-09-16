@@ -7,6 +7,11 @@
 
     $tabla_db1="informes";
 
-    $conexion = new mysqli($host, $usuariodb,$clavedb,$basededatos);
+    $conexion = new mysqli($host, $usuariodb,$clavedb,$basededatos,3307);
+    if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
+}
+
+echo "Conexión exitosa";
 
 ?>
