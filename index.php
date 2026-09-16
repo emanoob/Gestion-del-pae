@@ -61,7 +61,7 @@
                 }else{
                     echo '<li><a href="html/iniciarSesion.php">Iniciar sesión</a></li>';
                 }
-            ?>>
+            ?>
         </ul>
 
     </nav>
