@@ -1391,3 +1391,40 @@ APP PRINCIPAL
     background: var(--tarjeta);
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
+/* =========================
+   BOTÓN CERRAR SESIÓN
+   ========================= */
+
+nav .btn-cerrar-sesion {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid var(--color-resaltar);
+    border-radius: 10px;
+
+    background: transparent;
+    color: var(--color-resaltar);
+
+    font-family: 'Monda', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* Cuando pasas el mouse */
+nav .btn-cerrar-sesion:hover {
+    background: var(--color-resaltar);
+    color: var(--texto);
+    border-color: var(--color-resaltar);
+
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Cuando haces clic */
+nav .btn-cerrar-sesion:active {
+    transform: scale(0.96);
+}

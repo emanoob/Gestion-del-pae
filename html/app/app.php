@@ -69,13 +69,17 @@
             <li><a href="../pagina4.php">Acceder al servicio</a></li>
 
             <li><a href="#">App principal</a></li>
+            <li>
+    <a href="../../base_datos/login_php/cerrar_sesion.php" class="btn-cerrar-sesion">
+        Cerrar sesión
+    </a>
+            </li>
         </ul>
 
     </nav>
 
 </header>
     <main class="app-pr">
-        <a href="../../base_datos/login_php/cerrar_sesion.php">Cerrar secion</a>
         <section class="options-app">
             <button class="hb-app"><img alt="boton-pleg-app" src="../../img/App/mh.png"></button>
             
