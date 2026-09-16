@@ -95,7 +95,7 @@
                     Administra los alimentos de forma responsable para evitar pérdidas.
                 </p>
 
-                <a href="https://www.fao.org/platform-food-loss-waste/es" class="link-text">
+                <a href="https://www.fao.org/platform-food-loss-waste/es" class="link-text" target="_blank">
                     CONOCE MÁS
                 </a>
             </div>
@@ -106,7 +106,7 @@
                     Accesibilidad para toda la comunidad y oportunidades para todos.
                 </p>
 
-                <a href="https://es.wfp.org" class="link-text">
+                <a href="https://es.wfp.org" class="link-text" target="_blank">
                     CONOCE MÁS
                 </a>
             </div>
@@ -117,7 +117,7 @@
                     Administrar de forma correcta el inventario alimentario.
                 </p>
 
-                <a href="https://www.fao.org/home/es" class="link-text">
+                <a href="https://www.fao.org/home/es" class="link-text" target="_blank">
                     ¿CÓMO?
                 </a>
             </div>
