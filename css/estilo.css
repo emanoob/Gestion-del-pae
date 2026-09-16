@@ -6,7 +6,7 @@
 
 :root {
     --primario: #fbfbf9;
-    --secundario: #d7f3fd;
+    --secundario: #B0D4C3;
     --fondo: #f5fdff;
     --tarjeta: #D7E0FD;
     --texto: #00131a;
@@ -30,6 +30,8 @@ body{
 header{
     background:var(--secundario);
     padding:20px 40px;
+    border-bottom-width: 2rem;
+    border-color: #00131a;
 }
 
 .superior{
