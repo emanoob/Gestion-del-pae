@@ -85,7 +85,7 @@
             </button>
             <button class="option-app-item">
                 <img alt="option_item_img" src="../../img/App/2.png">
-                <p>Ver registro agrupados</p>
+                <p>Registros agrupados</p>
             </button>
             <button class="option-app-item">
                 <img alt="option_item_img" src="../../img/App/3.png">
@@ -209,6 +209,9 @@
                 <input type="hidden" value="" id="IDD2" name="IDD2">
                 <input type="submit" name="btn_save" class="btn_save">
                 
+        </dialog>
+        <dialog class="registros-agrupados">
+            <button class="cerrar-dialog-registros-agrupados"></button>
         </dialog>
         
     </main>

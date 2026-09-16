@@ -7,7 +7,7 @@
 
     $tabla_db1="informes";
 
-    $conexion = new mysqli($host, $usuariodb,$clavedb,$basededatos,3307);
+    $conexion = new mysqli($host, $usuariodb,$clavedb,$basededatos);
     if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }

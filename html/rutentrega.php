@@ -261,7 +261,6 @@
 </footer>
     <script src="../js/mHam.js"></script>
     <script src="../js/buscador.js"></script>
-```html
 <script>
 
 function cambiarEstado(boton) {
