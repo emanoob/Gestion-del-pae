@@ -69,9 +69,9 @@
 
                 <a href="#">Monitoreo de Consumo en Tiempo Real</a>
 
-                <a href="https://www.medellin.gov.co/es/secretaria-de-inclusion-social-y-familia/subsecretaria-de-grupos-poblacionales/equipo-de-seguridad-alimentaria-y-nutricional/">Logística de Redistribución</a>
+                <a href="https://www.medellin.gov.co/es/secretaria-de-inclusion-social-y-familia/subsecretaria-de-grupos-poblacionales/equipo-de-seguridad-alimentaria-y-nutricional/" target="_blank">Logística de Redistribución</a>
 
-                <a href="https://www.medellin.gov.co/es/secretaria-suministros-y-servicios/politica-sostenibilidad/gestion-integral-de-residuos-de-la-alcaldia-de-medellin/">Gestión de Residuos Orgánicos</a>
+                <a href="https://www.medellin.gov.co/es/secretaria-suministros-y-servicios/politica-sostenibilidad/gestion-integral-de-residuos-de-la-alcaldia-de-medellin/" target="_blank">Gestión de Residuos Orgánicos</a>
 
             </div>
 
@@ -106,7 +106,7 @@
     <section class="redes">
 
         <p>
-            <a href="https://www.instagram.com/gestion_alimenticia_jorge?utm_source=qr&igsh=ZWJ4ZDU0bTM3bDIy">
+            <a href="https://www.instagram.com/gestion_alimenticia_jorge?utm_source=qr&igsh=ZWJ4ZDU0bTM3bDIy" target="_blank">
             <img src="../img/redes sociales/lnstagram.png">
             gestion_alimenticia_Medellin
             </a>
@@ -120,7 +120,7 @@
         </p>
 
         <p>
-            <a href="https://www.facebook.com/share/1JHe1Jqxjx/">
+            <a href="https://www.facebook.com/share/1JHe1Jqxjx/" target="_blank">
             <img src="../img/redes sociales/f.png">
             @gestion_alimenticia-med
             </a>
@@ -131,7 +131,7 @@
     <section class="redes">
 
         <p>
-            <a href=" https://www.tiktok.com/@gomezyeral2323._?_r=1&_t=ZS-96wEMCMsZ7P">
+            <a href=" https://www.tiktok.com/@gomezyeral2323._?_r=1&_t=ZS-96wEMCMsZ7P"target="_blank">
             <img src="../img/tito.png">
             @Gestion_alimenticia_
             </a>

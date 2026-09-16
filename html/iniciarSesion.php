@@ -127,7 +127,7 @@
     <section class="redes">
 
         <p>
-            <a href="https://www.instagram.com/gestion_alimenticia_jorge?utm_source=qr&igsh=ZWJ4ZDU0bTM3bDIy">
+            <a href="https://www.instagram.com/gestion_alimenticia_jorge?utm_source=qr&igsh=ZWJ4ZDU0bTM3bDIy" target="_blank">
             <img src="../img/redes sociales/lnstagram.png">
             gestion_alimenticia_Medellin
             </a>
@@ -141,7 +141,7 @@
         </p>
 
         <p>
-            <a href="https://www.facebook.com/share/1JHe1Jqxjx/">
+            <a href="https://www.facebook.com/share/1JHe1Jqxjx/" target="_blank">
             <img src="../img/redes sociales/f.png">
             @gestion_alimenticia-med
             </a>
@@ -152,7 +152,7 @@
     <section class="redes">
 
         <p>
-            <a href=" https://www.tiktok.com/@gomezyeral2323._?_r=1&_t=ZS-96wEMCMsZ7P">
+            <a href=" https://www.tiktok.com/@gomezyeral2323._?_r=1&_t=ZS-96wEMCMsZ7P"  target="_blank">
             <img src="../img/tito.png">
             @Gestion_alimenticia_
             </a>
