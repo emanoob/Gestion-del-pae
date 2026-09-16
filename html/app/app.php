@@ -70,7 +70,7 @@
 
             <li><a href="#">App principal</a></li>
             <li>
-    <a href="../base_datos/login_php/cerrar_sesion.php" class="btn-cerrar-sesion">
+    <a href="../../base_datos/login_php/cerrar_sesion.php" class="btn-cerrar-sesion">
         Cerrar sesión
     </a>
             </li>
@@ -80,7 +80,6 @@
 
 </header>
     <main class="app-pr">
-        <a href="../../base_datos/login_php/cerrar_sesion.php">Cerrar secion</a>
         <section class="options-app">
             <button class="hb-app"><img alt="boton-pleg-app" src="../../img/App/mh.png"></button>
             
@@ -90,7 +89,7 @@
             </button>
             <button class="option-app-item">
                 <img alt="option_item_img" src="../../img/App/2.png">
-                <p>Ver registro agrupados</p>
+                <p>Registros agrupados</p>
             </button>
             <button class="option-app-item">
                 <img alt="option_item_img" src="../../img/App/3.png">
@@ -214,6 +213,9 @@
                 <input type="hidden" value="" id="IDD2" name="IDD2">
                 <input type="submit" name="btn_save" class="btn_save">
                 
+        </dialog>
+        <dialog class="registros-agrupados">
+            <button class="cerrar-dialog-registros-agrupados"></button>
         </dialog>
         
     </main>

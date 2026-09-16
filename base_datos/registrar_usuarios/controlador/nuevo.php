@@ -12,7 +12,7 @@
         $ApUs=$_POST['ApUs'];
         $Contr=$_POST['Contr'];
 
-        mysqli_query($conexion,"INSERT INTO `registros usuarios`
+        mysqli_query($conexion,"INSERT INTO `cuentas_usuarios`
         (nombre,apellido,cedula,correo,institucion,telefono,contraseña)
         values
         ('$NomUs','$ApUs','$CedUsu','$CorrUsu','$NomInsti','$Tel','$Contr')");
