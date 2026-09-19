@@ -7,7 +7,7 @@
 
     $tabla_db1="informes";
 
-    $conexion = new mysqli($host, $usuariodb,$clavedb,$basededatos,3307);
+    $conexion = new mysqli($host, $usuariodb,$clavedb,$basededatos);
     
      /*desde aqui y el 3307 lo borro cuando lo cierro
     if ($conexion->connect_error) {

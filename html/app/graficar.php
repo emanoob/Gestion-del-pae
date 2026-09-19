@@ -9,9 +9,28 @@
         session_destroy();
         die();
     }
+
+    
     $usuario=$_SESSION['usuario'];
     $UsurTablaSql="SELECT * FROM cuentas_usuarios WHERE correo= '$usuario'";
+
+    include("../../base_datos/informes/conexion/abrir_conexion.php");
+    $fechaInicio = '2026-09-07';
+    $fechaFin = '2026-09-24';
+
+    $sql = "SELECT * FROM `informes` WHERE fecha >= '$fechaInicio' AND fecha < DATE_ADD('$fechaFin', INTERVAL 1 DAY) ORDER BY fecha ASC";
+
+    $stmt = mysqli_query($conexion,$sql);
     
+
+    $datos = [];
+
+    while ($fila = mysqli_fetch_assoc($stmt)) {
+    $datos[] = $fila;
+    }
+
+    echo '<p>'.json_encode($datos).'</p>';
+
 ?>
 
 
@@ -19,7 +38,9 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion del PAE</title>
