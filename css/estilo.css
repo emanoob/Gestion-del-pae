@@ -1430,3 +1430,16 @@ nav .btn-cerrar-sesion:hover {
 nav .btn-cerrar-sesion:active {
     transform: scale(0.96);
 }
+
+
+
+
+
+
+
+
+
+/*Graficar  php   */
+.display-grafic{
+    width: 800px;
+}

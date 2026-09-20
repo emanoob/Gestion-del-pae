@@ -13,10 +13,14 @@
     
     $usuario=$_SESSION['usuario'];
     $UsurTablaSql="SELECT * FROM cuentas_usuarios WHERE correo= '$usuario'";
-
+    
     include("../../base_datos/informes/conexion/abrir_conexion.php");
 
-    $tipo_filtro='pl_entr';
+    $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
+    $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
+    $institucioncomprobar=$usurTablaArr['institucion'];
+
+    $tipo_filtro='platos_entregados';
     $fechaInicio = '2026-09-07';
     $fechaFin = '2026-09-24';
 
@@ -28,12 +32,11 @@
     $datos = [];
 
     while ($fila = mysqli_fetch_assoc($stmt)) {
-    $datos[] = $fila;
+        if ($fila['institucion']==$institucioncomprobar)
+        $datos[] = $fila;
     }
 
-    echo '<p>'.json_encode($datos).'</p>';
-
-
+    
     $fechas_gr=[];
     $platos_entregados_gr=[];
     $desperdicios_gr=[];
@@ -46,14 +49,14 @@
     }
     
     $tiempos_gr=[];
-    
+    $dates_gr=[];
+    switch ($tipo_filtro){
+        case "platos_entregados":
+            $dates_gr=$platos_entregados_gr;
+    }
     
 
-    echo '<p>fechas:</p>';
-    echo '<p>'.json_encode($fechas_gr).'</p>';
-    echo '<p>platos entregados:</p>';
-    echo '<p>'.json_encode($platos_entregados_gr).'</p>';
-
+    
 ?>
 
 
@@ -119,34 +122,45 @@
 
 </header>
     <main class="app-graficar">
-        <div>
-  <canvas id="myChart"></canvas>
-</div>
+        <div class="display-grafic">
+            <canvas id="myChart"></canvas>
+        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script>
-  const ctx = document.getElementById('myChart');
+<?php
 
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-</script>
+ echo '<script>'.
+'  const ctx = document.getElementById(\'myChart\');'.
+''.
+'  new Chart(ctx, {'.
+'    type: \'bar\','.
+'    data: {'.
+'      labels: '.json_encode($fechas_gr).','.
+'      datasets: [{'.
+'        label: \'platos entregados\','.
+'        data: '.json_encode($platos_entregados_gr).','.
+'        borderWidth: 1'.
+'      },{'.
+'        label: \'desperdicios\','.
+'        data: '.json_encode($desperdicios_gr).','.
+'        borderWidth: 1'.
+'      },{'.
+'        label: \'platos enviados\','.
+'        data: '.json_encode($platos_env_gr).','.
+'        borderWidth: 1'.
+'      }]'.
+'    },'.
+'    options: {'.
+'      scales: {'.
+'        y: {'.
+'          beginAtZero: true'.
+'        }'.
+'      }'.
+'    }'.
+'  });'.
+'</script>';
+?>
 
 </script>
         </div>
