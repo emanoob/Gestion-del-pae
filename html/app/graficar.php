@@ -15,6 +15,8 @@
     $UsurTablaSql="SELECT * FROM cuentas_usuarios WHERE correo= '$usuario'";
 
     include("../../base_datos/informes/conexion/abrir_conexion.php");
+
+    $tipo_filtro='pl_entr';
     $fechaInicio = '2026-09-07';
     $fechaFin = '2026-09-24';
 
@@ -31,6 +33,27 @@
 
     echo '<p>'.json_encode($datos).'</p>';
 
+
+    $fechas_gr=[];
+    $platos_entregados_gr=[];
+    $desperdicios_gr=[];
+    $platos_env_gr=[];
+    for ($i=0;$i< count($datos);$i++){
+        $fechas_gr[]=$datos[$i]['fecha'];
+        $platos_entregados_gr[]=$datos[$i]['platos entregados'];
+        $desperdicios_gr[]=$datos[$i]['desperdicios'];
+        $platos_env_gr[]=$datos[$i]['platos_enviados'];
+    }
+    
+    $tiempos_gr=[];
+    
+    
+
+    echo '<p>fechas:</p>';
+    echo '<p>'.json_encode($fechas_gr).'</p>';
+    echo '<p>platos entregados:</p>';
+    echo '<p>'.json_encode($platos_entregados_gr).'</p>';
+
 ?>
 
 
@@ -40,7 +63,7 @@
 <html lang="es">
 
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion del PAE</title>
@@ -96,7 +119,37 @@
 
 </header>
     <main class="app-graficar">
-        
+        <div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+</script>
+        </div>
     </main>
 
     <footer>
