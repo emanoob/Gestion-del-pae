@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-09-2026 a las 22:56:40
+-- Tiempo de generación: 21-09-2026 a las 23:36:03
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -59,7 +59,8 @@ CREATE TABLE `cuentas_usuarios` (
 
 INSERT INTO `cuentas_usuarios` (`id`, `nombre`, `apellido`, `cedula`, `correo`, `institucion`, `telefono`, `contraseña`, `rol`) VALUES
 (4, 'emanuel', 'gomez', 11, 'a@a', 'a', 123, '1', 'ADP'),
-(5, 'e', 'e', 1010, 'e@e', 'g', 333, '1', '');
+(5, 'e', 'e', 1010, 'e@e', 'g', 333, '1', ''),
+(6, 'Juan', 'mesa', 1010, 'juan@1', 'jorge', 333, '1020', '');
 
 -- --------------------------------------------------------
 
@@ -75,20 +76,21 @@ CREATE TABLE `informes` (
   `fecha` date NOT NULL,
   `hora` time NOT NULL,
   `desperdicios` decimal(65,38) NOT NULL,
-  `institucion` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `institucion` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `platos_enviados` int(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `informes`
 --
 
-INSERT INTO `informes` (`id`, `nombre`, `cedula`, `platos entregados`, `fecha`, `hora`, `desperdicios`, `institucion`) VALUES
-(4, 'emanuel', 902920, 0, '0000-00-00', '11:13:00', 0.00000000000000000000000000000000000000, 'a'),
-(5, 'emanuel', 902920, 12, '2026-09-24', '12:36:00', 1.00000000000000000000000000000000000000, ''),
-(6, 'emanuel', 902920, 1111, '2026-09-07', '11:01:00', 11.00000000000000000000000000000000000000, ''),
-(8, 'emanuel', 11, 11, '2026-09-15', '15:45:00', 11.00000000000000000000000000000000000000, 'a'),
-(9, 'emanuel', 11, 111, '2026-09-16', '16:53:00', 0.00000000000000000000000000000000000000, 'a'),
-(10, 'emanuel', 11, 45, '2020-09-22', '13:02:00', 66.00000000000000000000000000000000000000, 'a');
+INSERT INTO `informes` (`id`, `nombre`, `cedula`, `platos entregados`, `fecha`, `hora`, `desperdicios`, `institucion`, `platos_enviados`) VALUES
+(4, 'emanuel', 902920, 0, '0000-00-00', '11:13:00', 0.00000000000000000000000000000000000000, 'a', 0),
+(5, 'emanuel', 902920, 12, '2026-09-24', '12:36:00', 1.00000000000000000000000000000000000000, 'a', 0),
+(6, 'emanuel', 902920, 1111, '2026-09-07', '11:01:00', 11.00000000000000000000000000000000000000, 'a', 0),
+(8, 'emanuel', 11, 11, '2026-09-15', '15:45:00', 11.00000000000000000000000000000000000000, 'a', 0),
+(9, 'emanuel', 11, 111, '2026-09-16', '16:53:00', 0.00000000000000000000000000000000000000, 'a', 0),
+(10, 'emanuel', 11, 45, '2020-09-22', '13:02:00', 66.00000000000000000000000000000000000000, 'a', 0);
 
 -- --------------------------------------------------------
 
@@ -155,8 +157,15 @@ CREATE TABLE `registros_semanales` (
   `platos_entregados_totales` int(20) NOT NULL,
   `fecha_inicial` date NOT NULL,
   `fecha_final` date NOT NULL,
-  `platos_enviados` int(20) NOT NULL
+  `platos_enviados` int(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `registros_semanales`
+--
+
+INSERT INTO `registros_semanales` (`id`, `desperdicios_totales`, `platos_entregados_totales`, `fecha_inicial`, `fecha_final`, `platos_enviados`) VALUES
+(1, 90.000000000000000000000000000000, 1290, '2026-09-07', '2026-09-24', 0);
 
 --
 -- Índices para tablas volcadas
@@ -223,7 +232,7 @@ ALTER TABLE `comprobantes`
 -- AUTO_INCREMENT de la tabla `cuentas_usuarios`
 --
 ALTER TABLE `cuentas_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `informes`
@@ -253,7 +262,7 @@ ALTER TABLE `registros usuarios`
 -- AUTO_INCREMENT de la tabla `registros_semanales`
 --
 ALTER TABLE `registros_semanales`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas

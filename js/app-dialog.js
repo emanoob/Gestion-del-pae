@@ -79,3 +79,16 @@ buton_abrir_regist.addEventListener('click', function(){
 buton_cerrar_regist.addEventListener('click', function(){
     document.querySelector('.app-regist-inf').close();
 })
+
+
+const button_abrir_graficos=document.querySelector('.button-abrir-graficar');
+const button_cerrar_graficos=document.querySelector('.cerrar-dialog-graficar');
+
+
+button_abrir_graficos.addEventListener('click', function(){
+    document.querySelector('.app-graficar').showModal();
+})
+
+button_cerrar_graficos.addEventListener('click', function(){
+    document.querySelector('.app-graficar').close();
+})

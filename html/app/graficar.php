@@ -20,9 +20,22 @@
     $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
     $institucioncomprobar=$usurTablaArr['institucion'];
 
-    $tipo_filtro='platos_entregados';
-    $fechaInicio = '2026-09-07';
-    $fechaFin = '2026-09-24';
+
+
+    //OPTENIDO DEL FORMULARIO
+    $IDRS=$_POST['IDRS'];
+    $sqlFecha="SELECT * FROM registros_semanales WHERE id='$IDRS'";
+    $fechas=mysqli_query($conexion ,$sqlFecha);
+    $fechasArr=mysqli_fetch_assoc($fechas);
+    $fechaInicio = $fechasArr['fecha_inicial'];
+    $fechaFin = $fechasArr['fecha_final'];
+    $total_platos_entregados_gr=$fechasArr['platos_entregados_totales'];
+    $total_desperdicios_gr=$fechasArr['desperdicios_totales'];
+    $total_platos_env_gr=$fechasArr['platos_enviados'];
+
+
+
+
 
     $sql = "SELECT * FROM `informes` WHERE fecha >= '$fechaInicio' AND fecha < DATE_ADD('$fechaFin', INTERVAL 1 DAY) ORDER BY fecha ASC";
 
@@ -35,27 +48,27 @@
         if ($fila['institucion']==$institucioncomprobar)
         $datos[] = $fila;
     }
-
+    
     
     $fechas_gr=[];
     $platos_entregados_gr=[];
     $desperdicios_gr=[];
     $platos_env_gr=[];
-    for ($i=0;$i< count($datos);$i++){
+    for ($i=0;$i< count($datos)-1;$i++){
         $fechas_gr[]=$datos[$i]['fecha'];
         $platos_entregados_gr[]=$datos[$i]['platos entregados'];
         $desperdicios_gr[]=$datos[$i]['desperdicios'];
         $platos_env_gr[]=$datos[$i]['platos_enviados'];
     }
-    
+    $fechas_gr[]="total";
+
+    $platos_entregados_gr[]=$total_platos_entregados_gr;
+    $desperdicios_gr[]=$total_desperdicios_gr;
+    $platos_env_gr[]=$total_platos_env_gr;
+
     $tiempos_gr=[];
     $dates_gr=[];
-    switch ($tipo_filtro){
-        case "platos_entregados":
-            $dates_gr=$platos_entregados_gr;
-    }
     
-
     
 ?>
 
@@ -121,7 +134,8 @@
     </nav>
 
 </header>
-    <main class="app-graficar">
+    <main class="app-graficar-php">
+        <a href="app.php"><- Salir</a>
         <div class="display-grafic">
             <canvas id="myChart"></canvas>
         </div>
@@ -149,7 +163,7 @@
 '        label: \'platos enviados\','.
 '        data: '.json_encode($platos_env_gr).','.
 '        borderWidth: 1'.
-'      }]'.
+'      },]'.
 '    },'.
 '    options: {'.
 '      scales: {'.

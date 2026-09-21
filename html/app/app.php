@@ -1,4 +1,5 @@
 <?php
+    //para las conversiones de html a php usar: https://codebeautify.org/html-to-php-converter
     session_start();
     if(!isset($_SESSION['usuario'])){
         echo '<script>
@@ -83,15 +84,11 @@
         <section class="options-app">
             <button class="hb-app"><img alt="boton-pleg-app" src="../../img/App/mh.png"></button>
             
-            <button class="buton-abrir-regist option-app-item" >
+            <button class="buton-abrir-regist option-app-item">
                 <img alt="option_item_img" src="../../img/App/1.png">
                 <p>Añadir</p>
             </button>
-            <button class="option-app-item">
-                <img alt="option_item_img" src="../../img/App/2.png">
-                <p>Registros agrupados</p>
-            </button>
-            <button class="option-app-item">
+            <button class="button-abrir-graficar option-app-item">
                 <img alt="option_item_img" src="../../img/App/3.png">
                 <p>Graficar</p>
             </button>
@@ -212,11 +209,33 @@
                 </ul>
                 <input type="hidden" value="" id="IDD2" name="IDD2">
                 <input type="submit" name="btn_save" class="btn_save">
-                
+                </Form>
         </dialog>
-        <dialog class="registros-agrupados">
-            <button class="cerrar-dialog-registros-agrupados"></button>
+        <dialog class="app-graficar">
+            <button class="cerrar-dialog-graficar">X</button>
+            <h3>Elegir registro semanal:</h3>
+            <div class="section-registro semanal">
+
+
+                <?php
+                ?>
+                <?php
+                    include("../../base_datos/informes/conexion/abrir_conexion.php");
+                    $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
+
+                    echo '<div class="registro-semanal-item">';
+                    echo '<form action="graficar.php" method="POST">';
+                    echo '<p class="id-registro-semanal">id:1</p>';
+                    echo '<p class="fecha-inicial-registro-semanal">fecha-inicial:12/03/2020</p>';
+                    echo '<p class="fecha-inicial-registro-semanal">fecha-final:12/03/2020</p>';
+                    echo '<input type="hidden" value="1" id="IDRS" name="IDRS">';
+                    echo '<input type="submit" value="Ver grafica" class="graficar" name="graficar">';
+                    echo '</form>';
+                    echo '</div>';
+?>
+            </div>
         </dialog>
+        
         
     </main>
 
