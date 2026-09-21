@@ -9,8 +9,53 @@
         session_destroy();
         die();
     }
+
+    
     $usuario=$_SESSION['usuario'];
     $UsurTablaSql="SELECT * FROM cuentas_usuarios WHERE correo= '$usuario'";
+    
+    include("../../base_datos/informes/conexion/abrir_conexion.php");
+
+    $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
+    $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
+    $institucioncomprobar=$usurTablaArr['institucion'];
+
+    $tipo_filtro='platos_entregados';
+    $fechaInicio = '2026-09-07';
+    $fechaFin = '2026-09-24';
+
+    $sql = "SELECT * FROM `informes` WHERE fecha >= '$fechaInicio' AND fecha < DATE_ADD('$fechaFin', INTERVAL 1 DAY) ORDER BY fecha ASC";
+
+    $stmt = mysqli_query($conexion,$sql);
+    
+
+    $datos = [];
+
+    while ($fila = mysqli_fetch_assoc($stmt)) {
+        if ($fila['institucion']==$institucioncomprobar)
+        $datos[] = $fila;
+    }
+
+    
+    $fechas_gr=[];
+    $platos_entregados_gr=[];
+    $desperdicios_gr=[];
+    $platos_env_gr=[];
+    for ($i=0;$i< count($datos);$i++){
+        $fechas_gr[]=$datos[$i]['fecha'];
+        $platos_entregados_gr[]=$datos[$i]['platos entregados'];
+        $desperdicios_gr[]=$datos[$i]['desperdicios'];
+        $platos_env_gr[]=$datos[$i]['platos_enviados'];
+    }
+    
+    $tiempos_gr=[];
+    $dates_gr=[];
+    switch ($tipo_filtro){
+        case "platos_entregados":
+            $dates_gr=$platos_entregados_gr;
+    }
+    
+
     
 ?>
 
@@ -19,7 +64,9 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion del PAE</title>
@@ -75,7 +122,48 @@
 
 </header>
     <main class="app-graficar">
-        
+        <div class="display-grafic">
+            <canvas id="myChart"></canvas>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<?php
+
+ echo '<script>'.
+'  const ctx = document.getElementById(\'myChart\');'.
+''.
+'  new Chart(ctx, {'.
+'    type: \'bar\','.
+'    data: {'.
+'      labels: '.json_encode($fechas_gr).','.
+'      datasets: [{'.
+'        label: \'platos entregados\','.
+'        data: '.json_encode($platos_entregados_gr).','.
+'        borderWidth: 1'.
+'      },{'.
+'        label: \'desperdicios\','.
+'        data: '.json_encode($desperdicios_gr).','.
+'        borderWidth: 1'.
+'      },{'.
+'        label: \'platos enviados\','.
+'        data: '.json_encode($platos_env_gr).','.
+'        borderWidth: 1'.
+'      }]'.
+'    },'.
+'    options: {'.
+'      scales: {'.
+'        y: {'.
+'          beginAtZero: true'.
+'        }'.
+'      }'.
+'    }'.
+'  });'.
+'</script>';
+?>
+
+</script>
+        </div>
     </main>
 
     <footer>
