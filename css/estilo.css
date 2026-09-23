@@ -308,6 +308,9 @@ RESPONSIVE
     footer{
         flex-direction: column;
     }
+    main{
+        margin-top: 25%;
+    }
 }
 
 
@@ -321,7 +324,7 @@ RESPONSIVE
 main{
     background: var(--fondo);
     margin: 1px;
-    margin-top: 25%;
+    margin-top: 26vh;
     align-items: start;
     display: flex;
     flex-direction: column;
@@ -687,7 +690,7 @@ article p{
 
 
 .mainServCl{
-    margin-top: 20%;
+    margin-top: 23vh;
     display: block;
     padding-left: 0%;
     padding-right: 0%;
