@@ -75,8 +75,61 @@
 
 </header>
     <main class="app-inst">
-        
-    </main>
+
+<?php
+
+include("../../base_datos/login_php/conexion/abrir_conexion.php");
+
+$consulta = mysqli_query(
+    $conexion,
+    "SELECT * FROM cuentas_usuarios"
+);
+
+?>
+
+<section class="tabla-usuarios">
+
+<h2>Usuarios Registrados</h2>
+
+<table class="tabla-rutas">
+
+<thead>
+<tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Cédula</th>
+    <th>Correo</th>
+    <th>Institución</th>
+    <th>Teléfono</th>
+    <th>Rol</th>
+</tr>
+</thead>
+
+<tbody>
+
+<?php while($fila=mysqli_fetch_assoc($consulta)){ ?>
+
+<tr>
+    <td><?php echo $fila['id']; ?></td>
+    <td><?php echo $fila['nombre']; ?></td>
+    <td><?php echo $fila['apellido']; ?></td>
+    <td><?php echo $fila['cedula']; ?></td>
+    <td><?php echo $fila['correo']; ?></td>
+    <td><?php echo $fila['institucion']; ?></td>
+    <td><?php echo $fila['telefono']; ?></td>
+    <td><?php echo $fila['rol']; ?></td>
+</tr>
+
+<?php } ?>
+
+</tbody>
+
+</table>
+
+</section>
+
+</main>
 
     <footer>
 
