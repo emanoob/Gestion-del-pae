@@ -261,10 +261,7 @@
 </footer>
     <script src="../js/mHam.js"></script>
     <script src="../js/buscador.js"></script>
-<<<<<<< HEAD
     
-=======
->>>>>>> b518b2e05211e4afb94e5b3fae886ad56db2c8b6
 <script>
 
 function cambiarEstado(boton) {
@@ -322,7 +319,7 @@ function editarRuta(boton) {
 }
 
 </script>
-```
+
 
 
 </body>

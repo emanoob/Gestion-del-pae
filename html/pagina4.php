@@ -126,8 +126,7 @@
             </div>
             </form>    
             </section>
-        <img src="../img/pagina4/Circulo.png" class="Circulo">
-        <img src="../img/pagina4/Circulo.png" class="CirculoA">
+        
     </main>
     
 

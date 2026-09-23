@@ -7,13 +7,13 @@
 :root {
     --primario: #396A53;
     --header:#294C3C;
-    --secundario: #386B6B;
-    --fondo: #D0E6E6;
-    --tarjeta: #284D4D;
-    --texto: #09110D;
+    --secundario: #488989;
+    --fondo: #EEF6F6;
+    --tarjeta: #386B6B;
+    --texto: #11090C;
     --gris: #42413b;
     --letra2:#ff9c7c;
-    --color-resaltar:#6A3950;
+    --color-resaltar:#884966;
     --decoracion:#f1d796;
     --decoracion-x2:#d7b45a;
     --titulos-:#011218;
@@ -30,15 +30,24 @@ body{
  ==============================*/
 
 header{
-    border-bottom: 4px solid var(--footer);
+    border-bottom: 7px solid var(--texto);
     background:var(--header);
     padding:20px 40px;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    width:max-content;
+    align-items: center;
+    align-content: center;
+    width: 100%;
 }
 
 .superior{
     display:flex;
     justify-content:space-between;
+    gap:10%;
     align-items:center;
+
 }
 
 .logo{
@@ -84,6 +93,7 @@ NAVBAR
 nav{
     width:fit-content;
     margin:25px auto 0;
+    margin-top: 0px;
     display:flex;
     align-items:center;
     gap:15px;
@@ -136,6 +146,7 @@ nav a:hover{
 /*==========================
  CONTENIDO 
  ===========================*/
+
 
 
 
@@ -310,6 +321,7 @@ RESPONSIVE
 main{
     background: var(--fondo);
     margin: 1px;
+    margin-top: 25%;
     align-items: start;
     display: flex;
     flex-direction: column;
@@ -518,6 +530,7 @@ main{
 
 .mainentr{
     margin: 0px;
+    margin-top: 32vh;
     align-items: normal;
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -674,6 +687,7 @@ article p{
 
 
 .mainServCl{
+    margin-top: 20%;
     display: block;
     padding-left: 0%;
     padding-right: 0%;
@@ -986,12 +1000,13 @@ article p{
 
 
 
-/*Iniciar secion*/
+/*Iniciar sesion*/
 /*              */
 .contenedor{                             
     width:90%;
     max-width:1100px;
     margin:50px auto;
+    margin-top: 20vh;
     background: var(--fondo);
     display:block;
     align-items: none;

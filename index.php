@@ -174,7 +174,7 @@
     </section>
 
     </footer>
-    <script src="..js/mHam.js"></script>
+    <script src="js/mHam.js"></script>
     <script src="js/carrusel.js"></script>
     <script src="js/buscador.js"></script>
 </body>
