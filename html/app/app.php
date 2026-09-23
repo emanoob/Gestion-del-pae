@@ -80,173 +80,62 @@
     </nav>
 
 </header>
-    <main class="app-pr">
-        <section class="options-app">
-            <button class="hb-app"><img alt="boton-pleg-app" src="../../img/App/mh.png"></button>
-            
-            <button class="buton-abrir-regist option-app-item">
-                <img alt="option_item_img" src="../../img/App/1.png">
-                <p>Añadir</p>
-            </button>
-            <button class="button-abrir-graficar option-app-item">
-                <img alt="option_item_img" src="../../img/App/3.png">
-                <p>Graficar</p>
-            </button>
-            <button class="option-app-item">
-                <img alt="option_item_img" src="../../img/App/4.png">
-                <p>Reportar</p>
-            </button>
-        </section>
-        <section class="app-forms">
-            
-            <?php
+    <main class="app-inst">
 
-                    include("../../base_datos/informes/conexion/abrir_conexion.php");
-                    $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
-                    $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
-                    $institucioncomprobar=$usurTablaArr['institucion'];
-             
-                    for($i=0;$i<=20;$i++)
-                        {
-                            $resultados=mysqli_query($conexion, "SELECT * FROM `$tabla_db1` WHERE id = $i");
-                            
-                            WHILE($consulta =mysqli_fetch_array($resultados))
-                            {
-                                if($consulta['institucion']==$institucioncomprobar){
-                            
+<?php
 
-                            
-                                echo "<form action=\"../../base_datos/informes/actualizar/Actualizar.php\" method=\"POST\">";
-                                echo "<div class=\"form-item\">";
-                                
-                                echo "<p class=\"id-form-item\">".$consulta['id']."</p>";
-                                echo "<p class=\"fecha-form-item\">".$consulta['fecha']."</p>".
-                                    "<p>".$consulta['hora']."</p>".
-                                    "<div class=\"form-botons\">";
-                                    //Boton de ver abre un dialog
-                                echo "<input type=\"hidden\" value=\"".$consulta['id']."\" name=\"IDD\">".
-                                    "<button class=\"ver\" type=\"button\" data-id=\"".$consulta['id']."\" 
-                                    data-nombre=\"".$consulta['nombre']."\" data-cedu=\"".$consulta['cedula']."\" 
-                                    data-plentr=\"".$consulta['platos entregados']."\" data-desper=\"".$consulta['desperdicios']."\" 
-                                    data-fecha=\"".$consulta['fecha']."\" data-hora=\"".$consulta['hora']."\">Ver</button>";
-                                    
-                                    //Boton de update abre un dialog
-                                    if($usurTablaArr['cedula']==$consulta['cedula']){
-                                         echo"<button class=\"update\" type=\"button\" name=\"updatee\" data-id=\"".$consulta['id']."\" 
-                                    data-nombre=\"".$consulta['nombre']."\" data-cedu=\"".$consulta['cedula']."\" 
-                                    data-plentr=\"".$consulta['platos entregados']."\" data-desper=\"".$consulta['desperdicios']."\" 
-                                    data-fecha=\"".$consulta['fecha']."\" data-hora=\"".$consulta['hora']."\">Actualizar</button>";
-                                
-                                echo"<input type=\"submit\" value=\"Borrar\" class=\"delete\" name=\"delete\">";
-                                    }
-                                echo "</div>";
-                                
-                            
-                                echo "</div>";
-                                echo "</form>";
-                            }
-                                
-                            }
-                        }
-                        include("../../base_datos/informes/conexion/cerrar_conexion.php");
-                    
-                ?>
-        </section>
-        <dialog class="app-regist-inf">
-            <button class="buton-cerrar-regist">X</button>
-            <h2>Registrar</h2>
-            <Form action="../../base_datos/informes/controlador/nuevo.php" method="POST">
-                <ul class="regist_camp">
-                        <li><p>platos entregados</p></li>
-                        <li><input type="text" name="PlEntr" class="PlEntr"></li>    
-                </ul>
-                <ul class="regist_camp">
-                        <li><p>desperdicios kg</p></li>
-                        <li><input type="text" name="desper" class="desper"></li>    
-                </ul>
-                <ul class="regist_camp">
-                        <li><p>fecha</p></li>
-                        <li><input type="date" name="fecha" class="fecha"></li>    
-                </ul>
-                <ul class="regist_camp">
-                        <li><p>hora</p></li>
-                        <li><input type="time" name="hora" class="hora"></li>    
-                </ul>
-                <input type="submit" name="btn_send_inf" class="btn_send_inf">
-                
-            </Form>
-        </dialog>
-        <dialog class="app-ver-inf">
-            <button class="cerrar-dialog-ver">X</button>
-            <h2>Ver</h2>
-            <p>id: <span id="ver-inf-id"></span></p>
-            <p>nombre: <span id="ver-inf-nom"></span></p>
-            <p>cedula: <span id="ver-inf-ced"></span></p>
-            <p>platos entregados: <span id="ver-inf-plt"></span></p>
-            <p>fecha: <span id="ver-inf-fecha"></span></p>
-            <p>hora: <span id="ver-inf-hora"></span></p>
-            <p>desperdicios: <span id="ver-inf-desper"></span></p>
-        </dialog>
-        <dialog class ="app-update-inf">
-            <button class="cerrar-dialog-update">X</button>
-            <h2>actualizar</h2>
-            <Form action="../../base_datos/informes/controlador/gestion_tabla.php" method="POST">
-                <ul class="regist_camp">
-                        <li><p>platos entregados</p></li>
-                        <li><input type="text" name="newPlEntr" class="PlEntr" placeholder="" id="plt-update"></li>    
-                </ul>
-                <ul class="regist_camp">
-                        <li><p>desperdicios kg</p></li>
-                        <li><input type="text" name="newdesper" class="desper" placeholder="" id="desper-update"></li>    
-                </ul>
-                <ul class="regist_camp">
-                        <li><p>fecha</p></li>
-                        <li><input type="date" name="newfecha" class="fecha" placeholder="" id="fecha-update"></li>    
-                </ul>
-                <ul class="regist_camp">
-                        <li><p>hora</p></li>
-                        <li><input type="time" name="newhora" class="hora" placeholder="" id="hora-update"></li>    
-                </ul>
-                <input type="hidden" value="" id="IDD2" name="IDD2">
-                <input type="submit" name="btn_save" class="btn_save">
-                </Form>
-        </dialog>
-        <dialog class="app-graficar">
-            <button class="cerrar-dialog-graficar">X</button>
-            <h3>Elegir registro semanal:</h3>
-            <div class="section-registro semanal">
+include("../../base_datos/login_php/conexion/abrir_conexion.php");
 
+$consulta = mysqli_query(
+    $conexion,
+    "SELECT * FROM cuentas_usuarios"
+);
 
-                <?php
-                    include("../../base_datos/informes/conexion/abrir_conexion.php");
-                    $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
-
-                    
-                    for($i=0;$i<=20;$i++)
-                        {
-                        $resultadosSemanales=mysqli_query($conexion, "SELECT * FROM `registros_semanales` WHERE id = $i");
-                        WHILE($consultaSemanal =mysqli_fetch_array($resultadosSemanales)){
-                            echo '<div class="registro-semanal-item">';
-                            echo '<form action="graficar.php" method="POST">';
-                            echo '<p class="id-registro-semanal">id:'.$consultaSemanal['id'].'</p>';
-                            echo '<p class="fecha-inicial-registro-semanal">fecha-inicial:'.$consultaSemanal['fecha_inicial'].'</p>';
-                            echo '<p class="fecha-inicial-registro-semanal">fecha-final:'.$consultaSemanal['fecha_final'].'</p>';
-                            echo '<input type="hidden" value="'.$consultaSemanal['id'].'" id="IDRS" name="IDRS">';
-                            echo '<input type="submit" value="Ver grafica" class="graficar" name="graficar">';
-                            echo '</form>';
-                            echo '</div>';
-
-                        }
-                        
-
-                        }
-                    
 ?>
-            </div>
-        </dialog>
-        
-        
-    </main>
+
+<section class="tabla-usuarios">
+
+<h2>Usuarios Registrados</h2>
+
+<table class="tabla-rutas">
+
+<thead>
+<tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Cédula</th>
+    <th>Correo</th>
+    <th>Institución</th>
+    <th>Teléfono</th>
+    <th>Rol</th>
+</tr>
+</thead>
+
+<tbody>
+
+<?php while($fila=mysqli_fetch_assoc($consulta)){ ?>
+
+<tr>
+    <td><?php echo $fila['id']; ?></td>
+    <td><?php echo $fila['nombre']; ?></td>
+    <td><?php echo $fila['apellido']; ?></td>
+    <td><?php echo $fila['cedula']; ?></td>
+    <td><?php echo $fila['correo']; ?></td>
+    <td><?php echo $fila['institucion']; ?></td>
+    <td><?php echo $fila['telefono']; ?></td>
+    <td><?php echo $fila['rol']; ?></td>
+</tr>
+
+<?php } ?>
+
+</tbody>
+
+</table>
+
+</section>
+
+</main>
 
     <footer>
 
