@@ -7,6 +7,6 @@
 
     $tabla_db1="registros usuarios";
 
-    $conexion = new mysqli($host, $usuariodb,$clavedb,$basededatos);
+    $conexion = new mysqli($host, $usuariodb,$clavedb,$basededatos,3307);
 
 ?>

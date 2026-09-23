@@ -261,7 +261,10 @@
 </footer>
     <script src="../js/mHam.js"></script>
     <script src="../js/buscador.js"></script>
+<<<<<<< HEAD
     
+=======
+>>>>>>> 3269ec7616b8a9c3ac979d0db2ac431979c41c09
 <script>
 
 function cambiarEstado(boton) {
