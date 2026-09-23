@@ -103,6 +103,7 @@ $consulta = mysqli_query(
     <th>Institución</th>
     <th>Teléfono</th>
     <th>Rol</th>
+    <th>Acciones</th>
 </tr>
 </thead>
 
@@ -119,8 +120,13 @@ $consulta = mysqli_query(
     <td><?php echo $fila['institucion']; ?></td>
     <td><?php echo $fila['telefono']; ?></td>
     <td><?php echo $fila['rol']; ?></td>
-</tr>
 
+    <td>
+        <a href="editar_usuario.php?id=<?php echo $fila['id']; ?>" class="edit">
+            Editar
+        </a>
+    </td>
+</tr>
 <?php } ?>
 
 </tbody>

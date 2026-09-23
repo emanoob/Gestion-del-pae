@@ -1484,3 +1484,73 @@ nav .btn-cerrar-sesion:active {
 .display-grafic{
     width: 120vh;
 }
+
+
+/*formulario de cuentas admin
+_______________________________
+*/
+.formulario-editar{
+    width: 500px;
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 30px;
+    background: var(--tarjeta);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.formulario-editar h2{
+    text-align: center;
+    font-family: 'Anton';
+    margin-bottom: 25px;
+    color: var(--texto);
+}
+
+.formulario-editar form{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formulario-editar label{
+    font-family: 'Monda';
+    font-weight: bold;
+    color: var(--texto);
+}
+
+.formulario-editar input{
+    padding: 10px;
+    border: 2px solid var(--secundario);
+    border-radius: 10px;
+    font-family: 'Open Sans';
+    margin-bottom: 10px;
+}
+
+.formulario-editar button{
+    margin-top: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: var(--resaltar);
+    color: var(--texto);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.formulario-editar button:hover{
+    opacity: 0.85;
+}
+
+.edit{
+    display: inline-block;
+    padding: 8px 14px;
+    background: var(--decoracion);
+    color: var(--texto);
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.edit:hover{
+    background: var(--decoracion-x2);
+}
