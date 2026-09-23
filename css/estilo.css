@@ -5,18 +5,19 @@
 }
 
 :root {
-    --primario: #fbfbf9;
-    --secundario: #77B699;
-    --fondo: #EEF6F6;
-    --tarjeta: #B0D4C3;
-    --texto: #121A00;
+    --primario: #396A53;
+    --header:#294C3C;
+    --secundario: #386B6B;
+    --fondo: #D0E6E6;
+    --tarjeta: #284D4D;
+    --texto: #09110D;
     --gris: #42413b;
     --letra2:#ff9c7c;
-    --color-resaltar:#FBC3AE;
+    --color-resaltar:#6A3950;
     --decoracion:#f1d796;
     --decoracion-x2:#d7b45a;
     --titulos-:#011218;
-    --footer:#192E2E;
+    --footer:#182F2F;
 }
 
 body{
@@ -30,7 +31,7 @@ body{
 
 header{
     border-bottom: 4px solid var(--footer);
-    background:var(--secundario);
+    background:var(--header);
     padding:20px 40px;
 }
 
@@ -53,7 +54,7 @@ header h1{
 .buscador{
     display:flex;
     align-items:center;
-    background:#001910;
+    background: var(--texto);
     border-radius:25px;
     overflow:hidden;
 }

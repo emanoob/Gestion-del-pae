@@ -218,20 +218,29 @@
 
 
                 <?php
-                ?>
-                <?php
                     include("../../base_datos/informes/conexion/abrir_conexion.php");
                     $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
 
-                    echo '<div class="registro-semanal-item">';
-                    echo '<form action="graficar.php" method="POST">';
-                    echo '<p class="id-registro-semanal">id:1</p>';
-                    echo '<p class="fecha-inicial-registro-semanal">fecha-inicial:12/03/2020</p>';
-                    echo '<p class="fecha-inicial-registro-semanal">fecha-final:12/03/2020</p>';
-                    echo '<input type="hidden" value="1" id="IDRS" name="IDRS">';
-                    echo '<input type="submit" value="Ver grafica" class="graficar" name="graficar">';
-                    echo '</form>';
-                    echo '</div>';
+                    
+                    for($i=0;$i<=20;$i++)
+                        {
+                        $resultadosSemanales=mysqli_query($conexion, "SELECT * FROM `registros_semanales` WHERE id = $i");
+                        WHILE($consultaSemanal =mysqli_fetch_array($resultadosSemanales)){
+                            echo '<div class="registro-semanal-item">';
+                            echo '<form action="graficar.php" method="POST">';
+                            echo '<p class="id-registro-semanal">id:'.$consultaSemanal['id'].'</p>';
+                            echo '<p class="fecha-inicial-registro-semanal">fecha-inicial:'.$consultaSemanal['fecha_inicial'].'</p>';
+                            echo '<p class="fecha-inicial-registro-semanal">fecha-final:'.$consultaSemanal['fecha_final'].'</p>';
+                            echo '<input type="hidden" value="'.$consultaSemanal['id'].'" id="IDRS" name="IDRS">';
+                            echo '<input type="submit" value="Ver grafica" class="graficar" name="graficar">';
+                            echo '</form>';
+                            echo '</div>';
+
+                        }
+                        
+
+                        }
+                    
 ?>
             </div>
         </dialog>

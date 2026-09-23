@@ -29,9 +29,7 @@
     $fechasArr=mysqli_fetch_assoc($fechas);
     $fechaInicio = $fechasArr['fecha_inicial'];
     $fechaFin = $fechasArr['fecha_final'];
-    $total_platos_entregados_gr=$fechasArr['platos_entregados_totales'];
-    $total_desperdicios_gr=$fechasArr['desperdicios_totales'];
-    $total_platos_env_gr=$fechasArr['platos_enviados'];
+    
 
 
 
@@ -60,6 +58,9 @@
         $desperdicios_gr[]=$datos[$i]['desperdicios'];
         $platos_env_gr[]=$datos[$i]['platos_enviados'];
     }
+    $total_platos_entregados_gr=array_sum($platos_entregados_gr);
+    $total_desperdicios_gr=array_sum($desperdicios_gr);
+    $total_platos_env_gr=array_sum($platos_env_gr);
     $fechas_gr[]="total";
 
     $platos_entregados_gr[]=$total_platos_entregados_gr;

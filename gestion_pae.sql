@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-09-2026 a las 23:36:03
+-- Tiempo de generación: 23-09-2026 a las 04:12:30
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -153,19 +153,16 @@ INSERT INTO `registros usuarios` (`id`, `nombre`, `apellido`, `cedula`, `correo`
 
 CREATE TABLE `registros_semanales` (
   `id` int(11) NOT NULL,
-  `desperdicios_totales` double(65,30) NOT NULL,
-  `platos_entregados_totales` int(20) NOT NULL,
   `fecha_inicial` date NOT NULL,
-  `fecha_final` date NOT NULL,
-  `platos_enviados` int(60) NOT NULL
+  `fecha_final` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `registros_semanales`
 --
 
-INSERT INTO `registros_semanales` (`id`, `desperdicios_totales`, `platos_entregados_totales`, `fecha_inicial`, `fecha_final`, `platos_enviados`) VALUES
-(1, 90.000000000000000000000000000000, 1290, '2026-09-07', '2026-09-24', 0);
+INSERT INTO `registros_semanales` (`id`, `fecha_inicial`, `fecha_final`) VALUES
+(1, '2026-09-07', '2026-09-24');
 
 --
 -- Índices para tablas volcadas
@@ -262,7 +259,7 @@ ALTER TABLE `registros usuarios`
 -- AUTO_INCREMENT de la tabla `registros_semanales`
 --
 ALTER TABLE `registros_semanales`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
