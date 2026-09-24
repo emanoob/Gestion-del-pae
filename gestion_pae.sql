@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-09-2026 a las 04:12:30
+-- Tiempo de generación: 24-09-2026 a las 22:11:43
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -45,7 +45,7 @@ CREATE TABLE `cuentas_usuarios` (
   `id` int(11) NOT NULL,
   `nombre` varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `apellido` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `cedula` int(20) NOT NULL,
+  `cedula` int(40) NOT NULL,
   `correo` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `institucion` varchar(80) NOT NULL,
   `telefono` int(20) NOT NULL,
@@ -58,8 +58,8 @@ CREATE TABLE `cuentas_usuarios` (
 --
 
 INSERT INTO `cuentas_usuarios` (`id`, `nombre`, `apellido`, `cedula`, `correo`, `institucion`, `telefono`, `contraseña`, `rol`) VALUES
-(4, 'emanuel', 'gomez', 11, 'a@a', 'a', 123, '1', 'ADP'),
-(5, 'e', 'e', 1010, 'e@e', 'g', 333, '1', ''),
+(4, 'emanuel', 'gomez', 1138026905, 'a@a', 'a', 123, '1', 'ADP'),
+(5, 'e', 'e', 1010, 'e@e', 'g', 33333, '1', 'U'),
 (6, 'Juan', 'mesa', 1010, 'juan@1', 'jorge', 333, '1020', '');
 
 -- --------------------------------------------------------
@@ -99,25 +99,18 @@ INSERT INTO `informes` (`id`, `nombre`, `cedula`, `platos entregados`, `fecha`, 
 --
 
 CREATE TABLE `instituciones_registradas` (
-  `id_institucion` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `nombre institucion` text NOT NULL,
   `direccion` varchar(60) NOT NULL,
   `id_administrador` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `pre_registros_instituciones`
+-- Volcado de datos para la tabla `instituciones_registradas`
 --
 
-CREATE TABLE `pre_registros_instituciones` (
-  `id` int(11) NOT NULL,
-  `nombre institucion` text NOT NULL,
-  `direccion` varchar(70) NOT NULL,
-  `administrador_ced` int(20) NOT NULL,
-  `id_institucion` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `instituciones_registradas` (`id`, `nombre institucion`, `direccion`, `id_administrador`) VALUES
+(2, 'jorge', 'calle 12 b- 134', 1223333);
 
 -- --------------------------------------------------------
 
@@ -191,16 +184,8 @@ ALTER TABLE `informes`
 -- Indices de la tabla `instituciones_registradas`
 --
 ALTER TABLE `instituciones_registradas`
-  ADD PRIMARY KEY (`id_institucion`),
-  ADD UNIQUE KEY `id_administrador` (`id_administrador`);
-
---
--- Indices de la tabla `pre_registros_instituciones`
---
-ALTER TABLE `pre_registros_instituciones`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `administrador ced` (`administrador_ced`),
-  ADD UNIQUE KEY `id_institucion` (`id_institucion`);
+  ADD UNIQUE KEY `id_administrador` (`id_administrador`);
 
 --
 -- Indices de la tabla `registros usuarios`
@@ -241,13 +226,7 @@ ALTER TABLE `informes`
 -- AUTO_INCREMENT de la tabla `instituciones_registradas`
 --
 ALTER TABLE `instituciones_registradas`
-  MODIFY `id_institucion` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `pre_registros_instituciones`
---
-ALTER TABLE `pre_registros_instituciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `registros usuarios`
@@ -260,16 +239,6 @@ ALTER TABLE `registros usuarios`
 --
 ALTER TABLE `registros_semanales`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `pre_registros_instituciones`
---
-ALTER TABLE `pre_registros_instituciones`
-  ADD CONSTRAINT `fk_pre_registros_instituciones` FOREIGN KEY (`id_institucion`) REFERENCES `instituciones_registradas` (`id_institucion`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
