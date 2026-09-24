@@ -322,6 +322,7 @@ RESPONSIVE
     flex-direction: column;
 }
 main{
+    min-height: 100vh;
     background: var(--fondo);
     margin: 1px;
     margin-top: 26vh;
