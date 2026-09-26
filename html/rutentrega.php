@@ -7,6 +7,17 @@
         $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
         $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
         $rol=$usurTablaArr['rol'];
+
+    }
+
+        
+    $sql = "SELECT * FROM rutas";
+    $resultado = mysqli_query($conexion ,$sql);
+
+    $rutas = [];
+
+    while ($fila = $resultado->fetch_assoc()) {
+        $rutas[] = $fila;
     }
     
 ?>
@@ -118,95 +129,83 @@
 
        
 <table class="tabla-rutas" id="tablaRutas">
-
     <tr>
         <th>Ruta</th>
         <th>Recorrido</th>
         <th>Estado</th>
-        <?php
-        if(isset($_SESSION['usuario']) && $rol=="ADP"){
-            echo"<th>Acción</th>";
-        }
-            
-        ?>
-        
+
+        <?php if (isset($_SESSION['usuario']) && $rol == "ADP"): ?>
+            <th>Acción</th>
+        <?php endif; ?>
     </tr>
 
-    <tr>
-        <td>A</td>
-        <td class="recorrido">Robledo → Aranjuez</td>
-        <td class="estado activa">🟢 Activa</td>
-        <?php
-            if(isset($_SESSION['usuario']) && $rol=="ADP"){
-                echo '<td>';
-                echo '<button class="btn-estado" onclick="cambiarEstado(this)">';
-                echo 'Desactivar';
-                echo '</button>';
-                echo '<button class="btn-editar" onclick="editarRuta(this)">';
-                echo '✏️ Editar';
-                echo '</button>';
-                echo '</td>';
-            }
-        ?>
-    </tr>
+    <?php foreach ($rutas as $ruta): ?>
+        <tr>
+            <td><?= $ruta["id"] ?></td>
 
-    <tr>
-        <td>B</td>
-        <td class="recorrido">Centro → Boston</td>
-        <td class="estado activa">🟢 Activa</td>
-        <?php
-            if(isset($_SESSION['usuario']) && $rol=="ADP"){
-                echo '<td>';
-                echo '<button class="btn-estado" onclick="cambiarEstado(this)">';
-                echo 'Desactivar';
-                echo '</button>';
-                echo '<button class="btn-editar" onclick="editarRuta(this)">';
-                echo '✏️ Editar';
-                echo '</button>';
-                echo '</td>';
-            }
-        ?>
-    </tr>
+            <td class="recorrido">
+                <?= htmlspecialchars($ruta["recorrido"]) ?>
+            </td>
 
-    <tr>
-        <td>C</td>
-        <td class="recorrido">Buenos Aires → La Milagrosa</td>
-        <td class="estado proceso">🟡 En proceso</td>
-        <?php
-            if(isset($_SESSION['usuario']) && $rol=="ADP"){
-                echo '<td>';
-                echo '<button class="btn-estado" onclick="cambiarEstado(this)">';
-                echo 'Desactivar';
-                echo '</button>';
-                echo '<button class="btn-editar" onclick="editarRuta(this)">';
-                echo '✏️ Editar';
-                echo '</button>';
-                echo '</td>';
-            }
-        ?>
-    </tr>
+            <td class="estado <?= $ruta["estado"] ?>">
+                <?= $ruta["estado"] ?>
+            </td>
 
-    <tr>
-        <td>D</td>
-        <td class="recorrido">Belén → Guayabal</td>
-        <td class="estado inactiva">🔴 Suspendida</td>
-        <?php
-            if(isset($_SESSION['usuario']) && $rol=="ADP"){
-                echo '<td>';
-                echo '<button class="btn-estado" onclick="cambiarEstado(this)">';
-                echo 'Desactivar';
-                echo '</button>';
-                echo '<button class="btn-editar" onclick="editarRuta(this)">';
-                echo '✏️ Editar';
-                echo '</button>';
-                echo '</td>';
-            }
-        ?>
-    </tr>
+            <?php if (isset($_SESSION['usuario']) && $rol == "ADP"): ?>
+                <td>
+                    <button 
+                        class="btn-estado"
+                        data-id="<?= $ruta["id"] ?>"
+                        onclick="cambiarEstado(this)"
+                    >
+                        <?= $ruta["estado"] == "activa" ? "Desactivar" : "Activar" ?>
+                    </button>
 
+                    <button 
+                        class="btn-editar"
+                        data-id="<?= $ruta["id"] ?>"
+                        onclick="editarRuta(this)"
+                    >
+                        ✏️ Editar
+                    </button>
+                </td>
+            <?php endif; ?>
+        </tr>
+    <?php endforeach; ?>
 </table>
 
 
+
+<?php
+
+require_once "../base_datos/informes/conexion/abrir_conexion.php";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $id = $_POST["id"];
+    $estado = $_POST["estado"];
+
+    $sql = "UPDATE rutas SET estado = ? WHERE id = ?";
+
+    $stmt = $conexion->prepare($sql);
+    $stmt->bind_param("si", $estado, $id);
+
+    if ($stmt->execute()) {
+        echo json_encode([
+            "success" => true
+        ]);
+    } else {
+        echo json_encode([
+            "success" => false,
+            "mensaje" => "Error al actualizar"
+        ]);
+    }
+
+    $stmt->close();
+    $conexion->close();
+}
+
+?>
 
     </aside>
 
@@ -261,65 +260,145 @@
 </footer>
     <script src="../js/mHam.js"></script>
     <script src="../js/buscador.js"></script>
-<<<<<<< HEAD
     
-=======
->>>>>>> 3269ec7616b8a9c3ac979d0db2ac431979c41c09
 <script>
 
 function cambiarEstado(boton) {
 
-    // Buscamos la fila donde está el botón
     let fila = boton.closest("tr");
-
-    // Buscamos la celda del estado
     let estado = fila.querySelector(".estado");
+    let id = boton.dataset.id;
 
-    // Si actualmente está activa
-    if (estado.classList.contains("activa")) {
+    let nuevoEstado = estado.classList.contains("activa")
+        ? "inactiva"
+        : "activa";
 
-        estado.classList.remove("activa");
-        estado.classList.add("inactiva");
+    console.log("ID:", id);
+    console.log("Nuevo estado:", nuevoEstado);
 
-        estado.innerHTML = "🔴 Suspendida";
+    fetch("../base_datos/rutas/actualizar.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "id=" + encodeURIComponent(id) +
+              "&estado=" + encodeURIComponent(nuevoEstado)
+    })
+    .then(response => {
 
-        boton.innerText = "Activar";
+        console.log("HTTP:", response.status);
 
-    } 
-    
-    // Si está suspendida
-    else {
+        return response.text();
+    })
+    .then(texto => {
 
-        estado.classList.remove("inactiva");
-        estado.classList.add("activa");
+        console.log("RESPUESTA PHP:", texto);
 
-        estado.innerHTML = "🟢 Activa";
+        try {
 
-        boton.innerText = "Desactivar";
-    }
+            let data = JSON.parse(texto);
+
+            if (data.success) {
+
+                if (nuevoEstado === "activa") {
+
+                    estado.classList.remove("inactiva");
+                    estado.classList.add("activa");
+
+                    estado.innerHTML = "🟢 Activa";
+                    boton.innerText = "Desactivar";
+
+                } else {
+
+                    estado.classList.remove("activa");
+                    estado.classList.add("inactiva");
+
+                    estado.innerHTML = "🔴 Suspendida";
+                    boton.innerText = "Activar";
+                }
+
+            } else {
+
+                alert("Error PHP: " + data.mensaje);
+            }
+
+        } catch (e) {
+
+            console.error("PHP NO devolvió JSON");
+            console.error(texto);
+
+            alert("PHP devolvió un error. Mira la consola.");
+        }
+
+    })
+    .catch(error => {
+
+        console.error("FETCH ERROR:", error);
+
+        alert("Error de conexión");
+    });
 }
-
 
 function editarRuta(boton) {
 
-    // Buscamos la fila
     let fila = boton.closest("tr");
 
-    // Buscamos el recorrido
     let recorrido = fila.querySelector(".recorrido");
 
-    // Pedimos el nuevo recorrido
+    let id = boton.dataset.id;
+
     let nuevoRecorrido = prompt(
         "Escribe el nuevo recorrido:",
         recorrido.innerText
     );
 
-    // Si el usuario escribió algo
-    if (nuevoRecorrido !== null && nuevoRecorrido.trim() !== "") {
-
-        recorrido.innerText = nuevoRecorrido;
+    // Si canceló
+    if (nuevoRecorrido === null) {
+        return;
     }
+
+    // Si está vacío
+    if (nuevoRecorrido.trim() === "") {
+        alert("El recorrido no puede estar vacío.");
+        return;
+    }
+
+    fetch("../base_datos/rutas/actualizar_recorrido.php", {
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+
+        body:
+            "id=" + encodeURIComponent(id) +
+            "&recorrido=" + encodeURIComponent(nuevoRecorrido)
+    })
+    .then(response => response.json())
+
+    .then(data => {
+
+        if (data.success) {
+
+            // Solo cambiamos la pantalla
+            // después de confirmar que MySQL se actualizó
+            recorrido.innerText = nuevoRecorrido;
+
+        } else {
+
+            alert("No se pudo actualizar: " + data.mensaje);
+        }
+
+    })
+
+    .catch(error => {
+
+        console.error(error);
+
+        alert("Ocurrió un error al conectar con el servidor.");
+    });
 }
+
 
 </script>
 

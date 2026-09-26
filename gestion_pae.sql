@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-09-2026 a las 22:11:43
+-- Tiempo de generación: 26-09-2026 a las 02:05:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -59,7 +59,7 @@ CREATE TABLE `cuentas_usuarios` (
 
 INSERT INTO `cuentas_usuarios` (`id`, `nombre`, `apellido`, `cedula`, `correo`, `institucion`, `telefono`, `contraseña`, `rol`) VALUES
 (4, 'emanuel', 'gomez', 1138026905, 'a@a', 'a', 123, '1', 'ADP'),
-(5, 'e', 'e', 1010, 'e@e', 'g', 33333, '1', 'U'),
+(5, 'e', 'e', 1010, 'e@e', 'g', 33333, '1', 'ADI'),
 (6, 'Juan', 'mesa', 1010, 'juan@1', 'jorge', 333, '1020', '');
 
 -- --------------------------------------------------------
@@ -85,8 +85,6 @@ CREATE TABLE `informes` (
 --
 
 INSERT INTO `informes` (`id`, `nombre`, `cedula`, `platos entregados`, `fecha`, `hora`, `desperdicios`, `institucion`, `platos_enviados`) VALUES
-(4, 'emanuel', 902920, 0, '0000-00-00', '11:13:00', 0.00000000000000000000000000000000000000, 'a', 0),
-(5, 'emanuel', 902920, 12, '2026-09-24', '12:36:00', 1.00000000000000000000000000000000000000, 'a', 0),
 (6, 'emanuel', 902920, 1111, '2026-09-07', '11:01:00', 11.00000000000000000000000000000000000000, 'a', 0),
 (8, 'emanuel', 11, 11, '2026-09-15', '15:45:00', 11.00000000000000000000000000000000000000, 'a', 0),
 (9, 'emanuel', 11, 111, '2026-09-16', '16:53:00', 0.00000000000000000000000000000000000000, 'a', 0),
@@ -157,6 +155,28 @@ CREATE TABLE `registros_semanales` (
 INSERT INTO `registros_semanales` (`id`, `fecha_inicial`, `fecha_final`) VALUES
 (1, '2026-09-07', '2026-09-24');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rutas`
+--
+
+CREATE TABLE `rutas` (
+  `id` varchar(1) NOT NULL,
+  `recorrido` varchar(100) NOT NULL,
+  `estado` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `rutas`
+--
+
+INSERT INTO `rutas` (`id`, `recorrido`, `estado`) VALUES
+('A', 'Robledo → Aranjuez', 'activa'),
+('B', 'Centro → Boston	', 'inactiva'),
+('C', 'Buenos Aires → La Milagrosa', 'inactiva'),
+('D', 'Belén → Guayabal', 'activa');
+
 --
 -- Índices para tablas volcadas
 --
@@ -201,6 +221,12 @@ ALTER TABLE `registros_semanales`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `rutas`
+--
+ALTER TABLE `rutas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -220,7 +246,7 @@ ALTER TABLE `cuentas_usuarios`
 -- AUTO_INCREMENT de la tabla `informes`
 --
 ALTER TABLE `informes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `instituciones_registradas`

@@ -14,6 +14,7 @@
     --gris: #42413b;
     --letra2:#ff9c7c;
     --color-resaltar:#884966;
+    --color-resaltar2:#DDB295;
     --decoracion:#f1d796;
     --decoracion-x2:#d7b45a;
     --titulos-:#011218;
@@ -23,6 +24,8 @@
 body{
     background:var(--fondo);
     font-family:'Monda',sans-serif;
+    overflow-x: hidden;
+    
 }
 
 /*============================
@@ -33,9 +36,9 @@ header{
     border-bottom: 7px solid var(--texto);
     background:var(--header);
     padding:20px 40px;
-    z-index: 10;
-    position: fixed;
+    position: sticky;
     top: 0;
+    z-index: 1000;
     width:max-content;
     align-items: center;
     align-content: center;
@@ -322,10 +325,9 @@ RESPONSIVE
     flex-direction: column;
 }
 main{
-    min-height: 100vh;
+    min-height: 70vh;
     background: var(--fondo);
     margin: 1px;
-    margin-top: 26vh;
     align-items: start;
     display: flex;
     flex-direction: column;
@@ -534,7 +536,6 @@ main{
 
 .mainentr{
     margin: 0px;
-    margin-top: 32vh;
     align-items: normal;
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -691,7 +692,6 @@ article p{
 
 
 .mainServCl{
-    margin-top: 23vh;
     display: block;
     padding-left: 0%;
     padding-right: 0%;
@@ -1010,7 +1010,6 @@ article p{
     width:90%;
     max-width:1100px;
     margin:50px auto;
-    margin-top: 20vh;
     background: var(--fondo);
     display:block;
     align-items: none;
@@ -1180,15 +1179,15 @@ article p{
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
-    background: white;
+    background: var(--fondo);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,.2);
 }
 
 .tabla-rutas th{
-    background: #002b36;
-    color: white;
+    background: var(--footer);
+    color: var(--fondo);
     padding: 12px;
     font-size: 18px;
 }
@@ -1230,9 +1229,16 @@ APP PRINCIPAL
 .app-pr{
     display: flex;
     flex-direction: row;
+    align-content:flex-start;
+    align-items: center;
+    overflow-x: hidden;
+    
 }
 
 .options-app{
+    max-height: 50vh;
+    overflow-y: auto;
+    align-self:self-start ;
     background-color: var(--tarjeta);
     border-radius: 1rem;
     display: flex;
@@ -1243,6 +1249,18 @@ APP PRINCIPAL
     padding-left: 1rem;
     box-shadow: #27272665 1rem 1rem;
 }
+
+.options-app::-webkit-scrollbar{
+    width: 8px;
+}
+
+.options-app::-webkit-scrollbar-track{
+    background-color: var(--secundario);
+}
+.options-app::-webkit-scrollbar-thumb{
+    background-color: var(--texto);
+}
+
 
 .hb-app img{
     max-width: 15%;
@@ -1259,18 +1277,20 @@ APP PRINCIPAL
     display: flex;
     background-color: transparent;
     border: transparent;
+    text-decoration:none;
 }
 
 .option-app-item p{
     align-content: center;
     color: var(--texto);
     font-size: 1.2rem;
+    text-decoration: none;
 }
 .option-app-item a{
     align-content: center;
     color: var(--texto);
     font-size: 1.2rem;
-    text-decoration: none;
+    text-decoration:none;
 }
 .option-app-item img{
     width: 15%;
@@ -1286,6 +1306,7 @@ APP PRINCIPAL
 }
 
 .app-forms{
+    align-self: baseline;
     align-content: space-between;
     width: 100%;
     margin: 2px;
@@ -1297,13 +1318,27 @@ APP PRINCIPAL
     flex-direction: column;
     background-color: transparent;
     min-height: 50vh;
-    overflow-y: scroll ;
+    overflow-y: auto;
     max-height: 50vh;
     background-color: #3b633d21;
     box-shadow:1rem 1.1rem 1.1rem #00131a71;
+    
+}
+.app-forms::-webkit-scrollbar{
+    width: 8px;
+}
+
+.app-forms::-webkit-scrollbar-track{
+    background-color: var(--secundario);
+}
+.app-forms::-webkit-scrollbar-thumb{
+    background-color: var(--texto);
 }
 
 .form-item{
+    height: 6vh;
+    
+    border-radius: 0.5rem;
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -1311,10 +1346,11 @@ APP PRINCIPAL
     margin-top: 1rem;
     margin-right: 1rem;
     margin-left: 1rem;
-    gap:8rem;
+    gap:4vw;
 }
 
 .id-form-item{
+    width: 1vw;
     margin-left: 0.5rem;
     font-family: 'Antont';
     font-size: 1rem;
@@ -1324,106 +1360,83 @@ APP PRINCIPAL
 .form-time-all{
     display: flex;
     flex-direction: row;
-    gap:1rem;
+    gap:1vh;
+    margin-right:5vh;
 }
 
-.form-botones{
+.hora-form-item{
+    margin-right:5vw;
+}
+
+.form-botons{
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap:2px;
+    gap:5px;
+    margin-right: 1vw;
     
+}
+@media screen and (max-width:500px){
+    .app-pr{
+    flex-direction: column;
+    }
+
+    .form-item{
+        height: auto;
+    }
+
+    .form-botones{
+        flex-direction: column;
+
+    }
 }
 
 .update{
-    margin: 1px;
-    background-color:#95c0dd;
-    color: #00131a;
-    margin-left: 5px; 
+    display: inline-block;
+    background: var(--color-resaltar2);
+    color: var(--texto);
+    text-decoration: none;
+    border-radius: 2px;
+    font-weight: bold;
+    border:transparent;
+    padding: 8px 14px;
 }
 
 .delete{
-    background-color:#95c0dd;
-    color: #00131a;
-    margin-left: 5px; 
+    display: inline-block;
+    background: var(--color-resaltar2);
+    color: var(--texto);
+    text-decoration: none;
+    border-radius: 2px;
+    font-weight: bold;
+    border:transparent;
+    padding: 8px 14px;
 }
 
 .ver{
-    background-color:#95c0dd;
-    color: #00131a;
-    margin-left: 5px; 
+    display: inline-block;
+    background: var(--color-resaltar2);
+    color: var(--texto);
+    text-decoration: none;
+    border-radius: 2px;
+    font-weight: bold;
+    border:transparent;
+    padding: 8px 14px;
+}
+.update:hover{
+    background: var(--texto);
+    color: var(--fondo);
+}
+.ver:hover{
+    background: var(--texto);
+    color: var(--fondo);
+}
+.delete:hover{
+    background: var(--texto);
+    color: var(--fondo);
 }
 /* Ventana Registrar */
-.app-regist-inf{
-    border: none;
-    border-radius: 20px;
-    padding: 25px;
-    width: 400px;
-    background: var(--tarjeta);
-    box-shadow: 0 10px 30px rgba(0,0,0,.25);
-}
-
-.app-regist-inf h2{
-    text-align: center;
-    color: #00131a;
-    font-family: 'Anton', sans-serif;
-    margin-bottom: 20px;
-}
-
-/* Campos */
-.regist_camp{
-    list-style: none;
-    margin-bottom: 15px;
-    padding: 0;
-}
-
-.regist_camp p{
-    color: #00131a;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.regist_camp input{
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #00131a;
-    border-radius: 10px;
-    background: #f5fdff;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-/* Botón enviar */
-.btn_send_inf{
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background: #00131a;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.btn_send_inf:hover{
-    background: #ff9472;
-    color: #00131a;
-}
-
-/* Botón cerrar */
-.buton-cerrar-regist{
-    float: right;
-    border: none;
-    background: var(--color-resaltar);
-    color: #00131a;
-    font-weight: bold;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    cursor: pointer;
-}
 .app-regist-inf{
     position: fixed;
     top: 50%;
@@ -1437,6 +1450,155 @@ APP PRINCIPAL
     background: var(--tarjeta);
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
+
+
+.app-regist-inf h2{
+    text-align: center;
+    color: var(--texto);
+    font-family: 'Anton', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Campos */
+.regist_camp{
+    list-style: none;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.regist_camp p{
+    color: var(--texto);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.regist_camp input{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--texto);
+    border-radius: 10px;
+    background: var(--fondo);
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Botón enviar */
+.btn_send_inf{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: var(--texto);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn_send_inf:hover{
+    background: #ff9472;
+    color: #00131a;
+}
+
+.btn_save{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: var(--texto);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn_save:hover{
+    background: #ff9472;
+    color: #00131a;
+}
+
+/* Botón cerrar */
+.buton-cerrar-regist{
+    float: right;
+    border: none;
+    background: var(--color-resaltar);
+    color: var(--texto);
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.app-ver-inf{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: none;
+    border-radius: 20px;
+    padding: 25px;
+    width: 60vh;
+    background: var(--tarjeta);
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.app-ver-inf h2{
+    text-align: center;
+    color: var(--texto);
+    font-family: 'Anton', sans-serif;
+    margin-bottom: 20px;
+}
+
+.app-ver-inf p{
+    color: var(--texto);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.app-ver-inf span{
+    font-size: 1rem;
+}
+
+.cerrar-dialog-ver{
+    float: right;
+    border: none;
+    background: var(--color-resaltar);
+    color: var(--texto);
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.app-update-inf{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: none;
+    border-radius: 20px;
+    padding: 25px;
+    width: 400px;
+    background: var(--tarjeta);
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.cerrar-dialog-update{
+    float: right;
+    border: none;
+    background: var(--color-resaltar);
+    color: var(--texto);
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 /* =========================
    BOTÓN CERRAR SESIÓN
    ========================= */
@@ -1562,14 +1724,37 @@ _______________________________
 
 .edit{
     display: inline-block;
-    padding: 8px 14px;
-    background: var(--decoracion);
+    background: var(--color-resaltar2);
     color: var(--texto);
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 2px;
     font-weight: bold;
+    border:transparent;
+    padding: 8px 14px;
 }
 
 .edit:hover{
-    background: var(--decoracion-x2);
+    background: var(--texto);
+    color: var(--fondo);
+}
+
+.app-inst{
+    display: flex;
+    flex-direction: row;
+    align-items: self-start;
+}
+
+.instituciones-registros-table{
+    min-height: 10vh;
+    overflow-y: auto;
+}
+.instituciones-registros-table::-webkit-scrollbar{
+    width: 8px;
+}
+
+.instituciones-registros-table::-webkit-scrollbar-track{
+    background-color: var(--secundario);
+}
+.instituciones-registros-table::-webkit-scrollbar-thumb{
+    background-color: var(--texto);
 }

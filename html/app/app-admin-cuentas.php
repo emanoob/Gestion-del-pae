@@ -9,8 +9,16 @@
         session_destroy();
         die();
     }
+    include("../../base_datos/informes/conexion/abrir_conexion.php");
     $usuario=$_SESSION['usuario'];
     $UsurTablaSql="SELECT * FROM cuentas_usuarios WHERE correo= '$usuario'";
+    $query=mysqli_query($conexion,$UsurTablaSql);
+    $arrayUsur=mysqli_fetch_array($query);
+    if($arrayUsur['rol'] != "ADP" and $arrayUsur['rol'] != "ADI" ){
+        
+        header("location:app.php");
+        die();
+    }
     
 ?>
 
@@ -68,7 +76,7 @@
 
             <li><a href="../pagina4.php">Acceder al servicio</a></li>
 
-            <li><a href="#">App principal</a></li>
+            <li><a href="app.php">App principal</a></li>
         </ul>
 
     </nav>
@@ -112,6 +120,9 @@ $consulta = mysqli_query(
 <?php while($fila=mysqli_fetch_assoc($consulta)){ ?>
 
 <tr>
+    <?php
+        if($fila['institucion']==$arrayUsur['institucion'] or $arrayUsur['rol'] == "ADP"){
+    ?>
     <td><?php echo $fila['id']; ?></td>
     <td><?php echo $fila['nombre']; ?></td>
     <td><?php echo $fila['apellido']; ?></td>
@@ -127,6 +138,7 @@ $consulta = mysqli_query(
         </a>
     </td>
 </tr>
+<?php } ?>
 <?php } ?>
 
 </tbody>

@@ -77,25 +77,43 @@
 
             <li><a href="../pagina4.php">Acceder al servicio</a></li>
 
-            <li><a href="#">App principal</a></li>
+            <li><a href="app.php">App principal</a></li>
         </ul>
 
     </nav>
 
 </header>
     <main class="app-inst">
-        <button class="crear-institucion-button"><h3>Añadir institucion<h3></button>
-
-        
-            <table>
+        <section>
+            
+            <h2>Crear Institucion</h2>
+            <form method="POST" action="../../base_datos/instituciones/controlador/nuevo.php">
+                <ul class="regist_camp">
+                    <li><p>Nombre institucion:</p></li>
+                    <li><input type="text" name="Nints" class="Nints"></li>    
+                </ul>
+                <ul class="regist_camp">
+                    <li><p>Direccion:</p></li>
+                    <li><input type="text" name="Dir" class="Dir"></li>    
+                </ul>
+                <ul class="regist_camp">
+                    <li><p>Cedula admin:</p></li>
+                    <li><input type="text" name="CA" class="CA"></li>    
+                </ul>
+                <input type="submit" name="btn_send_inf" class="btn_send_inf">
+            </form>
+        </section>
+            <div class="instituciones-registros-table">
+            <table class="tabla-rutas">
                 <tr>
                     <th>Id </th>
                     <th>Nombre </th>
                     <th>Direccion </th>
-                    <th>Id_Administrador </th>
-                    <th></th>
+                    <th>Cedula Administrador </th>
+                    <th> </th>
                     <th></th>
                 </tr>
+                
                 <?php
                     include("../../base_datos/informes/conexion/abrir_conexion.php");
 
@@ -127,37 +145,21 @@
 
                             echo "<td>";
                             echo"<input type=\"submit\" value=\"Actualizar\" class=\"update\" name=\"update\">";
-                            echo "<td>";
+                            echo "</td>";
 
                             echo "<td>";
                             echo"<input type=\"submit\" value=\"Borrar\" class=\"delete\" name=\"delete\">";
-                            echo "<td>";
+                            echo "</td>";
 
                             echo "</tr>";
                         }
                     }
                 ?>
+                
             </table>
+            <div>
         
-        <dialog class="crear-institucion" open>
-            <button class="button-cerrar-institucion">X</button>
-            <h2>Crear Institucion</h2>
-            <form method="POST" action="../../base_datos/instituciones/controlador/nuevo.php">
-                <ul class="regist_camp">
-                    <li><p>Nombre institucion:</p></li>
-                    <li><input type="text" name="Nints" class="Nints"></li>    
-                </ul>
-                <ul class="regist_camp">
-                    <li><p>Direccion:</p></li>
-                    <li><input type="text" name="Dir" class="Dir"></li>    
-                </ul>
-                <ul class="regist_camp">
-                    <li><p>Cedula admin:</p></li>
-                    <li><input type="text" name="CA" class="CA"></li>    
-                </ul>
-                <input type="submit" name="btn_send_inf" class="btn_send_inf">
-            </form>
-        </dialog>
+        
     </main>
 
     <footer>

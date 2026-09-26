@@ -92,19 +92,43 @@
                 <img alt="option_item_img" src="../../img/App/3.png">
                 <p>Graficar</p>
             </button>
-            <button class="option-app-item">
+            <?php
+                /*
+                Necesario un dominio para realizarlo y ya noda tiempo a demas de poco necesasrio
+                <button class="option-app-item">
                 <img alt="option_item_img" src="../../img/App/4.png">
                 <p>Reportar</p>
-            </button>
+                </button>
+                */
+            ?>
+            
+            <?php
+                include("../../base_datos/informes/conexion/abrir_conexion.php");
+                $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
+                $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
+                if($usurTablaArr['rol'] == "ADP" or $usurTablaArr['rol'] == "ADI") {
+                    echo '<a href="app-admin-cuentas.php" class="option-app-item">';
+                    echo '<img alt="option_item_img" src="../../img/App/2.png">';
+                    echo '<p>Administrar cuentas </p>';
+                    echo '</a>';
+                }
+
+                if ($usurTablaArr['rol'] == "ADP"){
+                    echo '<a href="app-admin-instituciones.php" class="option-app-item">';
+                    echo '<img alt="option_item_img" src="../../img/App/2.png">';
+                    echo '<p>Administrar Instituciones</p>';
+                    echo '</a>';
+                }
+            ?>
         </section>
         <section class="app-forms">
             
             <?php
-
-                    include("../../base_datos/informes/conexion/abrir_conexion.php");
-                    $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
-                    $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
-                    $institucioncomprobar=$usurTablaArr['institucion'];
+                include("../../base_datos/informes/conexion/abrir_conexion.php");
+                $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
+                $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
+                    
+                $institucioncomprobar=$usurTablaArr['institucion'];
              
                     for($i=0;$i<=20;$i++)
                         {
@@ -112,7 +136,7 @@
                             
                             WHILE($consulta =mysqli_fetch_array($resultados))
                             {
-                                if($consulta['institucion']==$institucioncomprobar){
+                                if($consulta['institucion']==$institucioncomprobar or $usurTablaArr['rol'] == "ADP"){
                             
 
                             
@@ -121,7 +145,7 @@
                                 
                                 echo "<p class=\"id-form-item\">".$consulta['id']."</p>";
                                 echo "<p class=\"fecha-form-item\">".$consulta['fecha']."</p>".
-                                    "<p>".$consulta['hora']."</p>".
+                                    "<p class=\"hora-form-item\">".$consulta['hora']."</p>".
                                     "<div class=\"form-botons\">";
                                     //Boton de ver abre un dialog
                                 echo "<input type=\"hidden\" value=\"".$consulta['id']."\" name=\"IDD\">".
@@ -131,7 +155,7 @@
                                     data-fecha=\"".$consulta['fecha']."\" data-hora=\"".$consulta['hora']."\">Ver</button>";
                                     
                                     //Boton de update abre un dialog
-                                    if($usurTablaArr['cedula']==$consulta['cedula']){
+                                    if($usurTablaArr['cedula']==$consulta['cedula'] or $usurTablaArr['rol'] == "ADP" or $usurTablaArr['rol'] == "ADI"){
                                          echo"<button class=\"update\" type=\"button\" name=\"updatee\" data-id=\"".$consulta['id']."\" 
                                     data-nombre=\"".$consulta['nombre']."\" data-cedu=\"".$consulta['cedula']."\" 
                                     data-plentr=\"".$consulta['platos entregados']."\" data-desper=\"".$consulta['desperdicios']."\" 
@@ -179,13 +203,13 @@
         <dialog class="app-ver-inf">
             <button class="cerrar-dialog-ver">X</button>
             <h2>Ver</h2>
-            <p>id: <span id="ver-inf-id"></span></p>
-            <p>nombre: <span id="ver-inf-nom"></span></p>
-            <p>cedula: <span id="ver-inf-ced"></span></p>
-            <p>platos entregados: <span id="ver-inf-plt"></span></p>
-            <p>fecha: <span id="ver-inf-fecha"></span></p>
-            <p>hora: <span id="ver-inf-hora"></span></p>
-            <p>desperdicios: <span id="ver-inf-desper"></span></p>
+            <p>Id: <span id="ver-inf-id"></span></p>
+            <p>Nombre: <span id="ver-inf-nom"></span></p>
+            <p>Cedula: <span id="ver-inf-ced"></span></p>
+            <p>Platos entregados: <span id="ver-inf-plt"></span></p>
+            <p>Fecha: <span id="ver-inf-fecha"></span></p>
+            <p>Hora: <span id="ver-inf-hora"></span></p>
+            <p>Desperdicios: <span id="ver-inf-desper"></span></p>
         </dialog>
         <dialog class ="app-update-inf">
             <button class="cerrar-dialog-update">X</button>
