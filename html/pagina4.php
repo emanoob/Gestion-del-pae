@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    include("../base_datos/informes/conexion/abrir_conexion.php");
+    
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -51,7 +57,13 @@
 
             <li><a href="#" class="activo">Acceder al servicio</a></li>
 
-            <li><a href="iniciarSesion.php">Iniciar sesión</a></li>
+            <?php
+                if(isset($_SESSION['usuario'])){
+                    echo '<li><a href="iniciarSesion.php">App principal</a></li>';
+                }else{
+                    echo '<li><a href="iniciarSesion.php">Iniciar sesión</a></li>';
+                }
+            ?>
         </ul>
 
     </nav>

@@ -43,8 +43,10 @@
     $datos = [];
 
     while ($fila = mysqli_fetch_assoc($stmt)) {
-        if ($fila['institucion']==$institucioncomprobar)
-        $datos[] = $fila;
+        //if ($fila['institucion']==$institucioncomprobar or $UsurTablaArr['rol']=='ADP'){
+            $datos[] = $fila;
+        //}
+        
     }
     
     

@@ -1,6 +1,16 @@
 <?php
-
 include("../../base_datos/login_php/conexion/abrir_conexion.php");
+session_start();
+if(isset($_SESSION['usuario'])){
+        $usuario=$_SESSION['usuario'];
+        $UsurTablaSql="SELECT * FROM cuentas_usuarios WHERE correo= '$usuario'";
+        $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
+        $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
+        $rol=$usurTablaArr['rol'];
+
+    }
+
+
 
 $id = $_GET['id'];
 
@@ -25,6 +35,7 @@ if (isset($_POST['guardar'])) {
     $institucion = $_POST['institucion'];
     $telefono = $_POST['telefono'];
     $rol = $_POST['rol'];
+    $contraseña=$_POST['contraseña'];
 
     $actualizar = mysqli_query(
         $conexion,
@@ -35,7 +46,8 @@ if (isset($_POST['guardar'])) {
         correo='$correo',
         institucion='$institucion',
         telefono='$telefono',
-        rol='$rol'
+        rol='$rol',
+        contraseña='$contraseña'
         WHERE id='$id'"
     );
 
@@ -120,11 +132,15 @@ if (isset($_POST['guardar'])) {
 
         <label>Institución</label>
 
-        <input
-            type="text"
-            name="institucion"
-            value="<?php echo $fila['institucion']; ?>"
-        >
+        <?php
+        if($rol=='ADP'){
+            echo '<input type="text" name="institucion" value="'.$fila['institucion'].'">';
+            }else{
+                echo 'No tienes permitido modificar esto';
+                echo '<input type="hidden" name="institucion" value="'.$fila['institucion'].'">';
+            }
+        ?>
+        
 
 
         <label>Teléfono</label>
@@ -138,11 +154,19 @@ if (isset($_POST['guardar'])) {
 
         <label>Rol</label>
 
+        <?php
+        if($rol=='ADP'){
+            echo '<input type="text" name="rol" value="'.$fila['rol'].'" required>';
+            }else{
+                echo 'No tienes permitido modificar esto';
+                echo '<input type="hidden" name="rol" value="'.$fila['rol'].'" required>';
+            }
+        ?>
+        <label>Contraseña</label>
         <input
             type="text"
-            name="rol"
-            value="<?php echo $fila['rol']; ?>"
-            required
+            name="contraseña"
+            value="<?php echo $fila['contraseña']; ?>"
         >
 
 
