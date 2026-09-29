@@ -51,7 +51,7 @@
 
         <form class="buscador" id="buscadorForm">
             <input type="search" id="busqueda" placeholder="Buscar...">
-            <button type="submit">🔎</button>
+            <button type="submit"></button>
         </form>
 
     </section>
