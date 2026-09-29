@@ -1,8 +1,93 @@
 <?php
-
 include("../../base_datos/login_php/conexion/abrir_conexion.php");
+session_start();
 
-$id = $_GET['id'];
+
+
+
+if(isset($_SESSION['usuario'])){
+        $usuario=$_SESSION['usuario'];
+        $UsurTablaSql="SELECT * FROM cuentas_usuarios WHERE correo= '$usuario'";
+        $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
+        $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
+        $rol=$usurTablaArr['rol'];
+
+    }
+
+?>
+<?php
+
+$id = trim($_GET['id'] ?? '');
+$type = $_GET['type'] ?? '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $confirmacion = $_POST['confirmacion'] ?? '0';
+
+    if ($confirmacion === '1') {
+
+        $eliminar_sql = "DELETE FROM cuentas_usuarios WHERE id='$id'";
+        $sql = mysqli_query($conexion, $eliminar_sql);
+
+        if ($sql) {
+            echo "1";
+        } else {
+            echo "ERROR";
+        }
+
+    } else {
+
+        echo "0";
+    }
+
+    exit;
+}
+?>
+
+<?php if ($type === 'borrar') { ?>
+
+<script>
+
+const confirmacion = confirm("¿Seguro quieres borrar?");
+
+fetch(window.location.href, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: "confirmacion=" + (confirmacion ? "1" : "0")
+})
+.then(response => response.text())
+.then(data => {
+
+    console.log("Respuesta PHP:", data);
+
+    if (data.trim() === "1") {
+
+        // Se eliminó correctamente
+        window.location.href = "app-admin-cuentas.php";
+
+    } else if (data.trim() === "0") {
+
+        // Canceló
+        window.location.href = "app-admin-cuentas.php";
+
+    } else {
+
+        console.log("Respuesta inesperada:", data);
+    }
+
+})
+.catch(error => {
+    console.error("Error:", error);
+});
+
+</script>
+
+<?php } 
+ 
+
+
 
 $consulta = mysqli_query(
     $conexion,
@@ -25,6 +110,7 @@ if (isset($_POST['guardar'])) {
     $institucion = $_POST['institucion'];
     $telefono = $_POST['telefono'];
     $rol = $_POST['rol'];
+    $contraseña=$_POST['contrasena'];
 
     $actualizar = mysqli_query(
         $conexion,
@@ -35,7 +121,8 @@ if (isset($_POST['guardar'])) {
         correo='$correo',
         institucion='$institucion',
         telefono='$telefono',
-        rol='$rol'
+        rol='$rol',
+        contrasena='$contraseña'
         WHERE id='$id'"
     );
 
@@ -120,11 +207,15 @@ if (isset($_POST['guardar'])) {
 
         <label>Institución</label>
 
-        <input
-            type="text"
-            name="institucion"
-            value="<?php echo $fila['institucion']; ?>"
-        >
+        <?php
+        if($rol=='ADP'){
+            echo '<input type="text" name="institucion" value="'.$fila['institucion'].'">';
+            }else{
+                echo 'No tienes permitido modificar esto';
+                echo '<input type="hidden" name="institucion" value="'.$fila['institucion'].'">';
+            }
+        ?>
+        
 
 
         <label>Teléfono</label>
@@ -138,11 +229,19 @@ if (isset($_POST['guardar'])) {
 
         <label>Rol</label>
 
+        <?php
+        if($rol=='ADP'){
+            echo '<input type="text" name="rol" value="'.$fila['rol'].'" required>';
+            }else{
+                echo 'No tienes permitido modificar esto';
+                echo '<input type="hidden" name="rol" value="'.$fila['rol'].'" required>';
+            }
+        ?>
+        <label>Contraseña</label>
         <input
             type="text"
-            name="rol"
-            value="<?php echo $fila['rol']; ?>"
-            required
+            name="contraseña"
+            value="<?php echo $fila['contrasena']; ?>"
         >
 
 

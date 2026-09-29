@@ -43,8 +43,11 @@
     $datos = [];
 
     while ($fila = mysqli_fetch_assoc($stmt)) {
-        if ($fila['institucion']==$institucioncomprobar)
-        $datos[] = $fila;
+        
+        if ($fila['institucion']==$institucioncomprobar){
+            $datos[] = $fila;
+        }
+        
     }
     
     
@@ -52,7 +55,7 @@
     $platos_entregados_gr=[];
     $desperdicios_gr=[];
     $platos_env_gr=[];
-    for ($i=0;$i< count($datos)-1;$i++){
+    for ($i=0;$i< count($datos);$i++){
         $fechas_gr[]=$datos[$i]['fecha'];
         $platos_entregados_gr[]=$datos[$i]['platos entregados'];
         $desperdicios_gr[]=$datos[$i]['desperdicios'];
@@ -104,7 +107,7 @@
 
         <form class="buscador" id="buscadorForm">
             <input type="search" id="busqueda" placeholder="Buscar...">
-            <button type="submit">🔎</button>
+            <button type="submit"></button>
         </form>
 
     </section>
@@ -136,7 +139,7 @@
 
 </header>
     <main class="app-graficar-php">
-        <a href="app.php"><- Salir</a>
+        <a href="app.php" class="salir-graficar"><- Salir</a>
         <div class="display-grafic">
             <canvas id="myChart"></canvas>
         </div>

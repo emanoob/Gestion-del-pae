@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -49,8 +55,15 @@
             <li><a href="#" class="activo">Atención y servicios</a></li>
 
             <li><a href="pagina4.php">Acceder al servicio</a></li>
-
-            <li><a href="iniciarSesion.php">Iniciar sesión</a></li>
+            
+            <?php
+                if(isset($_SESSION['usuario'])){
+                    echo '<li><a href="iniciarSesion.php">App principal</a></li>';
+                }else{
+                    echo '<li><a href="iniciarSesion.php">Iniciar sesión</a></li>';
+                }
+            ?>
+            
         </ul>
 
     </nav>
@@ -67,7 +80,7 @@
 
                 <h2>Servicio al Ciudadano</h2>
 
-                <a href="#">Monitoreo de Consumo en Tiempo Real</a>
+                <a href="app/app.php">Monitoreo de Consumo en Tiempo Real</a>
 
                 <a href="https://www.medellin.gov.co/es/secretaria-de-inclusion-social-y-familia/subsecretaria-de-grupos-poblacionales/equipo-de-seguridad-alimentaria-y-nutricional/" target="_blank">Logística de Redistribución</a>
 
