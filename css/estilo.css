@@ -911,7 +911,7 @@ article p{
 }
 
 .ButtonsCon{
-    margin: 1px;
+    margin-left: 0.5vw;
     display: flex;
     gap: 1rem;
     justify-content: flex-end;
@@ -920,42 +920,41 @@ article p{
 
 
 
-.ButtonsCon button{
-    align-items: flex-end;
-    min-height: 2rem;
-    min-width: 5rem;
-    width: 5rem;
-    position: static;
-    border-radius: 30%;
-    font-size: 1.188rem;
-    min-width: 0;
-}
+
 
 .enviar{
-    border: 0px solid #33333300;
-    color: var(--letra2);
-    font-family: 'Open Sans';
-    background-color:#714537;
-    color: var(--letra2);
-    min-width: 0;
+    display: inline-block;
+    background: var(--color-resaltar2);
+    color: var(--texto);
+    text-decoration: none;
+    border-radius: 2px;
+    font-weight: bold;
+    border:transparent;
+    padding: 8px 14px;
 }
 
 
 
 
-.Cerrar{
-    border: 5px solid var(--titulos-);
-    background-color: var(--fondo);
+.cerrar{
+    display: inline-block;
+    background: var(--color-resaltar2);
+    color: var(--texto);
+    text-decoration: none;
+    border-radius: 2px;
+    font-weight: bold;
+    border:transparent;
+    padding: 8px 14px;
 }
 
 .enviar:hover{
-    background-color: var(--titulos-);
+    background: var(--texto);
+    color: var(--color-resaltar2);
 }
 
-.Cerrar:hover{
-    background-color: var(--color-resaltar);
-    border: 1px solid var(--titulos-);
-    color: var(--texto);
+.cerrar:hover{
+    background: var(--texto);
+    color: var(--color-resaltar2);
 }
 
 .lin{

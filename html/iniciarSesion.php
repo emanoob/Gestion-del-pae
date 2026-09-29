@@ -98,7 +98,7 @@
 
     <div class="grupo">
         <label>Contraseña</label>
-        <input type="password" name="contraseña">
+        <input type="password" name="contrasena">
     </div>
 
     

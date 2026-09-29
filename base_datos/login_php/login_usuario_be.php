@@ -3,9 +3,10 @@
     include("conexion/abrir_conexion.php");
     
     $correo = $_POST['correo'];
-    $contraseña= $_POST['contraseña'];
+    $contrasena= $_POST['contrasena'];
+    
 
-    $validar_login=mysqli_query($conexion,"SELECT * FROM `$tabla_db1` WHERE correo='$correo' AND contraseña='$contraseña'");
+    $validar_login=mysqli_query($conexion,"SELECT * FROM `$tabla_db1` WHERE correo='$correo' AND contrasena='$contrasena'");
 
     if (mysqli_num_rows($validar_login)>0){
         $_SESSION['usuario'] =$correo;

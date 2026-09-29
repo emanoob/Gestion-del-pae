@@ -112,6 +112,7 @@ $consulta = mysqli_query(
     <th>Teléfono</th>
     <th>Rol</th>
     <th>Acciones</th>
+    
 </tr>
 </thead>
 
@@ -138,8 +139,17 @@ $consulta = mysqli_query(
         if($arrayUsur['correo']!=$fila['correo']){
 
         
-            echo '<a href="editar_usuario.php?id='.$fila['id'].'" class="edit">';
+            echo '<a href="editar_usuario.php?id='.$fila['id'].'& type='."editar".' " class="edit">';
             echo 'Editar';
+            echo '</a>';
+            }
+        ?>
+        <?php
+        if($arrayUsur['correo']!=$fila['correo']){
+
+        
+            echo '<a href="editar_usuario.php?id='.$fila['id'].' & type='."borrar".' " class="edit">';
+            echo 'Borrar';
             echo '</a>';
             }
         ?>

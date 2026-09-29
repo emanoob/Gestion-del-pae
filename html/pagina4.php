@@ -133,8 +133,8 @@
             <p class="lin">___________________________________________________________________________________________</p>
 
             <div class="ButtonsCon">
-                <input type="submit" class="Cerrar" name="btn_reset" value="cerrar">
-                <input type="submit" name="btn_send" value="enviar">
+                <input type="submit" class="cerrar" name="btn_reset" value="cerrar">
+                <input type="submit" name="btn_send" value="enviar" class="enviar">
             </div>
             </form>    
             </section>

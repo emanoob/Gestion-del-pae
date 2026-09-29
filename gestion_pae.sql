@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2026 a las 02:05:23
+-- Tiempo de generación: 29-09-2026 a las 05:38:39
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -49,7 +49,7 @@ CREATE TABLE `cuentas_usuarios` (
   `correo` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `institucion` varchar(80) NOT NULL,
   `telefono` int(20) NOT NULL,
-  `contraseña` varchar(70) NOT NULL,
+  `contrasena` varchar(70) NOT NULL,
   `rol` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -57,10 +57,9 @@ CREATE TABLE `cuentas_usuarios` (
 -- Volcado de datos para la tabla `cuentas_usuarios`
 --
 
-INSERT INTO `cuentas_usuarios` (`id`, `nombre`, `apellido`, `cedula`, `correo`, `institucion`, `telefono`, `contraseña`, `rol`) VALUES
+INSERT INTO `cuentas_usuarios` (`id`, `nombre`, `apellido`, `cedula`, `correo`, `institucion`, `telefono`, `contrasena`, `rol`) VALUES
 (4, 'emanuel', 'gomez', 1138026905, 'a@a', 'a', 123, '1', 'ADP'),
-(5, 'e', 'e', 1010, 'e@e', 'g', 33333, '1', 'ADI'),
-(6, 'Juan', 'mesa', 1010, 'juan@1', 'jorge', 333, '1020', '');
+(5, 'e', 'e', 1010, 'e@e', 'g', 33333, '', 'ADI');
 
 -- --------------------------------------------------------
 
@@ -109,32 +108,6 @@ CREATE TABLE `instituciones_registradas` (
 
 INSERT INTO `instituciones_registradas` (`id`, `nombre institucion`, `direccion`, `id_administrador`) VALUES
 (2, 'jorge', 'calle 12 b- 134', 1223333);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `registros usuarios`
---
-
-CREATE TABLE `registros usuarios` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `apellido` varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `cedula` int(20) DEFAULT NULL,
-  `correo` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `institucion` varchar(80) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `telefono` int(20) NOT NULL,
-  `contraseña` varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `registros usuarios`
---
-
-INSERT INTO `registros usuarios` (`id`, `nombre`, `apellido`, `cedula`, `correo`, `institucion`, `telefono`, `contraseña`) VALUES
-(5, 'palo', 'ramaz', 902920, 'pablito@nimeli.com', 'juanito', 12345, 'ayudaaaaaa'),
-(6, 'paloolo', 'ramaz', 90000, 'pablito@nimeli.000', 'juaolp', 12345, 'ayudaaaaaa'),
-(7, '', '', 0, '', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -208,13 +181,6 @@ ALTER TABLE `instituciones_registradas`
   ADD UNIQUE KEY `id_administrador` (`id_administrador`);
 
 --
--- Indices de la tabla `registros usuarios`
---
-ALTER TABLE `registros usuarios`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `cedula` (`cedula`);
-
---
 -- Indices de la tabla `registros_semanales`
 --
 ALTER TABLE `registros_semanales`
@@ -240,7 +206,7 @@ ALTER TABLE `comprobantes`
 -- AUTO_INCREMENT de la tabla `cuentas_usuarios`
 --
 ALTER TABLE `cuentas_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `informes`
@@ -253,12 +219,6 @@ ALTER TABLE `informes`
 --
 ALTER TABLE `instituciones_registradas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `registros usuarios`
---
-ALTER TABLE `registros usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `registros_semanales`
