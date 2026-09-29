@@ -1669,6 +1669,10 @@ nav .btn-cerrar-sesion:active {
 .display-grafic{
     width: 120vh;
 }
+.salir-graficar{
+    text-decoration: none;
+    color: var(--texto);
+}
 
 
 /*formulario de cuentas admin
@@ -1761,4 +1765,36 @@ _______________________________
 }
 .instituciones-registros-table::-webkit-scrollbar-thumb{
     background-color: var(--texto);
+}
+
+
+
+
+
+
+
+
+.app-graficar{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: none;
+    border-radius: 20px;
+    padding: 25px;
+    width: 400px;
+    background: var(--tarjeta);
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.registro-semanal-item{
+    background: var(--secundario);
+    border-color: var(--texto);
+    border: solid;
+    border-radius: 5%;
+}
+
+.registro-semanal-item p{
+    font-size: 1rem;
 }

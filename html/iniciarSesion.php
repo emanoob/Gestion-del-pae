@@ -111,13 +111,17 @@
     <a href="#">¿Olvidaste tu contraseña?</a>
 </div>
                 <input class="ini_sec" type="submit" name="ini_sec" value="Iniciar Sesion">
-
+                <?php
+                /*
+                No tenemos un dominio
                 <p class="continuar">o continúa con</p>
 
                 <div class="sociales">
                     <button>Google</button>
                     <button>Microsoft</button>
                 </div>
+                */
+                ?>
             </div>
             </form>
         </div>
