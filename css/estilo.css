@@ -35,7 +35,7 @@ body{
 header{
     border-bottom: 7px solid var(--texto);
     background:var(--header);
-    padding:20px 40px;
+    padding:8px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -54,7 +54,7 @@ header{
 }
 
 .logo{
-    width:10%;
+    width:8%;
     z-index: 10000;
 }
 
@@ -260,6 +260,7 @@ RESPONSIVE
     display: none;
     background-color: #00131a;
     align-items: center;
+    
 }
 
 .cerrar-menu{
@@ -330,7 +331,7 @@ RESPONSIVE
     flex-direction: column;
 }
 main{
-    min-height: 70vh;
+    min-height: 75vh;
     background: var(--fondo);
     margin: 1px;
     align-items: start;
