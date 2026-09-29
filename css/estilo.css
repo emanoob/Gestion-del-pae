@@ -1798,3 +1798,28 @@ _______________________________
 .registro-semanal-item p{
     font-size: 1rem;
 }
+
+.graficar{
+    display: inline-block;
+    background: var(--color-resaltar2);
+    color: var(--texto);
+    text-decoration: none;
+    border-radius: 2px;
+    font-weight: bold;
+    border:transparent;
+    padding: 2px 13px;
+    align-self: center;
+}
+
+.cerrar-dialog-graficar{
+    float:right;
+    border: none;
+    background: var(--color-resaltar);
+    color: var(--texto);
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 10vh;
+}

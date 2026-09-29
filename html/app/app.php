@@ -252,9 +252,9 @@
                         WHILE($consultaSemanal =mysqli_fetch_array($resultadosSemanales)){
                             echo '<div class="registro-semanal-item">';
                             echo '<form action="graficar.php" method="POST">';
-                            echo '<p class="id-registro-semanal">Id:'.$consultaSemanal['id'].'</p>';
-                            echo '<p class="fecha-inicial-registro-semanal">Fecha inicial :'.$consultaSemanal['fecha_inicial'].'</p>';
-                            echo '<p class="fecha-inicial-registro-semanal">Fecha final :'.$consultaSemanal['fecha_final'].'</p>';
+                            echo '<p class="id-registro-semanal">Id: '.$consultaSemanal['id'].'</p>';
+                            echo '<p class="fecha-inicial-registro-semanal">Fecha inicial : '.$consultaSemanal['fecha_inicial'].'</p>';
+                            echo '<p class="fecha-inicial-registro-semanal">Fecha final : '.$consultaSemanal['fecha_final'].'</p>';
                             echo '<input type="hidden" value="'.$consultaSemanal['id'].'" id="IDRS" name="IDRS">';
                             echo '<input type="submit" value="Ver grafica" class="graficar" name="graficar">';
                             echo '</form>';
