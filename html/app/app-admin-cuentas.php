@@ -3,7 +3,7 @@
     if(!isset($_SESSION['usuario'])){
         echo '<script>
         alert("Por favor debes iniciar secion");
-        window.location = "../iniciarSesion.php
+        window.location = "../iniciarSesion.php";
         </script>"';
         header("location:../iniciarSesion.php");
         session_destroy();
