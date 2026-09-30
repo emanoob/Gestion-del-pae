@@ -20,7 +20,19 @@
     
 </head>
 <body>
-    
+    <div class="govco" style="background: #0943b5; padding: 5px 15px">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="header-govco">
+                <a target="blank" href="https://www.gov.co/">
+                    <img src="img/channels-956_header_govco.png" alt="Imagen logo GovCo" style="height: 20px;">
+                    
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
     <header>
 
     <section class="superior">
@@ -128,7 +140,7 @@
 
 </div>
     <footer>
-
+    <div class="footer-inside">
     <section class="redes">
 
         <p>
@@ -172,7 +184,7 @@
         <p>Alcaldía de Medellín</p>
 
     </section>
-
+    </div>
     </footer>
     <script src="js/mHam.js"></script>
     <script src="js/carrusel.js"></script>

@@ -83,38 +83,38 @@
                 <section class ="side">
                     <ul class="Camp">
                         <li><p>Nombre de institicion</p><p class="Important">*</p></li>
-                        <li><input type="text" name="NomInsti"></li>    
+                        <li class="camp-input"><input type="text" name="NomInsti"></li>    
                     </ul>
                 </section>
                 
                 <section class="side">
                     <ul class="Camp">
                         <li><p>Telefono</p><p class="Important">*</p></li>
-                        <li><input type="int" name="Tel"></li>    
+                        <li class="camp-input"><input type="int" name="Tel"></li>    
                     </ul>
                 </section>
                 
             </section>
-            <p class="lin">___________________________________________________________________________________________</p>
-            <h3>Usuario</h3>
+            
+            
 
             <section class="part">
                 <section class="side">
                     <ul class="Camp">
                         <li class="txt"><p>Cedula de usuario</p><p class="Important">*</p></li>
-                        <li><input type="int" name="CedUsu"></li>    
+                        <li class="camp-input"><input type="int" name="CedUsu"></li>    
                     </ul>
             
                     <ul class="Camp">
                         <li class="txt"><p>Correo del usuario</p><p class="Important">*</p></li>
-                        <li><input type="text" name="CorrUsu"></li>    
+                        <li class="camp-input"><input type="text" name="CorrUsu"></li>    
                     </ul>
                 </section>
                 
                 <section class="side">
                     <ul class="Camp">
                         <li class="txt"><p>Nombre del usuario</p><p class="Important">*</p></li>
-                        <li><input type="text" name="NomUs"></li>   
+                        <li class="camp-input"><input type="text" name="NomUs"></li>   
                     </ul>
                     <ul class="Camp">
                         <li><p class="txt">Apellido del usuario</p><p class="Important">*</p></li>
@@ -123,15 +123,14 @@
                     </ul>
                     <ul class="Camp">
                         <li><p class="txt">Contraseña</p><p class="Important">*</p></li>
-                        <li><input type="text" name="Contr"></li>   
+                        <li class="camp-input"><input type="text" name="Contr"></li>   
 
                     </ul>
                 </section>
                 
             </section>
             
-            <p class="lin">___________________________________________________________________________________________</p>
-
+            
             <div class="ButtonsCon">
                 <input type="submit" class="cerrar" name="btn_reset" value="cerrar">
                 <input type="submit" name="btn_send" value="enviar" class="enviar">

@@ -5,24 +5,26 @@
 }
 
 :root {
-    --primario: #396A53;
-    --header:#294C3C;
-    --secundario: #488989;
-    --fondo: #EEF6F6;
-    --tarjeta: #386B6B;
-    --texto: #11090C;
-    --gris: #42413b;
-    --letra2:#ff9c7c;
-    --color-resaltar:#884966;
-    --color-resaltar2:#DDB295;
-    --decoracion:#f1d796;
-    --decoracion-x2:#d7b45a;
-    --titulos-:#011218;
-    --footer:#182F2F;
+    --h1: 2.625rem;
+    --h2: 2.125rem;
+    --h3: 1.625rem;
+    --h4: 1.375rem;
+    --h5: 1.25rem;
+    --h6: 1rem;
+    --color-visited: #7e7e7e;
+    --color-hover: #4672c8;
+    --color-hover-gray: #4c4c4c;
+    --color-blue-light: #e5ecf8;
+    --color-border-primary: #b5c7e9;
+    --red: #b43737;
+    --blue: #0943b5;
+    --primary: #0943b5;
+    --secondary: #ededed;
+    --dark: #343a40;
 }
 
 body{
-    background:var(--fondo);
+    background:white;
     font-family:'Monda',sans-serif;
     overflow-x: hidden;
     
@@ -31,10 +33,20 @@ body{
 /*============================
  HEADER 
  ==============================*/
+.header-govco img {
+    height: 30px !important;
+    
+    vertical-align: middle;
+    border-style: none;
+    overflow-clip-margin: content-box;
+    overflow: clip
+}
 
+
+
+ 
 header{
-    border-bottom: 7px solid var(--texto);
-    background:var(--header);
+    background:white;
     padding:8px 40px;
     position: sticky;
     top: 0;
@@ -47,10 +59,7 @@ header{
 
 .superior{
     display:flex;
-    justify-content:space-between;
-    gap:10%;
     align-items:center;
-
 }
 
 .logo{
@@ -59,27 +68,26 @@ header{
 }
 
 header h1{
+    
     font-family:'Anton';
-    font-size:4rem;
-    color:var(--texto);
+    font-size:var(--h1);
+    color:var(--red);
 }
 
 .buscador{
+    margin-left: auto;
     display:flex;
-    align-items:center;
+    align-items:self-end;
     background: var(--texto);
     border-radius:25px;
     overflow:hidden;
 }
 
 .buscador input{
-    border:none;
-    outline:none;
-    background:none;
-    color:white;
-    padding:10px;
-    width:180px;
-    font-family:'Monda';
+    padding: 6px 40px 6px 16px;
+    width: 100%;
+    border: 1px solid #C9C9C9;
+    border-radius: 5rem;
 }
 
 .buscador button{
@@ -95,18 +103,13 @@ NAVBAR
 ===========================*/
 
 nav{
-    width:fit-content;
-    margin:25px auto 0;
-    margin-top: 0px;
-    display:flex;
-    align-items:center;
-    gap:15px;
-
-    background:var(--texto);
-    padding:12px 25px;
-
-    border-radius:18px;
+    padding: 0;
+    background: #f4f4f4;
+    border-bottom: solid 2px var(--red);
+    position: relative;
+    display: flex;
 }
+
 
 .menu{
     border:none;
@@ -126,7 +129,7 @@ nav ul{
 }
 
 nav a{
-    color:white;
+    color:var(--texto);
     text-decoration:none;
     font-family:'Monda';
     font-weight:600;
@@ -159,14 +162,25 @@ nav a:hover{
  ==========================*/
 
 footer{
-    display:flex;
-    justify-content:space-around;
-    align-items:flex-start;
-    background-color: var(--footer);
-    padding:40px;
+    
+    border-top: 100px solid white;
+    margin-top: 3rem;
+    background-color: var(--red) !important;
+
+}
+
+.footer-inside{
+    margin-top: -100px;
+    
+    
+    background-color: white;
+    border: 1px solid var(--color-blue-light);
+    padding-top: 50vh;
 }
 
 .redes{
+    margin: 1px;
+    background-color: b;
     display:flex;
     flex-direction:column;
     gap:15px;
@@ -180,6 +194,7 @@ footer{
     font-family:'Monda';
     color:var(--fondo);
     font-style: normal;
+    align-items: center;
 }
 .redes a{
     font-family:'Monda';
@@ -840,10 +855,10 @@ article p{
     align-items: start;
     justify-content: start;
     border-radius: 4%;
-    width:65%;
+    width:70%;
     min-width: 60%;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.74);
-    overflow-x: hidden;
+    
 }
 
 .formulario ul{
@@ -851,12 +866,16 @@ article p{
 }
 
 .part{
-    padding-left: 2rem;
+    margin-left: 0.5VH;
     display: grid;
     grid-template-columns: 2fr 2fr;
     gap: 6rem;
     min-width: 0;
-    
+    border-bottom: 0.5vh var(--texto) solid;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 .dentro{
     margin-left:1rem;
@@ -865,6 +884,10 @@ article p{
     padding-left: 2rem;
 }
 
+.side{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
 
 .side ul{
     min-width: 0;
@@ -886,6 +909,7 @@ article p{
     font-family: 'Monda';
     font-weight: bold;
     min-width: 0;
+    margin-left: 0.01vw;
     
 }
 
@@ -966,30 +990,20 @@ article p{
     left:1rem;
 }
 
-.Circulo{
-    min-width: 20%;
-    width: 40%;
-    max-width: 45%;
-    position: absolute;
-    align-self: center;
-    z-index: 1;
-    left:80vw;
-    bottom:0rem;
-    min-height: 40rem;
-}
 
-.CirculoA{
-    min-width: 20%;
-    width: 40%;
-    max-width: 45%;
-    position: absolute;
-    align-self: center;
-    z-index: 1;
-    bottom:0rem;
-    left: -20vw;
-    min-height: 40rem;
-}
 
+
+.Camp{
+    justify-content: space-between;
+    width: 19vw;
+    gap:0.1vw;
+}
+.Camp input{
+    align-content: center;
+    margin-left: 0.01vw;
+    width: 10rem;
+    
+}
 @media (max-width: 1023px){
     .part {
         grid-template-columns: 1fr;
@@ -1000,6 +1014,9 @@ article p{
 
     .Camp{
         flex-direction: column;
+    }
+    .side{
+        direction: column;
     }
 }
 
