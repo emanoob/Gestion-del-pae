@@ -184,43 +184,44 @@
         </div>
     </main>
 
-    <footer>
+        <footer>
+    <div class="footer-inside">
+        
+    <ul class="redes">
 
-    <section class="redes">
-
-        <p>
-            <a href="https://www.instagram.com/gestion_alimenticia_jorge?utm_source=qr&igsh=ZWJ4ZDU0bTM3bDIy" target="_blank">
+        <li>
+            <a href="https://www.instagram.com/gestion_alimenticia_jorge?utm_source=qr&igsh=ZWJ4ZDU0bTM3bDIy">
             <img src="../../img/redes sociales/lnstagram.png">
             gestion_alimenticia_Medellin
             </a>
-        </p>
+        </li>
 
-        <p>
+        <li>
             <a href="https://wa.me/573107398094?text=Hola%20quiero%20más%20información%20sobre%20sus%20servicios" target="_blank">
             <img src="../../img/redes sociales/w.png">
             3234724735
             </a>
-        </p>
+        </li>
 
-        <p>
-            <a href="https://www.facebook.com/share/1JHe1Jqxjx/" target="_blank">
+        <li>
+            <a href="https://www.facebook.com/share/1JHe1Jqxjx/">
                 <img src="../../img/redes sociales/f.png">
                 @gestion_alimenticia-med
             </a>
-        </p>
+        </li>
 
-    </section>
+    
 
-    <section class="redes">
+    
 
-        <p>
-            <a href=" https://www.tiktok.com/@gomezyeral2323._?_r=1&_t=ZS-96wEMCMsZ7P" target="_blank">
+        <li>
+            <a href=" https://www.tiktok.com/@gomezyeral2323._?_r=1&_t=ZS-96wEMCMsZ7P">
             <img src="../../img/tito.png">
             @Gestion_alimenticia_
             </a>
-        </p>
+        </li>
 
-    </section>
+    </ul>
 
     <section class="alcaldia">
 
@@ -229,7 +230,7 @@
         <p>Alcaldía de Medellín</p>
 
     </section>
-
+    </div>
     </footer>
     <script src="../../js/mHam.js"></script>
     <script src="../../js/buscador.js"></script>

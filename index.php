@@ -20,19 +20,7 @@
     
 </head>
 <body>
-    <div class="govco" style="background: #0943b5; padding: 5px 15px">
-    <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="header-govco">
-                <a target="blank" href="https://www.gov.co/">
-                    <img src="img/channels-956_header_govco.png" alt="Imagen logo GovCo" style="height: 20px;">
-                    
-                </a>
-            </div>
-        </div>
-
-    </div>
-</div>
+    
     <header>
 
     <section class="superior">
@@ -141,41 +129,42 @@
 </div>
     <footer>
     <div class="footer-inside">
-    <section class="redes">
+        
+    <ul class="redes">
 
-        <p>
+        <li>
             <a href="https://www.instagram.com/gestion_alimenticia_jorge?utm_source=qr&igsh=ZWJ4ZDU0bTM3bDIy">
             <img src="img/redes sociales/lnstagram.png">
             gestion_alimenticia_Medellin
             </a>
-        </p>
+        </li>
 
-        <p>
+        <li>
             <a href="https://wa.me/573107398094?text=Hola%20quiero%20más%20información%20sobre%20sus%20servicios" target="_blank">
             <img src="img/redes sociales/w.png">
             3234724735
             </a>
-        </p>
+        </li>
 
-        <p>
+        <li>
             <a href="https://www.facebook.com/share/1JHe1Jqxjx/">
                 <img src="img/redes sociales/f.png">
                 @gestion_alimenticia-med
             </a>
-        </p>
+        </li>
 
-    </section>
+    
 
-    <section class="redes">
+    
 
-        <p>
+        <li>
             <a href=" https://www.tiktok.com/@gomezyeral2323._?_r=1&_t=ZS-96wEMCMsZ7P">
             <img src="img/tito.png">
             @Gestion_alimenticia_
             </a>
-        </p>
+        </li>
 
-    </section>
+    </ul>
 
     <section class="alcaldia">
 

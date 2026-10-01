@@ -47,7 +47,6 @@ body{
  
 header{
     background:white;
-    padding:8px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -122,19 +121,40 @@ nav{
     width:28px;
 }
 
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:25px;
+
+.nav{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+.nav ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    align-items: center;
 }
 
-nav a{
-    color:var(--texto);
-    text-decoration:none;
-    font-family:'Monda';
-    font-weight:600;
+.nav li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    
+    
+}
 
-    transition:0.3s;
+nav a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #434343;
+    text-decoration: none;
+    font-family: 'Monda', sans-serif;
+    font-weight: 600;
+    width: auto;
 }
 
 
@@ -143,11 +163,17 @@ nav a{
  ============================*/
 
 nav a:hover{
-    color:var(--color-resaltar);
+    background:#4c4c4c;
+    color: white;
+    text-decoration: underline;
+    
 }
 
 .activo{
-    color:var(--color-resaltar);
+    background:#4c4c4c;
+    color: white;
+    
+    
 }
 
 /*==========================
@@ -175,37 +201,54 @@ footer{
     
     background-color: white;
     border: 1px solid var(--color-blue-light);
-    padding-top: 50vh;
+    
 }
 
 .redes{
-    margin: 1px;
-    background-color: b;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    color: #fff;
+    margin: 0;
+    flex-wrap: wrap !important;
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: 0.25rem;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
 }
 
-.redes p{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    background: none;
-    font-family:'Monda';
-    color:var(--fondo);
-    font-style: normal;
-    align-items: center;
+
+.redes li{
+    border-bottom-left-radius: 0.25rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    margin-right: 1rem;
+    padding: 15px 5px;
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    background-color: #fff;
+    
+
 }
 .redes a{
     font-family:'Monda';
-    color:var(--fondo);
-    font-style: normal;
-    text-decoration: none;
-    align-items: center;
+    text-decoration: underline;
+    font-weight: 600;
+    color: var(--primary);
+    background-color: transparent;
+    text-decoration: underline;
+    box-sizing: border-box;
 }
 
 .alcaldia p{
-    color:var(--fondo);
+    color: black;
 }
 
 /* ICONOS NEGROS */
@@ -214,7 +257,7 @@ footer{
     width:22px;
     height:22px;
 
-    filter: grayscale(100%) brightness(1000%);
+    filter: grayscale(100%) brightness(0%);
     align-content: center;
 }
 
@@ -396,7 +439,7 @@ main h2{
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--secundario);
+    background-color: #f4f4f4;
     border-radius: 0.5em;
     padding: 2em;
 
@@ -423,14 +466,15 @@ main h2{
 .carrusel .punto{
     width: 3em;
     height: 2em;
-    background-color: var(--texto);
+    background-color:white;
     margin: 0.8em;
     border-radius: 2em;
+    border: 1px solid #C9C9C9;
     
 }
 
 .carrusel .punto.activo{
-    background-color: var(--color-resaltar);
+    background-color: var(--color-hover-gray);
 }
 
 
@@ -467,7 +511,8 @@ main{
 }
 
 .Info div{
-    background-color:var(--tarjeta);
+    border: 1px solid #C9C9C9;
+    background-color:var(#f4f4f4);
 
     width:320px;
     height:220px;
@@ -496,6 +541,7 @@ main{
 
     text-align:center;
     font-size:1.8rem;
+    color: var(--blue);
 }
 
 .Info div p{
@@ -506,7 +552,7 @@ main{
 
 .link-text{
     margin-top:18px;
-    color:var(--texto);
+    color: var(--blue);
     text-decoration:underline;
     font-weight:bold;
 }
@@ -928,7 +974,7 @@ article p{
 }
 
 .Important{
-    color: var(--color-resaltar);
+    color: var(--red);
     font-weight: bold;
     font-size: 2rem;
     font-family: 'Open Sans';
@@ -949,8 +995,8 @@ article p{
 
 .enviar{
     display: inline-block;
-    background: var(--color-resaltar2);
-    color: var(--texto);
+    background: var(--blue);
+    color:white;
     text-decoration: none;
     border-radius: 2px;
     font-weight: bold;
@@ -963,7 +1009,7 @@ article p{
 
 .cerrar{
     display: inline-block;
-    background: var(--color-resaltar2);
+    background: #f4f4f4;
     color: var(--texto);
     text-decoration: none;
     border-radius: 2px;
@@ -973,13 +1019,15 @@ article p{
 }
 
 .enviar:hover{
-    background: var(--texto);
-    color: var(--color-resaltar2);
+    background: white;
+    color: var(--blue);
+    text-decoration: underline;
+    border:black solid 0.1px;
 }
 
 .cerrar:hover{
-    background: var(--texto);
-    color: var(--color-resaltar2);
+    color: var(--blue);
+    text-decoration: underline;
 }
 
 .lin{
@@ -1201,7 +1249,7 @@ article p{
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
-    background: var(--fondo);
+    background: #f4f4f4;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,.2);
@@ -1261,7 +1309,7 @@ APP PRINCIPAL
     max-height: 50vh;
     overflow-y: auto;
     align-self:self-start ;
-    background-color: var(--tarjeta);
+    background-color: #f4f4f4;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -1280,7 +1328,7 @@ APP PRINCIPAL
     background-color: var(--secundario);
 }
 .options-app::-webkit-scrollbar-thumb{
-    background-color: var(--texto);
+    background-color: black;
 }
 
 
@@ -1304,7 +1352,7 @@ APP PRINCIPAL
 
 .option-app-item p{
     align-content: center;
-    color: var(--texto);
+    color: #333;
     font-size: 1.2rem;
     text-decoration: none;
 }
@@ -1319,12 +1367,14 @@ APP PRINCIPAL
 }
 
 .option-app-item p:hover{
-    color: var(--color-resaltar);
+    color: var(--blue);
     transform:translateY(-1px);
+    text-decoration: underline;
 }
 .option-app-item a:hover{
-    color: var(--color-resaltar);
+    color: var(--blue);
     transform:translateY(-1px);
+    text-decoration: underline;
 }
 
 .app-forms{
@@ -1364,7 +1414,7 @@ APP PRINCIPAL
     align-items: center;
     display: flex;
     flex-direction: row;
-    background-color:#95c0dd;
+    background-color:#f4f4f4;
     margin-top: 1rem;
     margin-right: 1rem;
     margin-left: 1rem;
@@ -1416,7 +1466,7 @@ APP PRINCIPAL
 
 .update{
     display: inline-block;
-    background: var(--color-resaltar2);
+    background: var(--blue);
     color: var(--texto);
     text-decoration: none;
     border-radius: 2px;
@@ -1427,7 +1477,7 @@ APP PRINCIPAL
 
 .delete{
     display: inline-block;
-    background: var(--color-resaltar2);
+    background: var(--blue);
     color: var(--texto);
     text-decoration: none;
     border-radius: 2px;
@@ -1438,25 +1488,31 @@ APP PRINCIPAL
 
 .ver{
     display: inline-block;
-    background: var(--color-resaltar2);
+    background: var(--blue);
     color: var(--texto);
     text-decoration: none;
     border-radius: 2px;
     font-weight: bold;
     border:transparent;
     padding: 8px 14px;
+    
 }
 .update:hover{
-    background: var(--texto);
+    background: transparent;
     color: var(--fondo);
+    border-style:solid;
+    border-color: #202128;
 }
 .ver:hover{
-    background: var(--texto);
-    color: var(--fondo);
+    background: transparent;
+    border-color: #202128;
+    border-style:solid;
 }
 .delete:hover{
-    background: var(--texto);
+    background: transparent;
     color: var(--fondo);
+    border-style:solid;
+    border-color: #202128;
 }
 /* Ventana Registrar */
 .app-regist-inf{
@@ -1469,7 +1525,7 @@ APP PRINCIPAL
     border-radius: 20px;
     padding: 25px;
     width: 400px;
-    background: var(--tarjeta);
+    background: var(--color-blue-light);
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
@@ -1561,7 +1617,7 @@ APP PRINCIPAL
     border-radius: 20px;
     padding: 25px;
     width: 60vh;
-    background: var(--tarjeta);
+    background:var(--color-blue-light);
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
@@ -1605,7 +1661,7 @@ APP PRINCIPAL
     border-radius: 20px;
     padding: 25px;
     width: 400px;
-    background: var(--tarjeta);
+    background: var(--color-blue-light);
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
