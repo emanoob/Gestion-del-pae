@@ -83,13 +83,13 @@
                 <section class ="side">
                     <ul class="Camp">
                         <li><p>Nombre de institicion</p><p class="Important">*</p></li>
-                        <li class="camp-input"><input type="text" name="NomInsti"></li>    
+                        <li class="camp-input"><input type="text" name="NomInsti" required></li>    
                     </ul>
                 </section>
                 
                 <section class="side">
                     <ul class="Camp">
-                        <li><p>Telefono</p><p class="Important">*</p></li>
+                        <li><p>Telefono</p></li>
                         <li class="camp-input"><input type="int" name="Tel"></li>    
                     </ul>
                 </section>
@@ -102,12 +102,12 @@
                 <section class="side">
                     <ul class="Camp">
                         <li class="txt"><p>Cedula de usuario</p><p class="Important">*</p></li>
-                        <li class="camp-input"><input type="int" name="CedUsu"></li>    
+                        <li class="camp-input"><input type="int" name="CedUsu" required></li>    
                     </ul>
             
                     <ul class="Camp">
                         <li class="txt"><p>Correo del usuario</p><p class="Important">*</p></li>
-                        <li class="camp-input"><input type="text" name="CorrUsu"></li>    
+                        <li class="camp-input"><input type="text" name="CorrUsu" required></li>    
                     </ul>
                     <ul class="Camp">
                         <li>
@@ -127,16 +127,16 @@
                 <section class="side">
                     <ul class="Camp">
                         <li class="txt"><p>Nombre del usuario</p><p class="Important">*</p></li>
-                        <li class="camp-input"><input type="text" name="NomUs"></li>   
+                        <li class="camp-input"><input type="text" name="NomUs" required></li>   
                     </ul>
                     <ul class="Camp">
-                        <li><p class="txt">Apellido del usuario</p><p class="Important">*</p></li>
+                        <li><p class="txt">Apellido del usuario</p></li>
                         <li><input type="text" name="ApUs"></li>   
 
                     </ul>
                     <ul class="Camp">
                         <li><p class="txt">Contraseña</p><p class="Important">*</p></li>
-                        <li class="camp-input"><input type="text" name="Contr"></li>   
+                        <li class="camp-input"><input type="text" name="Contr" required></li>   
 
                     
                 </section>
