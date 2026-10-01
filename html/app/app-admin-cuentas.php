@@ -111,6 +111,7 @@ $consulta = mysqli_query(
     <th>Institución</th>
     <th>Teléfono</th>
     <th>Rol</th>
+    <th>Estado</th>
     <th>Acciones</th>
     
 </tr>
@@ -132,6 +133,16 @@ $consulta = mysqli_query(
     <td><?php echo $fila['institucion']; ?></td>
     <td><?php echo $fila['telefono']; ?></td>
     <td><?php echo $fila['rol']; ?></td>
+    <td><?php
+    if($arrayUsur['correo']!=$fila['correo']){ 
+        if($fila['activa']==0){
+            echo '<a href="habilitar.php?id='.$fila['id'].'&type=editar" class="edit">';
+            echo 'Inavilitado';
+            echo '</a>';
+            }else{
+                echo'<a href="habilitar.php?id='.$fila['id'].'&type=editar" class="edit">';
+        echo 'Habilitado';
+        echo '</a>';}}?></td>
     
 
     <td>

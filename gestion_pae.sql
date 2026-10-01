@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-09-2026 a las 05:38:39
+-- Tiempo de generación: 01-10-2026 a las 04:53:19
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -50,16 +50,19 @@ CREATE TABLE `cuentas_usuarios` (
   `institucion` varchar(80) NOT NULL,
   `telefono` int(20) NOT NULL,
   `contrasena` varchar(70) NOT NULL,
-  `rol` varchar(3) NOT NULL
+  `rol` varchar(20) NOT NULL,
+  `activa` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `cuentas_usuarios`
 --
 
-INSERT INTO `cuentas_usuarios` (`id`, `nombre`, `apellido`, `cedula`, `correo`, `institucion`, `telefono`, `contrasena`, `rol`) VALUES
-(4, 'emanuel', 'gomez', 1138026905, 'a@a', 'a', 123, '1', 'ADP'),
-(5, 'e', 'e', 1010, 'e@e', 'g', 33333, '', 'ADI');
+INSERT INTO `cuentas_usuarios` (`id`, `nombre`, `apellido`, `cedula`, `correo`, `institucion`, `telefono`, `contrasena`, `rol`, `activa`) VALUES
+(4, 'emanuel', 'gomez', 1138026905, 'a@a', 'a', 123, '1', 'ADP', 1),
+(5, 'e', 'e', 1010, 'e@e', 'g', 33333, '', 'ADI', 1),
+(11, '', '', 0, 'a@qqq', '', 0, '111', 'ADI', 0),
+(12, '', '', 0, 'a@qqq', '', 0, '1111', 'Usuario', 0);
 
 -- --------------------------------------------------------
 
@@ -206,7 +209,7 @@ ALTER TABLE `comprobantes`
 -- AUTO_INCREMENT de la tabla `cuentas_usuarios`
 --
 ALTER TABLE `cuentas_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `informes`

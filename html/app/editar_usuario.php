@@ -19,7 +19,7 @@ if(isset($_SESSION['usuario'])){
 
 $id = trim($_GET['id'] ?? '');
 $type = $_GET['type'] ?? '';
-
+if ($type=='borrar'){
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $confirmacion = $_POST['confirmacion'] ?? '0';
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     exit;
-}
+}}
 ?>
 
 <?php if ($type === 'borrar') { ?>
@@ -134,7 +134,7 @@ if (isset($_POST['guardar'])) {
               </script>";
 
     } else {
-
+        echo 'hola';
         echo "Error al actualizar: " . mysqli_error($conexion);
 
     }
