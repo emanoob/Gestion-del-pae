@@ -1004,6 +1004,19 @@ article p{
     width: 10rem;
     
 }
+.Camp select{
+    align-content: center;
+    margin-left: 0.01vw;
+    width: 10rem;
+    height: 1.8rem;
+    border: 1px solid #b5c7e9;
+    border-radius: 5px;
+    background-color: white;
+    color: var(--texto);
+    font-family: 'Monda', sans-serif;
+    font-size: 0.85rem;
+    padding: 2px 5px;
+}
 @media (max-width: 1023px){
     .part {
         grid-template-columns: 1fr;
