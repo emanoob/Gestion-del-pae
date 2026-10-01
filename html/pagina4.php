@@ -109,6 +109,19 @@
                         <li class="txt"><p>Correo del usuario</p><p class="Important">*</p></li>
                         <li class="camp-input"><input type="text" name="CorrUsu"></li>    
                     </ul>
+                    <ul class="Camp">
+                        <li>
+                            <p class="txt">Tipo de cuenta</p>
+                            <p class="Important">*</p>
+                        </li>
+
+                        <li class="camp-input">
+                            <select name="rol" required>
+                            <option value="Usuario">Usuario</option>
+                            <option value="PENDIENTE_ADI">Solicitar Administrador Institucional (ADI)</option>
+                            </select>
+                        </li>
+                    </ul>
                 </section>
                 
                 <section class="side">
@@ -125,19 +138,7 @@
                         <li><p class="txt">Contraseña</p><p class="Important">*</p></li>
                         <li class="camp-input"><input type="text" name="Contr"></li>   
 
-                    <ul class="Camp">
-    <li>
-        <p class="txt">Tipo de cuenta</p>
-        <p class="Important">*</p>
-    </li>
-
-    <li class="camp-input">
-        <select name="rol" required>
-            <option value="Usuario">Usuario</option>
-            <option value="PENDIENTE_ADI">Solicitar Administrador Institucional (ADI)</option>
-        </select>
-    </li>
-</ul>
+                    
                 </section>
                 
             </section>

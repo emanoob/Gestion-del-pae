@@ -917,7 +917,7 @@ article p{
     grid-template-columns: 2fr 2fr;
     gap: 6rem;
     min-width: 0;
-    border-bottom: 0.5vh var(--texto) solid;
+    border-bottom: 0.5vh #333 solid;
     margin-left: 0.5vw;
     margin-right: 0.5vw;
     margin-top: 1vh;
