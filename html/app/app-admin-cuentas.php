@@ -135,25 +135,42 @@ $consulta = mysqli_query(
     
 
     <td>
-        <?php
-        if($arrayUsur['correo']!=$fila['correo']){
 
-        
-            echo '<a href="editar_usuario.php?id='.$fila['id'].'& type='."editar".' " class="edit">';
-            echo 'Editar';
-            echo '</a>';
-            }
-        ?>
-        <?php
-        if($arrayUsur['correo']!=$fila['correo']){
+<?php
 
-        
-            echo '<a href="editar_usuario.php?id='.$fila['id'].' & type='."borrar".' " class="edit">';
-            echo 'Borrar';
-            echo '</a>';
-            }
-        ?>
-    </td>
+if($fila['rol']=="PENDIENTE_ADI" && $arrayUsur['rol']=="ADP"){
+
+    echo '<a href="app/aprobar_adi.php?id='.$fila['id'].'" class="edit">';
+    echo 'Aprobar ADI';
+    echo '</a>';
+
+    echo ' ';
+
+    echo '<a href="app/rechazar_adi.php?id='.$fila['id'].'" class="edit">';
+    echo 'Rechazar';
+    echo '</a>';
+
+}else{
+
+    if($arrayUsur['correo']!=$fila['correo']){
+
+        echo '<a href="editar_usuario.php?id='.$fila['id'].'&type=editar" class="edit">';
+        echo 'Editar';
+        echo '</a>';
+
+        echo ' ';
+
+        echo '<a href="editar_usuario.php?id='.$fila['id'].'&type=borrar" class="edit">';
+        echo 'Borrar';
+        echo '</a>';
+
+    }
+
+}
+
+?>
+
+</td>
 </tr>
 <?php } ?>
 <?php } ?>
