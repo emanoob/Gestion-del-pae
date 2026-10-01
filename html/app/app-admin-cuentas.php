@@ -140,13 +140,13 @@ $consulta = mysqli_query(
 
 if($fila['rol']=="PENDIENTE_ADI" && $arrayUsur['rol']=="ADP"){
 
-    echo '<a href="app/aprobar_adi.php?id='.$fila['id'].'" class="edit">';
+    echo '<a href="aprobar_adi.php?id='.$fila['id'].'" class="edit">';
     echo 'Aprobar ADI';
     echo '</a>';
 
     echo ' ';
 
-    echo '<a href="app/rechazar_adi.php?id='.$fila['id'].'" class="edit">';
+    echo '<a href="rechazar_adi.php?id='.$fila['id'].'" class="edit">';
     echo 'Rechazar';
     echo '</a>';
 

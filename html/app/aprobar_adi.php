@@ -19,14 +19,14 @@ $consulta=mysqli_query(
 $arrayUsur=mysqli_fetch_assoc($consulta);
 
 if($arrayUsur['rol']!="ADP"){
-    header("Location: ../app-admin-cuentas.php");
+    header("Location:app-admin-cuentas.php");
     exit();
 }
 
 $id=$_GET['id'] ?? '';
 
 if($id==""){
-    header("Location: ../app-admin-cuentas.php");
+    header("Location:app-admin-cuentas.php");
     exit();
 }
 
@@ -37,7 +37,7 @@ $actualizar=mysqli_query(
      WHERE id='$id'"
 );
 
-header("Location: ../app-admin-cuentas.php");
+header("Location:app-admin-cuentas.php");
 exit();
 
 ?>
