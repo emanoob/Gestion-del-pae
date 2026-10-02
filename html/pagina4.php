@@ -130,8 +130,8 @@
                         <li class="camp-input"><input type="text" name="NomUs" required></li>   
                     </ul>
                     <ul class="Camp">
-                        <li><p class="txt">Apellido del usuario</p></li>
-                        <li><input type="text" name="ApUs"></li>   
+                        <li><p class="txt">Apellido del usuario</p><p class="Important">*</p></li>
+                        <li><input type="text" name="ApUs" required></li>   
 
                     </ul>
                     <ul class="Camp">
