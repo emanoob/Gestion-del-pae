@@ -130,7 +130,7 @@
                 date_default_timezone_set('America/Bogota');
                 $institucioncomprobar=$usurTablaArr['institucion'];
              
-                    for($i=0;$i<=20;$i++)
+                    for($i=0;$i<=30;$i++)
                         {
                             $resultados=mysqli_query($conexion, "SELECT * FROM `$tabla_db1` WHERE id = $i");
                             
@@ -248,7 +248,7 @@
                     $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
 
                     
-                    for($i=0;$i<=20;$i++)
+                    for($i=0;$i<=30;$i++)
                         {
                         $resultadosSemanales=mysqli_query($conexion, "SELECT * FROM `registros_semanales` WHERE id = $i");
                         WHILE($consultaSemanal =mysqli_fetch_array($resultadosSemanales)){
