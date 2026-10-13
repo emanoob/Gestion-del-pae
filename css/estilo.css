@@ -139,7 +139,7 @@ nav{
 }
 
 .nav li {
-    display: flex;
+    list-style: none;
     align-items: center;
     height: 100%;
     
@@ -331,54 +331,97 @@ RESPONSIVE
 .despl-list{
     align-items: center;
 }
-@media screen and (max-width:500px){
-    .menu{
+
+
+
+
+@media screen and (max-width: 500px) {
+
+    .menu {
         display: block;
+        background-color: #00131a;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 24px;
+        cursor: pointer;
     }
 
-    .nav{
-        opacity: 0;
-        visibility: hidden;
-    }
-    .nav{
-        
-        padding: 2rem;
-        display: flex;
+    .nav {
         display: none;
-        top:0;
+        position: absolute;
+        top: 100%;
         right: 0;
-        flex-direction: column;
-        align-items: end;
-        position: initial;
+        left: 0;
+        width: 100%;
         margin: 0;
-        z-index: 500;
-        margin-left: 25%;
-
-    }
-    .nav.visible{
-        visibility: visible;
+        padding: 15px;
+        box-sizing: border-box;
+        background-color: #f4f4f4;
+        z-index: 1001;
         opacity: 1;
+        visibility: visible;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav.visible {
         display: flex;
     }
 
-    .despl-list{
+    .nav ul,
+    .despl-list {
+        background-color: #f4f4f4;
+        display: flex;
         flex-direction: column;
-        margin:0;
+        align-items: stretch;
+        width: 100%;
+        gap: 0;
+        margin: 0;
+        padding: 0;
     }
 
-    header h1{
-    font-size:2rem;
+    .nav li {
+        margin-top:2px;
+        width: 100%;
     }
-    .logo{
+
+    .nav a {
+        display: flex;
+        width: 100%;
+        min-height: 45px;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        justify-content: flex-start;
+        white-space: normal;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .cerrar-menu {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .logo {
         width: 25%;
     }
-    footer{
+
+    footer {
         flex-direction: column;
     }
-    main{
+
+    main {
         margin-top: 25%;
     }
 }
+
+
 
 
 
