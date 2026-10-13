@@ -62,7 +62,7 @@ header{
 }
 
 .logo{
-    width:8%;
+    width: 120px;;
     z-index: 10000;
 }
 
@@ -119,6 +119,7 @@ nav{
 
 .casa{
     width:28px;
+    margin-right: 2vw;
 }
 
 
@@ -130,12 +131,14 @@ nav{
     box-sizing: border-box;
 }
 .nav ul {
+    justify-content: space-between;
     display: flex;
     align-items: center;
     margin: 0;
     padding: 0;
     height: 100%;
     align-items: center;
+    gap:0px;
 }
 
 .nav li {
@@ -147,6 +150,7 @@ nav{
 }
 
 nav a {
+    padding: 1vw;
     display: flex;
     align-items: center;
     height: 100%;
@@ -203,8 +207,15 @@ footer{
     border: 1px solid var(--color-blue-light);
     
 }
-
+.container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
 .redes{
+    
     flex: 0 0 100%;
     max-width: 100%;
     color: #fff;
@@ -347,6 +358,11 @@ RESPONSIVE
         cursor: pointer;
     }
 
+
+    .casa{
+        margin-left: 45%;
+    }
+
     .nav {
         display: none;
         height: auto;
@@ -399,7 +415,7 @@ RESPONSIVE
     }
 
     .cerrar-menu {
-        display: block;
+        display: none;
         width: 100%;
         padding: 10px;
         cursor: pointer;
@@ -809,6 +825,9 @@ article p{
     padding-top: 0%;
     align-items: center;
 }
+.mainServCl a{
+    color: var(--blue);
+}
 
 .hero{
     min-height:76vh;
@@ -838,7 +857,7 @@ article p{
     width:360px;
     min-height:220px;
 
-    background:rgba(220,220,220,.85);
+    background:#f4f4f4;
 
     border-radius:30px;
 
@@ -853,7 +872,7 @@ article p{
 
 .card a{
     display:block;
-    color:#222;
+    color: var(--blue);
     margin-bottom:20px;
     font-size:18px;
 }
@@ -1040,9 +1059,9 @@ article p{
 .enviar{
     display: inline-block;
     background: var(--blue);
-    color:white;
+    color: var(--color-blue-light);
     text-decoration: none;
-    border-radius: 2px;
+    border-radius: 0.1px;
     font-weight: bold;
     border:transparent;
     padding: 8px 14px;
@@ -1063,10 +1082,10 @@ article p{
 }
 
 .enviar:hover{
-    background: white;
+    background:#d1d1d1;
     color: var(--blue);
+    border-color: #202128;
     text-decoration: underline;
-    border:black solid 0.1px;
 }
 
 .cerrar:hover{
@@ -1363,6 +1382,7 @@ APP PRINCIPAL
 }
 
 .options-app{
+    width: 35%;
     max-height: 50vh;
     overflow-y: auto;
     align-self:self-start ;
@@ -1375,6 +1395,9 @@ APP PRINCIPAL
     padding-bottom: 1rem;
     padding-left: 1rem;
     box-shadow: #27272665 1rem 1rem;
+}
+.first{
+    margin-top: 1vh;
 }
 
 .options-app::-webkit-scrollbar{
@@ -1525,7 +1548,7 @@ APP PRINCIPAL
 .update{
     display: inline-block;
     background: var(--blue);
-    color: var(--texto);
+    color: var(--color-blue-light);
     text-decoration: none;
     border-radius: 2px;
     font-weight: bold;
@@ -1536,7 +1559,7 @@ APP PRINCIPAL
 .delete{
     display: inline-block;
     background: var(--blue);
-    color: var(--texto);
+    color: var(--color-blue-light);
     text-decoration: none;
     border-radius: 2px;
     font-weight: bold;
@@ -1547,30 +1570,33 @@ APP PRINCIPAL
 .ver{
     display: inline-block;
     background: var(--blue);
-    color: var(--texto);
+    color: var(--color-blue-light);
     text-decoration: none;
-    border-radius: 2px;
+    border-radius: 0.1px;
     font-weight: bold;
     border:transparent;
     padding: 8px 14px;
     
 }
 .update:hover{
-    background: transparent;
-    color: var(--fondo);
-    border-style:solid;
+    background:#d1d1d1;
+    color: var(--blue);
     border-color: #202128;
+    text-decoration: underline;
+    
 }
 .ver:hover{
-    background: transparent;
+    
+    background:#d1d1d1;
     border-color: #202128;
-    border-style:solid;
+    text-decoration: underline;
+    color: var(--blue);
 }
 .delete:hover{
-    background: transparent;
-    color: var(--fondo);
-    border-style:solid;
+    background:#d1d1d1;
+    color: var(--blue);
     border-color: #202128;
+    text-decoration: underline;
 }
 /* Ventana Registrar */
 .app-regist-inf{
@@ -1583,7 +1609,7 @@ APP PRINCIPAL
     border-radius: 20px;
     padding: 25px;
     width: 400px;
-    background: var(--color-blue-light);
+    background: #f4f4f4;
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
@@ -1613,7 +1639,7 @@ APP PRINCIPAL
     padding: 12px;
     border: 2px solid var(--texto);
     border-radius: 10px;
-    background: #f4f4f4;
+    background: #c9c9c9;
     font-size: 16px;
     box-sizing: border-box;
 }
@@ -1624,7 +1650,7 @@ APP PRINCIPAL
     padding: 12px;
     border: none;
     border-radius: 10px;
-    background: #333;
+    background: #00131a;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -1632,8 +1658,9 @@ APP PRINCIPAL
 }
 
 .btn_send_inf:hover{
-    background: #ff9472;
-    color: #00131a;
+    text-decoration: underline;
+    background: white;
+    color: var(--blue);
 }
 
 .btn_save{
@@ -1641,7 +1668,7 @@ APP PRINCIPAL
     padding: 12px;
     border: none;
     border-radius: 10px;
-    background: var(--texto);
+    background: #00131a;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -1649,8 +1676,9 @@ APP PRINCIPAL
 }
 
 .btn_save:hover{
-    background: #ff9472;
-    color: #00131a;
+    text-decoration: underline;
+    background: white;
+    color: var(--blue);
 }
 
 /* Botón cerrar */
@@ -1675,7 +1703,7 @@ APP PRINCIPAL
     border-radius: 20px;
     padding: 25px;
     width: 60vh;
-    background:var(--color-blue-light);
+    background:#f4f4f4;
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
@@ -1719,7 +1747,7 @@ APP PRINCIPAL
     border-radius: 20px;
     padding: 25px;
     width: 400px;
-    background: var(--color-blue-light);
+    background: #f4f4f4;
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
@@ -1740,24 +1768,15 @@ APP PRINCIPAL
    ========================= */
 
 nav .btn-cerrar-sesion {
-    height: 6vh;
-    display: inline-block;
-    margin-top: 10px;
-    padding: 6px 16px;
-    border: 1px solid var(--color-border-primary);
-    border-radius: 10px;
-
-    background: transparent;
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+    height: 100%;
     color: var(--blue);
-
-    font-family: 'Monda', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-
     text-decoration: none;
-    cursor: pointer;
-
-    transition: all 0.3s ease;
+    font-family: 'Monda', sans-serif;
+    font-weight: 600;
+    width: auto;
 }
 
 /* Cuando pasas el mouse */
@@ -1767,7 +1786,6 @@ nav .btn-cerrar-sesion:hover {
     border-color: var(--color-resaltar);
 
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Cuando haces clic */
@@ -1778,7 +1796,17 @@ nav .btn-cerrar-sesion:active {
 
 /*app-graficar*/
 .app-graficar{
-    background-color: var(--color-blue-light);
+    overflow-y: auto;
+    position: fixed;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    border: none;
+    border-radius: 20px;
+    padding: 25px;
+    width: 400px;
+    background: #f4f4f4;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
 }
 
 
@@ -1805,7 +1833,11 @@ nav .btn-cerrar-sesion:active {
 }
 .salir-graficar{
     text-decoration: none;
-    color: var(--texto);
+    color: var(--blue);
+}
+
+.salir-graficar:hover{
+    text-decoration: underline;
 }
 
 
@@ -1866,8 +1898,7 @@ _______________________________
 
 .edit{
     display: inline-block;
-    background: var(--color-resaltar2);
-    color: var(--texto);
+    color: var(--blue);
     text-decoration: none;
     border-radius: 2px;
     font-weight: bold;
@@ -1876,8 +1907,7 @@ _______________________________
 }
 
 .edit:hover{
-    background: var(--texto);
-    color: var(--fondo);
+    text-decoration: underline;
 }
 
 .app-inst{

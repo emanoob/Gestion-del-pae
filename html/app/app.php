@@ -84,7 +84,7 @@
         <section class="options-app">
             
             
-            <button class="buton-abrir-regist option-app-item">
+            <button class="buton-abrir-regist option-app-item first">
                 <img alt="option_item_img" src="../../img/App/1.png">
                 <p>Añadir</p>
             </button>
@@ -275,8 +275,8 @@
     </main>
 
     <footer>
+        <div class=" container">
     <div class="footer-inside">
-        
     <ul class="redes">
 
         <li>
@@ -320,6 +320,7 @@
         <p>Alcaldía de Medellín</p>
 
     </section>
+    </div>
     </div>
     </footer>
     <script src="../../js/mHam.js"></script>

@@ -155,8 +155,8 @@
     
 
     <footer>
+        <div class=" container">
     <div class="footer-inside">
-        
     <ul class="redes">
 
         <li>
@@ -200,6 +200,7 @@
         <p>Alcaldía de Medellín</p>
 
     </section>
+    </div>
     </div>
     </footer>
     <script src="../js/mHam.js"></script>

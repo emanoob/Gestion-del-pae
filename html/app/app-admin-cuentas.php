@@ -195,8 +195,8 @@ if($fila['rol']=="PENDIENTE_ADI" && $arrayUsur['rol']=="ADP"){
 </main>
 
         <footer>
+        <div class=" container">
     <div class="footer-inside">
-        
     <ul class="redes">
 
         <li>
@@ -240,6 +240,7 @@ if($fila['rol']=="PENDIENTE_ADI" && $arrayUsur['rol']=="ADP"){
         <p>Alcaldía de Medellín</p>
 
     </section>
+    </div>
     </div>
     </footer>
     <script src="../../js/mHam.js"></script>
