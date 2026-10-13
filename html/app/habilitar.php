@@ -18,7 +18,7 @@ $consulta=mysqli_query(
 
 $arrayUsur=mysqli_fetch_assoc($consulta);
 
-if($arrayUsur['rol']!="ADP"){
+if($arrayUsur['rol']=="Usuario"){
     header("Location:app-admin-cuentas.php");
     exit();
 }
