@@ -137,7 +137,7 @@ $consulta = mysqli_query(
     if($arrayUsur['correo']!=$fila['correo']){ 
         if($fila['activa']==0){
             echo '<a href="habilitar.php?id='.$fila['id'].'&type=editar" class="edit">';
-            echo 'Inavilitado';
+            echo 'Deshabilitado';
             echo '</a>';
             }else{
                 echo'<a href="habilitar.php?id='.$fila['id'].'&type=editar" class="edit">';

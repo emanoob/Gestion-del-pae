@@ -8,7 +8,7 @@ document.getElementById("buscadorForm").addEventListener("submit", function(e) {
 
     if (texto === "rutas" || texto === "entregas" || texto === "ruta" || texto === "entrega" || texto === "transporte" || texto === "distribucion" || texto === "logistica") 
     {
-        window.location.href = rutaBase + "html/rutentrega.php";
+        window.location.href = rutaBase + "../html/rutentrega.php";
     }
 
     else if (

@@ -127,7 +127,7 @@
                 include("../../base_datos/informes/conexion/abrir_conexion.php");
                 $UsurTabla=mysqli_query($conexion ,$UsurTablaSql);
                 $usurTablaArr=mysqli_fetch_assoc($UsurTabla);
-                    
+                date_default_timezone_set('America/Bogota');
                 $institucioncomprobar=$usurTablaArr['institucion'];
              
                     for($i=0;$i<=20;$i++)
@@ -190,11 +190,13 @@
                 </ul>
                 <ul class="regist_camp">
                         <li><p>fecha</p></li>
-                        <li><input type="date" name="fecha" class="fecha"></li>    
-                </ul>
+                        <li><input type="hidden" name="fecha" class="fecha" value="<?php echo date("Y-m-d");?>" placeholder="2023-10-01"></li>  
+                        <li><p><?php echo date("Y-m-d");?></p></li>  
+                </ul>   
                 <ul class="regist_camp">
                         <li><p>hora</p></li>
-                        <li><input type="time" name="hora" class="hora"></li>    
+                        <li><p><?php echo date('H:i');?></p></li>
+                        <li><input type="hidden" name="hora" class="hora" value="<?php echo date('H:i');?>"></li>    
                 </ul>
                 <input type="submit" name="btn_send_inf" class="btn_send_inf">
                 

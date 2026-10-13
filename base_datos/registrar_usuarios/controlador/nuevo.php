@@ -15,12 +15,10 @@
 
         mysqli_query($conexion,"INSERT INTO `cuentas_usuarios`
         (nombre,apellido,cedula,correo,institucion,telefono,contrasena,rol)
-        values
+        VALUES
         ('$NomUs','$ApUs','$CedUsu','$CorrUsu','$NomInsti','$Tel','$Contr','$rol')");
 
         include("../conexion/cerrar_conexion.php");
-        header('Location:../../../html/pagina4.php');
-    }else{
         header('Location:../../../html/pagina4.php');
     }
 
