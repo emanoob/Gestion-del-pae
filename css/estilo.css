@@ -1877,8 +1877,11 @@ nav .btn-cerrar-sesion:active {
 /*================*/
 /*Graficar  php   */
 .display-grafic{
-    width: 120vh;
-    overflow-x: auto;
+    width: 70vw;
+    
+}
+.display-grafic canvas{
+    overflow-x:scroll;
 }
 .salir-graficar{
     text-decoration: none;
@@ -2035,4 +2038,12 @@ _______________________________
     border-radius: 50%;
     cursor: pointer;
     margin-bottom: 10vh;
+}
+
+
+@media screen and (max-width:500px){
+    .display-grafic{
+    width: 100vw;
+    
+}
 }
