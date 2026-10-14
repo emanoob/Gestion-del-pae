@@ -726,7 +726,9 @@ article p{
     font-family:'Monda';
 }
 /* BOTONES DE ADMINISTRACIÓN DE RUTAS */
-
+.tabla-usuarios{
+    overflow-x: auto;
+}
 .tabla-rutas td:last-child {
     white-space: nowrap;
     text-align: center;
@@ -2044,6 +2046,7 @@ _______________________________
 @media screen and (max-width:500px){
     .display-grafic{
     width: 100vw;
+    
     
 }
 }
