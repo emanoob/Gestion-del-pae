@@ -1878,6 +1878,7 @@ nav .btn-cerrar-sesion:active {
 /*Graficar  php   */
 .display-grafic{
     width: 120vh;
+    overflow-x: auto;
 }
 .salir-graficar{
     text-decoration: none;
