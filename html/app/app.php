@@ -215,7 +215,7 @@
         </dialog>
         <dialog class ="app-update-inf">
             <button class="cerrar-dialog-update">X</button>
-            <h2>actualizar</h2>
+            <h2 class="actualizarh">Actualizar</h2>
             <Form action="../../base_datos/informes/controlador/gestion_tabla.php" method="POST">
                 <ul class="regist_camp">
                         <li><p>platos entregados</p></li>

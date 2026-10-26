@@ -169,7 +169,6 @@ nav a {
 nav a:hover{
     background:#4c4c4c;
     color: white;
-    text-decoration: underline;
     
 }
 
@@ -230,6 +229,7 @@ footer{
     margin-block-end: 1em;
     padding-inline-start: 40px;
     unicode-bidi: isolate;
+    justify-content: center;
 }
 
 
@@ -238,7 +238,7 @@ footer{
     border-top-right-radius: 0;
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
-    margin-right: 1rem;
+    margin-right: 1vw;
     padding: 15px 5px;
     position: relative;
     display: block;
@@ -250,12 +250,15 @@ footer{
 }
 .redes a{
     font-family:'Monda';
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: 600;
-    color: var(--primary);
+    color: black;
     background-color: transparent;
-    text-decoration: underline;
     box-sizing: border-box;
+    align-items: center;
+}
+.redes a:hover{
+    text-decoration: underline;
 }
 
 .alcaldia p{
@@ -346,7 +349,7 @@ RESPONSIVE
 
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 590px) {
 
     .menu {
         display: block;
@@ -440,6 +443,10 @@ RESPONSIVE
     header{
         border-bottom: solid 2px var(--red);
     }
+
+    
+
+    
 }
 
 
@@ -453,7 +460,7 @@ RESPONSIVE
     flex-direction: column;
 }
 main{
-    min-height: 75vh;
+    min-height: 50vh;
     background: var(--fondo);
     margin: 1px;
     align-items: start;
@@ -497,7 +504,7 @@ main h2{
 }
 
 .carrusel .grande{
-    width: 300%;
+    width: 300vw;
 
     display: flex;
     flex-flow: row nowrap;
@@ -605,7 +612,7 @@ main{
 
     text-align:center;
     font-size:1.8rem;
-    color: var(--blue);
+    color: black;
 }
 
 .Info div p{
@@ -616,13 +623,14 @@ main{
 
 .link-text{
     margin-top:18px;
-    color: var(--blue);
-    text-decoration:underline;
+    color: var(--red);
     font-weight:bold;
+    text-decoration: none;
 }
 
 .link-text:hover{
     color:var(--decoracion-x2);
+    text-decoration:underline;
 }
 
 .aside h2{
@@ -657,7 +665,6 @@ main{
         font-size: 1rem;
     }
 }
-
 
 
 
@@ -822,10 +829,22 @@ article p{
     
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 810px){
     .mainentr{
         grid-template-columns: 1fr;
+        padding-left: 5px;
     }
+    .informacion a img{
+        width: 70%;
+    }
+    .informacion h2{
+        font-size: 2.9;
+    }
+
+    .informacion p{
+        width: 80vw;
+    }
+    
 }
 
 
@@ -893,9 +912,14 @@ article p{
 
 .card a{
     display:block;
-    color: var(--blue);
+    color: var(--red);
     margin-bottom:20px;
     font-size:18px;
+    text-decoration: none;
+}
+
+.card a:hover{
+    text-decoration: underline;
 }
 
 .telefono{
@@ -944,7 +968,7 @@ article p{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-bottom: 8rem;
+    padding-bottom: 6vh;
     
 }
 
@@ -960,7 +984,7 @@ article p{
     min-height: auto;
     font-weight: bold;
     padding-left: 1%;
-    margin-top:5vh;
+    margin-top:1vh;
     align-self: center;
 }
 
@@ -1493,7 +1517,8 @@ APP PRINCIPAL
 }
 
 .option-app-item p:hover{
-    color: var(--blue);
+    cursor: pointer;
+    color: var(--red);
     transform:translateY(-1px);
     text-decoration: underline;
 }
@@ -1596,6 +1621,7 @@ APP PRINCIPAL
 }
 
 .update{
+    cursor: pointer;
     display: inline-block;
     background: var(--blue);
     color: var(--color-blue-light);
@@ -1607,6 +1633,7 @@ APP PRINCIPAL
 }
 
 .delete{
+    cursor: pointer;
     display: inline-block;
     background: var(--blue);
     color: var(--color-blue-light);
@@ -1618,6 +1645,7 @@ APP PRINCIPAL
 }
 
 .ver{
+    cursor: pointer;
     display: inline-block;
     background: var(--blue);
     color: var(--color-blue-light);
@@ -1656,9 +1684,9 @@ APP PRINCIPAL
     transform: translate(-50%, -50%);
 
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     padding: 25px;
-    width: 400px;
+    width: 50vw;
     background: #f4f4f4;
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
@@ -1666,8 +1694,9 @@ APP PRINCIPAL
 
 .app-regist-inf h2{
     text-align: center;
-    color: var(--texto);
+    color: #212529;
     font-family: 'Anton', sans-serif;
+    font-size: 1.75rem;
     margin-bottom: 20px;
 }
 
@@ -1680,16 +1709,15 @@ APP PRINCIPAL
 
 .regist_camp p{
     color: var(--texto);
-    font-weight: bold;
+    font-size: 16px;
     margin-bottom: 5px;
 }
 
 .regist_camp input{
     width: 100%;
     padding: 12px;
-    border: 2px solid var(--texto);
-    border-radius: 10px;
-    background: #c9c9c9;
+    border: 0.094rem solid #737373;
+    border-radius: 1px;
     font-size: 16px;
     box-sizing: border-box;
 }
@@ -1709,8 +1737,8 @@ APP PRINCIPAL
 
 .btn_send_inf:hover{
     text-decoration: underline;
-    background: white;
-    color: var(--blue);
+    background: var(--red);
+    color: white;
 }
 
 .btn_save{
@@ -1750,10 +1778,10 @@ APP PRINCIPAL
     transform: translate(-50%, -50%);
 
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     padding: 25px;
-    width: 60vh;
-    background:#f4f4f4;
+    width: 50vw;
+    background: #f4f4f4;
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
@@ -1766,13 +1794,14 @@ APP PRINCIPAL
 
 .app-ver-inf p{
     color: var(--texto);
-    font-weight: bold;
+    
     font-size: 1.2rem;
     margin-bottom: 5px;
 }
 
 .app-ver-inf span{
     font-size: 1rem;
+    font-weight: bold;
 }
 
 .cerrar-dialog-ver{
@@ -1794,11 +1823,17 @@ APP PRINCIPAL
     transform: translate(-50%, -50%);
 
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     padding: 25px;
-    width: 400px;
+    width: 50vw;
     background: #f4f4f4;
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.actualizarh{
+    text-align: center;
+    color: var(--texto);
+    font-family: 'Anton', sans-serif;
+    margin-bottom: 20px;
 }
 
 .cerrar-dialog-update{
@@ -1822,20 +1857,17 @@ nav .btn-cerrar-sesion {
     display: flex;
     align-items: center;
     height: 100%;
-    color: var(--blue);
+    color: var(--red);
     text-decoration: none;
     font-family: 'Monda', sans-serif;
-    font-weight: 600;
+    font-weight: 800;
     width: auto;
 }
 
 /* Cuando pasas el mouse */
 nav .btn-cerrar-sesion:hover {
-    background: var(--color-resaltar);
-    color: var(--blue);
-    border-color: var(--color-resaltar);
-
-    transform: translateY(-2px);
+    
+    transform: translateY(-1px);
 }
 
 /* Cuando haces clic */
@@ -1846,22 +1878,23 @@ nav .btn-cerrar-sesion:active {
 
 /*app-graficar*/
 .app-graficar{
-    overflow-y: auto;
     position: fixed;
-    height: 50%;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
+
     border: none;
-    border-radius: 20px;
+    border-radius: 1px;
     padding: 25px;
-    width: 400px;
+    width: 50vw;
     background: #f4f4f4;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
 
 .registro-semanal-item{
     background-color: white;
+    border-radius: 1px;
 }
 
 
@@ -1887,7 +1920,7 @@ nav .btn-cerrar-sesion:active {
 }
 .salir-graficar{
     text-decoration: none;
-    color: var(--blue);
+    color: var(--red);
 }
 
 .salir-graficar:hover{
@@ -1952,7 +1985,7 @@ _______________________________
 
 .edit{
     display: inline-block;
-    color: var(--blue);
+    color: var(--red);
     text-decoration: none;
     border-radius: 2px;
     font-weight: bold;
@@ -1964,11 +1997,22 @@ _______________________________
     text-decoration: underline;
 }
 
+.usurh{
+    font-size: 1.75rem;
+}
+
 .app-inst{
     display: flex;
     flex-direction: row;
     align-items: self-start;
 }
+
+.app-cuent{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+}
+
 
 .instituciones-registros-table{
     min-height: 10vh;
@@ -1999,18 +2043,18 @@ _______________________________
     transform: translate(-50%, -50%);
 
     border: none;
-    border-radius: 20px;
+    border-radius: 1px;
     padding: 25px;
-    width: 400px;
+    width: 50vw;
     background: #f4f4f4;
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
 .registro-semanal-item{
-    background: var(--);
+    background: #e6e6e6;
     border-color: var(--texto);
     border: solid;
-    border-radius: 5%;
+    border-radius: 2px;
 }
 
 .registro-semanal-item p{
@@ -2027,6 +2071,11 @@ _______________________________
     border:transparent;
     padding: 2px 13px;
     align-self: center;
+}
+.graficar:hover{
+    background: #d1d1d1;
+    color: blue;
+    text-decoration: underline;
 }
 
 .cerrar-dialog-graficar{

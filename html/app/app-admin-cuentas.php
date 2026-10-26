@@ -82,7 +82,7 @@
     </nav>
 
 </header>
-    <main class="app-inst">
+    <main class="app-cuent">
 
 <?php
 
@@ -94,10 +94,10 @@ $consulta = mysqli_query(
 );
 
 ?>
-
+<h2 class="usurh">Usuarios Registrados</h2>
 <section class="tabla-usuarios">
 
-<h2>Usuarios Registrados</h2>
+
 
 <table class="tabla-rutas">
 
