@@ -136,7 +136,7 @@
                     </ul>
                     <ul class="Camp">
                         <li><p class="txt">Contraseña</p><p class="Important">*</p></li>
-                        <li class="camp-input"><input type="text" name="Contr" required></li>   
+                        <li class="camp-input"><input type="text" name="Contr" required minlength="8" pattern="(?=.*[A-Za-z])(?=.*[0-9]).+" title="La contraseña debe contener al menos una letra y un número."></li>   
 
                     
                 </section>
