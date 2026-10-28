@@ -1391,7 +1391,7 @@ article p{
     }
 }
 .tabla-rutas{
-    width: 100%;
+    width: 40vw;
     margin-top: 20px;
     border-collapse: collapse;
     background: #f4f4f4;
@@ -1617,6 +1617,10 @@ APP PRINCIPAL
     .options-app{
         width: 75%;
         align-self: center;
+    }
+
+    .infos{
+        width: 100%;
     }
 }
 
