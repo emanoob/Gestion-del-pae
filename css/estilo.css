@@ -733,9 +733,20 @@ article p{
     font-family:'Monda';
 }
 /* BOTONES DE ADMINISTRACIÓN DE RUTAS */
-.tabla-usuarios{
+
+
+
+.instituciones-registros-table{
+    display: block;
+    width: 100%;
     overflow-x: auto;
+    
 }
+
+.tabla-rutas{
+    
+}
+
 .tabla-rutas td:last-child {
     white-space: nowrap;
     text-align: center;
@@ -2101,5 +2112,13 @@ _______________________________
     width: 100vw;
     
     
+    
 }
+
+    .app-inst{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+}
+    
 }
